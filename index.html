@@ -3,34 +3,354 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Chakradhari Computational Technologies - Bridging frontier research and real-world application through rigorous computational intelligence" />
   <title>Chakradhari Computational Technologies Pvt Ltd</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&family=Inter:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets - Load in order: global → intro → main -->
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/intro.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Favicon (add your favicon) -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body>
-  <!-- Intro Section -->
+  
+  <!-- ============================================
+       INTRO SECTION (Existing - Untouched)
+       ============================================ -->
   <section id="intro">
     <div class="intro-container">
-      <img src="assets/images/logo.gif" alt="Company Logo" class="logo" />
+      <img src="assets/images/logo.gif" alt="Chakradhari Logo" class="logo" />
       <div class="company-text"></div>
     </div>
   </section>
 
-  <!-- Main Content -->
+  <!-- ============================================
+       HEADER / NAVIGATION
+       ============================================ -->
+  <header class="site-header">
+    <div class="header-container">
+      <img src="assets/images/logo.gif" alt="Chakradhari Logo" class="header-logo" />
+      
+      <nav class="header-nav">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#capabilities" class="nav-link">Capabilities</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-cta">Contact Us</a>
+      </nav>
+
+      <!-- Mobile Menu Toggle -->
+      <div class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================
+       MAIN CONTENT
+       ============================================ -->
   <main id="main-content">
-    <header>
-      <h2>Welcome to Chakradhari Computational Technologies</h2>
-    </header>
-    <p>
-      We build intelligent computational systems, merging physics, data, and design
-      to solve complex scientific problems with simplicity and precision.
-    </p>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-content">
+        <div class="hero-text" data-animate data-animation="fade-in-left">
+          <h1>Where Science Meets Computation</h1>
+          <p class="hero-subtitle">
+            Bridging frontier research and real-world application through rigorous computational intelligence. We transform cutting-edge scientific advances into production-grade solutions.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#capabilities" class="btn-primary">Explore Our Work</a>
+            <a href="#contact" class="btn-secondary">Get in Touch</a>
+          </div>
+        </div>
+        
+        <div class="hero-visual" data-animate data-animation="fade-in-right">
+          <div class="hero-image-wrapper">
+            <!-- Replace placeholder with actual image -->
+            <div class="hero-image-placeholder">
+              Hero Visualization<br>
+              <small>(electromagnetic field / quantum simulation)</small>
+            </div>
+            <!-- <img src="assets/images/hero-visualization.jpg" alt="Scientific Visualization" /> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISION & PHILOSOPHY SECTION -->
+    <section class="content-section" id="about">
+      <div class="section-header" data-animate>
+        <h2 class="section-title">Vision & Philosophy</h2>
+      </div>
+      
+      <div style="max-width: 900px; margin: 0 auto;">
+        <div style="margin-bottom: 3rem;" data-animate>
+          <h3 style="font-family: 'Rajdhani', sans-serif; font-size: 1.75rem; color: #0096ff; margin-bottom: 1rem;">Vision</h3>
+          <p style="font-size: 1.1rem; line-height: 1.8; color: #a8b2c7;">
+            To bridge the frontier of scientific research and real-world application through rigorous computation — advancing industries, education, and society with state-of-the-art numerical intelligence.
+          </p>
+        </div>
+        
+        <div data-animate>
+          <h3 style="font-family: 'Rajdhani', sans-serif; font-size: 1.75rem; color: #0096ff; margin-bottom: 1rem;">Our Philosophy</h3>
+          <p style="font-size: 1.1rem; line-height: 1.8; color: #a8b2c7;">
+            Science is evolving fast. Most industries lag behind because they rely on decade-old algorithms and methods. Chakradhari's strength lies in constantly reading the latest research, testing it, and transforming it into reliable, deployable solutions. <strong style="color: #fff;">We don't just code; we research, validate, and build.</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION PILLARS SECTION -->
+    <section class="content-section" id="mission" style="background: rgba(0, 150, 255, 0.02);">
+      <div class="section-header" data-animate>
+        <h2 class="section-title">Mission</h2>
+        <p class="section-subtitle">
+          We explore, implement, and deploy the latest computational advances across physics, engineering, and data science to solve real problems. Our mission rests on three pillars:
+        </p>
+      </div>
+
+      <div class="mission-grid">
+        <div class="pillar-card" data-animate data-stagger>
+          <!-- Icon placeholder - replace with actual icon/image -->
+          <div class="pillar-icon" style="width: 60px; height: 60px; background: rgba(0, 150, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0096ff; font-size: 1.5rem; font-weight: bold;">
+            01
+          </div>
+          <h3>Consulting for Deep Science Projects</h3>
+          <p>
+            Partnering with industries, research labs, and government bodies to design and implement simulation-driven solutions — from quantum systems to traffic models, from electromagnetic devices to ecosystem modeling.
+          </p>
+        </div>
+
+        <div class="pillar-card" data-animate data-stagger>
+          <div class="pillar-icon" style="width: 60px; height: 60px; background: rgba(0, 150, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0096ff; font-size: 1.5rem; font-weight: bold;">
+            02
+          </div>
+          <h3>R&D and Software Development</h3>
+          <p>
+            Translating cutting-edge research into high-performance, production-grade tools. We specialize in scalable algorithms, HPC optimization, and domain-specific modeling, built with scientific rigor.
+          </p>
+        </div>
+
+        <div class="pillar-card" data-animate data-stagger>
+          <div class="pillar-icon" style="width: 60px; height: 60px; background: rgba(0, 150, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0096ff; font-size: 1.5rem; font-weight: bold;">
+            03
+          </div>
+          <h3>Education and Open Science</h3>
+          <p>
+            Contributing open-source software, dashboards, and boot camps for advanced learning in computational physics, quantum computing, and digital twin technologies — fostering accessible science education.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE VALUES SECTION -->
+    <section class="content-section" id="values">
+      <div class="section-header" data-animate>
+        <h2 class="section-title">Core Values</h2>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-item" data-animate data-stagger>
+          <h4>Rigor</h4>
+          <p>Every solution is grounded in verified science.</p>
+        </div>
+
+        <div class="value-item" data-animate data-stagger>
+          <h4>Curiosity</h4>
+          <p>We stay at the edge of what's possible in computational science.</p>
+        </div>
+
+        <div class="value-item" data-animate data-stagger>
+          <h4>Integrity</h4>
+          <p>Knowledge from client projects stays protected; independent work fuels our open contributions.</p>
+        </div>
+
+        <div class="value-item" data-animate data-stagger>
+          <h4>Accessibility</h4>
+          <p>Complex science should not remain locked in journals — it should be teachable, tangible, and usable.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPABILITIES SECTION -->
+    <section class="content-section" id="capabilities" style="background: radial-gradient(ellipse at center, rgba(0, 150, 255, 0.05) 0%, transparent 70%);">
+      <div class="section-header" data-animate>
+        <h2 class="section-title">Capabilities</h2>
+        <p class="section-subtitle">
+          Transforming cutting-edge research into production-grade solutions
+        </p>
+      </div>
+
+      <div class="capabilities-grid">
+        <!-- Capability 1 -->
+        <div class="capability-item" data-animate>
+          <div class="capability-content">
+            <h3>Scientific Simulation & Modeling</h3>
+            <p>
+              Computational electromagnetics, optics, climate and ecosystem modeling, quantum computing, and beyond. We bring state-of-the-art numerical methods to solve complex multi-physics problems.
+            </p>
+            <div class="capability-tags">
+              <span class="tag">Electromagnetics</span>
+              <span class="tag">Quantum Computing</span>
+              <span class="tag">Climate Modeling</span>
+            </div>
+          </div>
+          <div class="capability-image">
+            <div class="capability-image-placeholder">
+              Simulation Visualization<br>
+              <small>(computational mesh / field plot)</small>
+            </div>
+            <!-- <img src="assets/images/capabilities/simulation.jpg" alt="Scientific Simulation" /> -->
+          </div>
+        </div>
+
+        <!-- Capability 2 -->
+        <div class="capability-item" data-animate>
+          <div class="capability-content">
+            <h3>Algorithmic Innovation</h3>
+            <p>
+              Implementing the newest numerical methods from literature into industrial workflows. From latest research papers to production code — we bridge the gap between academia and industry.
+            </p>
+            <div class="capability-tags">
+              <span class="tag">HPC Optimization</span>
+              <span class="tag">Numerical Methods</span>
+              <span class="tag">Algorithm Design</span>
+            </div>
+          </div>
+          <div class="capability-image">
+            <div class="capability-image-placeholder">
+              Code & Research<br>
+              <small>(paper + implementation)</small>
+            </div>
+            <!-- <img src="assets/images/capabilities/algorithms.jpg" alt="Algorithmic Innovation" /> -->
+          </div>
+        </div>
+
+        <!-- Capability 3 -->
+        <div class="capability-item" data-animate>
+          <div class="capability-content">
+            <h3>Digital Twin Development</h3>
+            <p>
+              Building physics-driven digital twins for predictive analysis and optimization. Real-time simulations that mirror physical systems for better decision-making and forecasting.
+            </p>
+            <div class="capability-tags">
+              <span class="tag">Real-time Simulation</span>
+              <span class="tag">Predictive Analytics</span>
+              <span class="tag">IoT Integration</span>
+            </div>
+          </div>
+          <div class="capability-image">
+            <div class="capability-image-placeholder">
+              Digital Twin Interface<br>
+              <small>(interactive dashboard)</small>
+            </div>
+            <!-- <img src="assets/images/capabilities/digital-twin.jpg" alt="Digital Twin" /> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & OPEN SCIENCE SECTION -->
+    <section class="content-section" id="education">
+      <div class="section-header" data-animate>
+        <h2 class="section-title">Education & Open Science</h2>
+        <p class="section-subtitle">
+          Making computational science accessible to everyone
+        </p>
+      </div>
+
+      <div class="education-wrapper">
+        <div class="education-content" data-animate data-animation="fade-in-left">
+          <p style="font-size: 1.1rem; line-height: 1.8; color: #a8b2c7; margin-bottom: 2rem;">
+            Interactive dashboards for quantum computing, digital twins, and physical simulations. Focused boot camps for universities, researchers, and engineers to learn computational methods hands-on.
+          </p>
+          
+          <ul class="education-features">
+            <li>Interactive simulation dashboards</li>
+            <li>Quantum computing tutorials</li>
+            <li>HPC training programs</li>
+            <li>Open-source contributions</li>
+          </ul>
+        </div>
+
+        <div class="education-visual" data-animate data-animation="fade-in-right">
+          <div class="capability-image">
+            <div class="capability-image-placeholder">
+              Educational Platform<br>
+              <small>(interactive qubit sphere / simulation)</small>
+            </div>
+            <!-- <img src="assets/images/education-dashboard.jpg" alt="Education Platform" /> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <div class="section-header" data-animate>
+          <h2 class="section-title">Let's Build Something Revolutionary</h2>
+          <p class="section-subtitle">
+            Ready to transform your computational challenges into breakthrough solutions?
+          </p>
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-item" data-animate data-stagger>
+            <span class="contact-label">Email</span>
+            <span class="contact-value">
+              <a href="mailto:info@chakradhari.com">info@chakradhari.com</a>
+            </span>
+          </div>
+
+          <div class="contact-item" data-animate data-stagger>
+            <span class="contact-label">Phone</span>
+            <span class="contact-value">+91-XXX-XXX-XXXX</span>
+          </div>
+
+          <div class="contact-item" data-animate data-stagger>
+            <span class="contact-label">Location</span>
+            <span class="contact-value">Bengaluru, Karnataka, India</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <nav class="footer-links">
+        <a href="#about">About Us</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Chakradhari Computational Technologies Pvt. Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       SCRIPTS - Load in order
+       ============================================ -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3"></script>
   <script src="js/intro.js"></script>
+  <script src="js/main.js"></script>
+
 </body>
 </html>
