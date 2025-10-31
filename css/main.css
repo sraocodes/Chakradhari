@@ -496,6 +496,13 @@ section {
   }
 }
 
+/* Add after .capability-image styles */
+.capability-gif,
+.hero-image-wrapper img {
+  background: linear-gradient(135deg, rgba(0, 150, 255, 0.08) 0%, rgba(0, 150, 255, 0.03) 100%);
+  min-height: 300px; /* Prevents layout shift */
+}
+
 /* === EDUCATION SECTION === */
 .education-wrapper {
   display: grid;
