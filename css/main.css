@@ -75,6 +75,30 @@ section {
   background-clip: text;
 }
 
+/* Adjust header on mobile - keep logo and blue text visible */
+@media (max-width: 968px) {
+  .header-company-name {
+    font-size: 1.1rem;  /* Slightly smaller on mobile */
+  }
+  
+  /* Show only "Computational" on mobile with blue color */
+  .header-company-name {
+    display: none;
+  }
+  
+  .header-brand::after {
+    content: 'Computational';
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #0096ff 0%, #00d4ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+
 /* Hide company name on smaller screens */
 @media (max-width: 968px) {
   .header-company-name {
