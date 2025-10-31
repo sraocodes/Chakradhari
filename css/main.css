@@ -46,11 +46,48 @@ section {
   opacity: 1;
 }
 
+/* Add after .header-logo styles */
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.header-brand:hover {
+  opacity: 0.8;
+}
+
+.header-company-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.header-company-name .highlight {
+  background: linear-gradient(90deg, #0096ff 0%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hide company name on smaller screens */
+@media (max-width: 968px) {
+  .header-company-name {
+    display: none;
+  }
+}
+
 .header-nav {
   display: flex;
   gap: 2.5rem;
   align-items: center;
 }
+
 
 .nav-link {
   color: #a8b2c7;
