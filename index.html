@@ -3,36 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Chakradhari Computational Technologies - Accelerating physics-based simulations through ML emulators, physics-informed neural networks, and HPC optimization" />
+  <meta name="description" content="Chakradhari Computational Technologies - Long-term evidence-building engagements for soil and climate interventions. We evaluate whether watershed and agricultural programs are producing measurable change." />
   <title>Chakradhari Computational Technologies Pvt Ltd</title>
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Stylesheets - Load in order: global → intro → main -->
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/intro.css">
   <link rel="stylesheet" href="css/main.css">
 
-  <!-- Favicon (add your favicon) -->
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body>
   
-  <!-- ============================================
-       INTRO SECTION 
-       ============================================ -->
   <section id="intro">
     <div class="intro-container">
       <img src="assets/images/logo.gif" alt="Chakradhari Logo" class="logo" />
       <div class="company-text"></div>
     </div>
   </section>
-
-  <!-- ============================================
-       HEADER / NAVIGATION
-       ============================================ -->
-
 
   <header class="site-header">
     <div class="header-container">
@@ -44,14 +33,13 @@
       </a>
       
       <nav class="header-nav">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#expertise" class="nav-link">Team</a>
-        <a href="#capabilities" class="nav-link">What We Do</a>
-        <a href="#education" class="nav-link">Education</a>
+        <a href="#what-we-do" class="nav-link">What We Do</a>
+        <a href="#engagements" class="nav-link">How We Work</a>
+        <a href="#proof" class="nav-link">Our Work</a>
+        <a href="#about" class="nav-link">Why Us</a>
         <a href="#contact" class="nav-cta">Contact Us</a>
       </nav>
 
-      <!-- Mobile Menu Toggle -->
       <div class="menu-toggle" aria-label="Toggle menu">
         <span></span>
         <span></span>
@@ -60,380 +48,366 @@
     </div>
   </header>
 
-  <!-- ============================================
-       MAIN CONTENT
-       ============================================ -->
   <main id="main-content">
 
-    <!-- HERO SECTION -->
     <section class="hero-section" id="hero">
       <div class="hero-content">
         <div class="hero-text" data-animate data-animation="fade-in-left">
-          <h1>Accelerating Physics Simulations with Machine Learning</h1>
+          <h1>Evidence-Building for Soil and Climate Interventions</h1>
           <p class="hero-subtitle">
-            We help engineering and research teams reduce simulation time by 10–100× using ML emulators, physics-informed neural networks, and high-performance code optimization. From CFD and FEM to climate models — we make slow simulations fast.
+            We take responsibility for evaluating whether soil, watershed, and climate interventions are producing measurable change. Using field data, satellite observations, and validated models, we deliver evidence that supports or challenges policy and research decisions.
+          </p>
+          <p class="hero-subtitle" style="margin-top: 1rem; font-weight: 500; color: #fff;">
+            Typical engagements: 6–18 months. We work with 2–3 partners at a time.
           </p>
           <div class="hero-cta-group">
-            <a href="#capabilities" class="btn-primary">What We Do</a>
+            <a href="#engagements" class="btn-primary">How We Work</a>
             <a href="#contact" class="btn-secondary">Get in Touch</a>
           </div>
         </div>
         
         <div class="hero-visual" data-animate data-animation="fade-in-right">
           <div class="hero-image-wrapper">
-            <!-- Replace placeholder with actual image -->
             <div class="hero-image-placeholder">
-            <img src="assets/images/figure1.gif" alt="Scientific Visualization" 
-                loading="lazy" decoding="async" />            
+              <video autoplay loop muted playsinline loading="eager" style="width: 100%; height: 100%; object-fit: cover;">
+                <source src="assets/images/plants.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
-      </div>
     </section>
 
-    <!-- THE PROBLEM SECTION (NEW) -->
-    <section class="content-section" id="problem" style="background: rgba(0, 150, 255, 0.02);">
+    <section class="content-section" id="what-we-do" style="background: rgba(0, 150, 255, 0.02);">
       <div class="section-header" data-animate>
-        <h2 class="section-title">The Problem We Solve</h2>
+        <h2 class="section-title">What We Do</h2>
       </div>
       
       <div style="max-width: 900px; margin: 0 auto;">
-        <div style="margin-bottom: 2rem;" data-animate>
+        <div style="margin-bottom: 3rem;" data-animate>
           <p style="font-size: 1.25rem; line-height: 1.8; color: #fff; font-weight: 500; text-align: center;">
-            Most engineering simulations take hours or days to run — slowing down innovation, R&D cycles, and decision-making.
+            Our primary work is evaluating whether soil and watershed interventions are producing measurable change, using field data, satellite observations, and validated models.
           </p>
         </div>
         
         <div data-animate>
           <p style="font-size: 1.1rem; line-height: 1.8; color: #a8b2c7;">
-            Whether it's computational fluid dynamics (CFD), finite element analysis (FEM), electromagnetic simulations, or climate models, traditional physics-based solvers are computationally expensive. This creates bottlenecks for:
+            Governments and research institutes invest in watershed restoration, soil health programs, and climate adaptation — but outcomes are rarely measured. Soil change happens slowly, requires multiple indicators tracked over time, and is easy to misinterpret from short-term observations.
           </p>
-          <ul style="font-size: 1.05rem; line-height: 1.8; color: #a8b2c7; margin-top: 1.5rem; margin-left: 2rem;">
-            <li style="margin-bottom: 0.75rem;"><strong style="color: #0096ff;">Engineering teams</strong> running design optimization and parameter sweeps</li>
-            <li style="margin-bottom: 0.75rem;"><strong style="color: #0096ff;">Research labs</strong> analyzing multi-physics systems</li>
-            <li style="margin-bottom: 0.75rem;"><strong style="color: #0096ff;">Manufacturing companies</strong> needing real-time digital twins</li>
-            <li style="margin-bottom: 0.75rem;"><strong style="color: #0096ff;">Climate and environmental teams</strong> running large-scale models</li>
-          </ul>
           <p style="font-size: 1.1rem; line-height: 1.8; color: #a8b2c7; margin-top: 1.5rem;">
-            <strong style="color: #fff;">We solve this by building ML-driven surrogate models that replace slow simulations with fast, accurate predictions</strong> — while preserving the underlying physics.
+            We close this gap by building evidence pipelines that combine field measurements, satellite data, and computational models. Our output is evidence — sometimes published as research, sometimes embedded in tools, always defensible.
+          </p>
+          <p style="font-size: 1.1rem; line-height: 1.8; color: #fff; margin-top: 1.5rem; font-weight: 500;">
+            We do not take short, visualization-only projects. We do not deliver dashboards without validated data behind them. We focus on long-term engagements where evidence matters.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- WHAT WE DO SECTION (SIMPLIFIED & FOCUSED) -->
-    <section class="content-section" id="capabilities" style="background: radial-gradient(ellipse at center, rgba(0, 150, 255, 0.05) 0%, transparent 70%);">
+    <section class="content-section" id="engagements" style="background: radial-gradient(ellipse at center, rgba(0, 150, 255, 0.05) 0%, transparent 70%);">
       <div class="section-header" data-animate>
-        <h2 class="section-title">What We Do</h2>
+        <h2 class="section-title">How Organizations Work With Us</h2>
         <p class="section-subtitle">
-          Three core solutions for accelerating physics-based simulations
+          Three types of evidence-building engagements
         </p>
-      </div>
-
-      <div class="capabilities-grid">
-        
-        <!-- Capability 1: ML Emulators -->
-        <div class="capability-item" data-animate>
-          <div class="capability-content">
-            <h3>ML Emulators for Physics-Based Systems</h3>
-            <p>
-              We build surrogate models and neural operators that replace computationally expensive simulations with fast ML predictions. Trained on physics data, these emulators deliver 10–100× speedups while maintaining accuracy for CFD, FEM, heat transfer, electromagnetics, and multi-physics systems. Ideal for design optimization, parameter sweeps, and real-time decision support.
-            </p>
-            <div class="capability-tags">
-              <span class="tag">Surrogate Models</span>
-              <span class="tag">Neural Operators</span>
-              <span class="tag">CFD/FEM Acceleration</span>
-              <span class="tag">10–100× Speedup</span>
-            </div>
-          </div>
-         <div class="capability-image">
-            <img src="/assets/images/waveguide_simulation.gif"
-                alt="Physics Simulation (Computational Field)"
-                class="capability-gif" loading="lazy">
-          </div>
-        </div>
-
-        <!-- Capability 2: Physics-Informed Neural Networks -->
-        <div class="capability-item" data-animate>
-          <div class="capability-content">
-            <h3>Physics-Informed Neural Networks (PINNs)</h3>
-            <p>
-              We implement physics-informed ML models that incorporate governing equations directly into the learning process. Whether it's Navier-Stokes, Maxwell's equations, heat diffusion, or wave propagation, our PINNs solve partial differential equations efficiently while respecting physical constraints. Perfect for inverse problems, parameter identification, and scenarios with limited data.
-            </p>
-            <div class="capability-tags">
-              <span class="tag">PINNs</span>
-              <span class="tag">PDE Solvers</span>
-              <span class="tag">Inverse Problems</span>
-              <span class="tag">Physics-Constrained ML</span>
-            </div>
-          </div>
-          <div class="capability-image">
-            <img src="/assets/images/fem_simulation.gif"
-                alt="Physics Simulation (Computational Field)"
-                class="capability-gif" loading="lazy">
-          </div>
-
-        </div>
-
-        <!-- Capability 3: Code Modernization & HPC -->
-        <div class="capability-item" data-animate>
-          <div class="capability-content">
-            <h3>Code Modernization & HPC Optimization</h3>
-            <p>
-              We modernize legacy scientific software (Fortran, C, Python) into optimized, GPU-accelerated frameworks. Our expertise in parallelization, memory optimization, and multi-architecture scaling transforms slow research codes into production-ready industrial tools. We handle numerical algorithm redesign, profiling, and deployment across HPC clusters and cloud infrastructure.
-            </p>
-            <div class="capability-tags">
-              <span class="tag">Legacy Code Modernization</span>
-              <span class="tag">GPU Acceleration</span>
-              <span class="tag">HPC Optimization</span>
-              <span class="tag">Parallelization</span>
-            </div>
-          </div>
-          <div class="capability-image">
-            <img src="assets/images/ml_optimization.gif"
-                 alt="Machine Learning Optimization Landscape"
-                 class="capability-gif" loading="lazy" decoding="async">
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- WHO WE WORK WITH SECTION (NEW - CRITICAL FOR CLARITY) -->
-    <section class="content-section" id="customers">
-      <div class="section-header" data-animate>
-        <h2 class="section-title">Who We Work With</h2>
-      </div>
-
-      <div class="values-grid">
-        <div class="value-item" data-animate data-stagger>
-          <h4>Engineering Simulation Teams</h4>
-          <p>Companies running CFD, FEM, or multi-physics simulations who need faster design iterations and optimization workflows.</p>
-        </div>
-
-        <div class="value-item" data-animate data-stagger>
-          <h4>Research Labs</h4>
-          <p>Academic and industrial research groups working with computationally intensive physics models in climate, materials, energy, and aerospace.</p>
-        </div>
-
-        <div class="value-item" data-animate data-stagger>
-          <h4>Manufacturing & Energy Companies</h4>
-          <p>Organizations deploying digital twins and real-time simulation systems for production optimization and predictive analytics.</p>
-        </div>
-
-        <div class="value-item" data-animate data-stagger>
-          <h4>Climate & Environmental Teams</h4>
-          <p>Groups running large-scale climate models, ecosystem simulations, and environmental impact assessments requiring computational acceleration.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY CHOOSE US SECTION (REFINED) -->
-    <section class="content-section" id="about" style="background: rgba(0, 150, 255, 0.02);">
-      <div class="section-header" data-animate>
-        <h2 class="section-title">Why Choose Chakradhari</h2>
-      </div>
-
-      <div class="values-grid">
-        <div class="value-item" data-animate data-stagger>
-          <h4>Deep Expertise in Numerical Physics + ML</h4>
-          <p>We understand both the mathematics of physics-based simulations and the implementation of modern ML techniques — ensuring solutions are scientifically sound and computationally efficient.</p>
-        </div>
-
-        <div class="value-item" data-animate data-stagger>
-          <h4>HPC & GPU Optimization Experience</h4>
-          <p>Proven track record in high-performance computing, multi-architecture code optimization, and large-scale computational workloads across diverse supercomputing environments.</p>
-        </div>
-
-        <div class="value-item" data-animate data-stagger>
-          <h4>Physics-Informed ML Integration</h4>
-          <p>Unique ability to integrate scientific principles directly into machine learning models, creating surrogate systems that respect physical laws and domain constraints.</p>
-        </div>
-
-        <div class="value-item" data-animate data-stagger>
-          <h4>Proven Simulation Acceleration</h4>
-          <p>Track record of accelerating real-world simulations across CFD, FEM, electromagnetics, and climate modeling — delivering measurable speedups and cost savings.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- APPROACH & DELIVERY SECTION (NEW) -->
-    <section class="content-section" id="mission">
-      <div class="section-header" data-animate>
-        <h2 class="section-title">How We Work</h2>
-        <p class="section-subtitle">
-          From assessment to deployment — our systematic approach to simulation acceleration
-        </p>
-      </div>
-
-      <div class="mission-grid">
-        <div class="pillar-card" data-animate data-stagger>
-          <div class="pillar-icon" style="width: 60px; height: 60px; background: rgba(0, 150, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0096ff; font-size: 1.5rem; font-weight: bold;">
-            01
-          </div>
-          <h3>Assessment & Profiling</h3>
-          <p>
-            We analyze your existing simulation workflows, identify computational bottlenecks, and quantify potential speedup opportunities through detailed profiling and benchmarking.
-          </p>
-        </div>
-
-        <div class="pillar-card" data-animate data-stagger>
-          <div class="pillar-icon" style="width: 60px; height: 60px; background: rgba(0, 150, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0096ff; font-size: 1.5rem; font-weight: bold;">
-            02
-          </div>
-          <h3>Solution Design & Validation</h3>
-          <p>
-            We develop custom ML emulators or optimize your simulation code, rigorously validating against ground truth physics to ensure accuracy and reliability across your parameter space.
-          </p>
-        </div>
-
-        <div class="pillar-card" data-animate data-stagger>
-          <div class="pillar-icon" style="width: 60px; height: 60px; background: rgba(0, 150, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0096ff; font-size: 1.5rem; font-weight: bold;">
-            03
-          </div>
-          <h3>Deployment & Integration</h3>
-          <p>
-            We integrate accelerated solutions into your existing infrastructure, provide comprehensive documentation, and support your team through deployment and scaling.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- TEAM & EXPERTISE SECTION (STREAMLINED) -->
-    <section class="content-section" id="expertise" style="background: rgba(0, 150, 255, 0.02);">
-      <div class="section-header" data-animate>
-        <h2 class="section-title">Our Team</h2>
-        <p class="section-subtitle">Physicists and computational scientists with deep research expertise</p>
       </div>
 
       <div style="max-width: 900px; margin: 0 auto;">
-        <div data-animate>
-          <p style="font-size: 1.1rem; line-height: 1.8; color: #a8b2c7; margin-bottom: 2rem;">
-            Founded by researchers with backgrounds in computational physics, applied mathematics, and high-performance computing from leading institutions across India, Germany, Belgium, and the United States. Our team combines over 15 years of experience in scientific computing with practical expertise in delivering production-grade computational solutions.
-          </p>
-          <p style="font-size: 1.1rem; line-height: 1.8; color: #a8b2c7;">
-            We've worked extensively with large-scale simulations across diverse supercomputing architectures — from numerical weather prediction and climate modeling to quantum systems and fluid dynamics. This cross-domain experience enables us to tackle complex computational challenges across industries.
-          </p>
+        <div class="mission-grid">
+          
+          <div class="pillar-card" data-animate data-stagger>
+            <div class="pillar-icon" style="width: 60px; height: 60px; background: rgba(0, 150, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0096ff; font-size: 1.5rem; font-weight: bold;">
+              01
+            </div>
+            <h3>Intervention Evaluation</h3>
+            <p style="margin-bottom: 1rem;">
+              <strong style="color: #fff;">The Question:</strong> Did this soil, watershed, or climate intervention work?
+            </p>
+            <p style="margin-bottom: 1rem;">
+              <strong style="color: #fff;">What We Deliver:</strong> Evidence-backed assessment using multi-year field and satellite data. Clear conclusions: worked, didn't work, or inconclusive — with validated indicators supporting each claim.
+            </p>
+            <p style="margin-bottom: 1rem;">
+              <strong style="color: #fff;">Example Clients:</strong> Research institutes testing watershed restoration programs. Government departments evaluating 5-year soil health initiatives.
+            </p>
+            <p style="color: #0096ff; font-weight: 500;">
+              This is our primary engagement type.
+            </p>
+          </div>
+
+          <div class="pillar-card" data-animate data-stagger>
+            <div class="pillar-icon" style="width: 60px; height: 60px; background: rgba(0, 150, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0096ff; font-size: 1.5rem; font-weight: bold;">
+              02
+            </div>
+            <h3>Evidence Pipeline Setup</h3>
+            <p style="margin-bottom: 1rem;">
+              <strong style="color: #fff;">The Problem:</strong> You collect data but cannot turn it into decision-ready evidence.
+            </p>
+            <p style="margin-bottom: 1rem;">
+              <strong style="color: #fff;">What We Deliver:</strong> We audit existing data, fill gaps (through collection or validated estimation), integrate field and satellite observations, and set up reusable workflows.
+            </p>
+            <p style="margin-bottom: 1rem;">
+              <strong style="color: #fff;">Example Clients:</strong> Professors needing automated farm boundary segmentation. Institutes with incomplete datasets requiring gap-filling for hypothesis testing.
+            </p>
+            <p style="color: #a8b2c7; font-style: italic;">
+              We handle the technical integration so researchers can focus on science.
+            </p>
+          </div>
+
+          <div class="pillar-card" data-animate data-stagger>
+            <div class="pillar-icon" style="width: 60px; height: 60px; background: rgba(0, 150, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0096ff; font-size: 1.5rem; font-weight: bold;">
+              03
+            </div>
+            <h3>Policy Evidence Translation</h3>
+            <p style="margin-bottom: 1rem;">
+              <strong style="color: #fff;">The Question:</strong> Does our 5-year climate policy have evidence it worked?
+            </p>
+            <p style="margin-bottom: 1rem;">
+              <strong style="color: #fff;">What We Deliver:</strong> We find data supporting or challenging policy effectiveness. Evidence reports that help refine strategies or justify continuation.
+            </p>
+            <p style="margin-bottom: 1rem;">
+              <strong style="color: #fff;">Example Clients:</strong> Government climate policy teams evaluating long-term adaptation programs.
+            </p>
+            <p style="color: #a8b2c7; font-style: italic;">
+              This is later-stage work, building on validated research partnerships.
+            </p>
+          </div>
+
         </div>
 
-        <div class="expertise-highlights" style="margin-top: 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
-          <div data-animate data-stagger style="padding: 1.5rem; background: rgba(0, 150, 255, 0.05); border-left: 3px solid #0096ff; border-radius: 6px;">
-            <h4 style="font-family: 'Rajdhani', sans-serif; color: #0096ff; margin-bottom: 0.5rem;">Numerical Physics</h4>
-            <p style="font-size: 0.95rem; color: #a8b2c7; margin: 0;">CFD, FEM, PDEs, multi-physics modeling</p>
-          </div>
-          
-          <div data-animate data-stagger style="padding: 1.5rem; background: rgba(0, 150, 255, 0.05); border-left: 3px solid #0096ff; border-radius: 6px;">
-            <h4 style="font-family: 'Rajdhani', sans-serif; color: #0096ff; margin-bottom: 0.5rem;">ML for Scientific Computing</h4>
-            <p style="font-size: 0.95rem; color: #a8b2c7; margin: 0;">PINNs, neural operators, surrogate modeling</p>
-          </div>
-          
-          <div data-animate data-stagger style="padding: 1.5rem; background: rgba(0, 150, 255, 0.05); border-left: 3px solid #0096ff; border-radius: 6px;">
-            <h4 style="font-family: 'Rajdhani', sans-serif; color: #0096ff; margin-bottom: 0.5rem;">HPC & Code Optimization</h4>
-            <p style="font-size: 0.95rem; color: #a8b2c7; margin: 0;">GPU acceleration, parallelization, performance tuning</p>
-          </div>
+        <div data-animate style="margin-top: 3rem; padding: 2rem; background: rgba(0, 150, 255, 0.05); border-left: 3px solid #0096ff; border-radius: 6px;">
+          <p style="font-size: 1.05rem; line-height: 1.8; color: #a8b2c7; margin: 0;">
+            <strong style="color: #fff;">What We Are NOT:</strong> We do not build standalone dashboards without data validation. We do not take one-off visualization projects. We do not work on engagements shorter than 6 months unless they are scoped pilots for longer partnerships.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- ADDITIONAL CAPABILITIES SECTION (OPTIONAL/SECONDARY) -->
-    <section class="content-section" id="additional">
+    <section class="content-section" id="proof">
       <div class="section-header" data-animate>
-        <h2 class="section-title">Additional Capabilities</h2>
+        <h2 class="section-title">Foundational Expertise</h2>
         <p class="section-subtitle">
-          Complementary services supporting our core mission
+          Decades of combined experience in environmental sensing and computational modeling
         </p>
       </div>
 
       <div style="max-width: 900px; margin: 0 auto;">
         <div class="mission-grid">
           <div class="pillar-card" data-animate data-stagger>
-            <h3>Digital Twin Development</h3>
+            <h3>Multi-Decadal Field Observations</h3>
             <p>
-              Building physics-driven digital twin platforms and decision-support systems that integrate real-time data with fast simulation engines for manufacturing, infrastructure, and environmental monitoring.
+              Our team has managed and analyzed high-frequency climate and soil data across diverse agricultural catchments, including the Berambadi watershed. We understand the nuances of long-term data—from sensor drift to seasonal variability—ensuring the evidence we build is grounded in physical reality.
             </p>
           </div>
 
           <div class="pillar-card" data-animate data-stagger>
-            <h3>Computer Vision for Scientific Imaging</h3>
+            <h3>Root-Soil Interface Dynamics</h3>
             <p>
-              Developing ML pipelines for analyzing scientific images, satellite data, and experimental observations — from automated feature extraction to physics-informed image reconstruction.
+              We specialize in non-invasive imaging and sensing of subsurface water movement. By quantifying how plants actually interact with soil moisture, we provide a high-fidelity look at irrigation efficiency and crop health that traditional surface observations miss.
             </p>
           </div>
 
           <div class="pillar-card" data-animate data-stagger>
-            <h3>Domain-Specific LLM Solutions</h3>
+            <h3>Regional-Scale Soil Analytics</h3>
             <p>
-              Fine-tuning and deploying large language models for technical documentation, code generation, and knowledge extraction in specialized scientific and engineering domains.
+              We deploy advanced retrieval models to transform raw satellite data into actionable soil health indicators. Our approach goes beyond generic indices, utilizing site-specific calibration to achieve high accuracy in moisture and nutrient tracking across varying soil textures.
             </p>
           </div>
+
+          <div class="pillar-card" data-animate data-stagger>
+            <h3>Digital Twins for Agriculture</h3>
+            <p>
+              We build integrated decision support systems that couple process-based physical models with machine learning. These "Digital Twins" allow partners to simulate intervention scenarios and predict long-term outcomes for soil health and watershed resilience before committing resources.
+            </p>
+          </div>
+        </div>
+
+        <div data-animate style="margin-top: 3rem; text-align: center;">
+          <p style="font-size: 1.05rem; line-height: 1.8; color: #fff; font-weight: 500;">
+            Our expertise is built on years of rigorous field-to-model validation. We don't just process data; we interpret the complex physical processes that drive climate and agricultural change.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- EDUCATION & OPEN SCIENCE SECTION (KEPT BUT POSITIONED AS SECONDARY) -->
-    <section class="content-section" id="education" style="background: rgba(0, 150, 255, 0.02);">
+    <section class="content-section" id="methods" style="background: rgba(0, 150, 255, 0.02);">
       <div class="section-header" data-animate>
-        <h2 class="section-title">Education & Open Science</h2>
+        <h2 class="section-title">Our Technology Stack</h2>
         <p class="section-subtitle">
-          Democratizing access to advanced computational methods
+          An integrated pipeline from ground truth to decision intelligence
         </p>
       </div>
 
-      <div class="education-wrapper">
-        <div class="education-content" data-animate data-animation="fade-in-left">
-          <p style="font-size: 1.1rem; line-height: 1.8; color: #a8b2c7; margin-bottom: 2rem;">
-            Beyond our core commercial work, we're committed to making computational science more accessible through open-source tools, educational content, and training programs. We believe that cutting-edge methods shouldn't remain locked in academic papers or proprietary systems.
-          </p>
-          
-          <div style="margin-top: 2rem;">
-            <h4 style="font-family: 'Rajdhani', sans-serif; color: #0096ff; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-              Current Initiatives
-              <span style="font-size: 0.75rem; padding: 0.25rem 0.75rem; background: rgba(0, 150, 255, 0.2); border-radius: 12px; font-weight: 500;">In Progress</span>
-            </h4>
-            <ul class="education-features" style="margin-bottom: 2rem;">
-              <li>Open-source toolboxes for satellite data processing and visualization</li>
-              <li>Computational templates and numerical methods documentation</li>
-              <li>Tutorial repositories for ML-driven simulation acceleration</li>
-            </ul>
-
-            <h4 style="font-family: 'Rajdhani', sans-serif; color: #0096ff; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-              Coming Soon
-            </h4>
-            <ul class="education-features" style="margin-bottom: 2rem;">
-              <li>YouTube series on numerical computing and physics-informed ML</li>
-              <li>Interactive visualization tools for understanding complex simulations</li>
-              <li>HPC optimization guides and case studies</li>
-            </ul>
-
-            <h4 style="font-family: 'Rajdhani', sans-serif; color: #0096ff; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-              Future Plans
-            </h4>
-            <ul class="education-features">
-              <li>Specialized training programs for universities and industries</li>
-              <li>Workshops on ML emulator development and deployment</li>
-              <li>Custom boot camps for research groups</li>
-            </ul>
+      <div class="capabilities-grid">
+        <div class="capability-item" data-animate>
+          <div class="capability-content">
+            <h3>Precision Ground-Truthing</h3>
+            <p>
+              We design and deploy high-density environmental sensor networks. By capturing high temporal resolution data across soil and climate variables, we build the "gold standard" datasets required to train reliable predictive models.
+            </p>
+            <div class="capability-tags">
+              <span class="tag">Edge Sensing</span>
+              <span class="tag">Real-time Telemetry</span>
+              <span class="tag">Network Optimization</span>
+            </div>
+          </div>
+          <div class="capability-image">
+            <video autoplay loop muted playsinline loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+              <source src="assets/images/field.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
 
-        <div class="education-visual" data-animate data-animation="fade-in-right">
+        <div class="capability-item" data-animate>
+          <div class="capability-content">
+            <h3>Scalable Remote Sensing</h3>
+            <p>
+              Our proprietary retrieval algorithms convert multi-spectral and SAR satellite data into physical metrics. We bridge the gap between "orbital views" and "field reality," enabling regional monitoring without the cost of massive ground infrastructure.
+            </p>
+            <div class="capability-tags">
+              <span class="tag">SAR Analytics</span>
+              <span class="tag">Automated Feature Extraction</span>
+              <span class="tag">Regional Scaling</span>
+            </div>
+          </div>
           <div class="capability-image">
-            <img src="assets/images/edu_dash.gif"
-                 alt="Educational Platform Dashboard"
-                 class="capability-gif" loading="lazy" decoding="async">
+            <video autoplay loop muted playsinline loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+              <source src="assets/images/satellite.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="capability-item" data-animate>
+          <div class="capability-content">
+            <h3>Decision-Ready Digital Twins</h3>
+            <p>
+              We synthesize field and satellite data into process-based models. These systems allow partners to run "what-if" scenarios, evaluating the long-term impact of soil health interventions or climate shifts before they occur.
+            </p>
+            <div class="capability-tags">
+              <span class="tag">Predictive Modeling</span>
+              <span class="tag">Scenario Simulation</span>
+              <span class="tag">Risk Assessment</span>
+            </div>
+          </div>
+          <div class="capability-image">
+            <video autoplay loop muted playsinline loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+              <source src="assets/images/twin.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-     
+    <section class="content-section" id="customers">
+      <div class="section-header" data-animate>
+        <h2 class="section-title">Who We Work With</h2>
+      </div>
+
+      <div style="max-width: 900px; margin: 0 auto; margin-bottom: 2rem;" data-animate>
+        <p style="font-size: 1.1rem; line-height: 1.8; color: #a8b2c7; text-align: center;">
+          We work with agricultural research institutes, government climate policy teams, and long-term environmental monitoring programs. These are organizations that need evidence over time — not quick deliverables.
+        </p>
+        <p style="font-size: 1.1rem; line-height: 1.8; color: #fff; text-align: center; margin-top: 1.5rem; font-weight: 500;">
+          Our first focus is helping research institutes prove whether interventions work — before scaling methods to policy programs.
+        </p>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-item" data-animate data-stagger>
+          <h4>Agricultural Research Institutes</h4>
+          <p>Universities, ICAR institutes, and research organizations testing soil interventions, watershed management, and climate adaptation strategies. Primary clients for our first 2 years.</p>
+        </div>
+
+        <div class="value-item" data-animate data-stagger>
+          <h4>Government Climate Policy Teams</h4>
+          <p>Departments of agriculture, water resources, and environment running multi-year programs that need outcome measurement and evidence-based evaluation.</p>
+        </div>
+
+        <div class="value-item" data-animate data-stagger>
+          <h4>Long-Term Monitoring Programs</h4>
+          <p>Watershed management projects and ecosystem monitoring efforts with sustained funding and multi-year timelines. We do not work on short-cycle consulting projects.</p>
+        </div>
+
+        <div class="value-item" data-animate data-stagger>
+          <h4>International Development Projects</h4>
+          <p>NGOs and development agencies working on agricultural resilience and climate adaptation in data-limited regions where field validation is critical.</p>
+        </div>
+      </div>
+    </section>
+
+<section class="content-section" id="about" style="background: rgba(0, 150, 255, 0.02);">
+      <div class="section-header" data-animate>
+        <h2 class="section-title">The Chakradhari Advantage</h2>
+      </div>
+
+      <div style="max-width: 900px; margin: 0 auto;">
+        <div data-animate>
+          <p style="font-size: 1.1rem; line-height: 1.8; color: #a8b2c7; margin-bottom: 2rem;">
+            Evidence for climate and soil interventions is often broken: it's either too localized (field-only) or too abstract (satellite-only). We bridge this gap by combining physical intuition with high-performance computation.
+          </p>
+          <p style="font-size: 1.1rem; line-height: 1.8; color: #fff; font-weight: 500;">
+            We operate at the intersection of numerical physics, machine learning, and environmental sensing. This allows us to deliver evidence that is both scientifically defensible and operationally useful.
+          </p>
+        </div>
+
+        <div class="values-grid" style="margin-top: 3rem;">
+          <div class="value-item" data-animate data-stagger>
+            <h4>Domain Expertise</h4>
+            <p>Our team brings global experience in inverse problems and environmental physics, ensuring models are constrained by physical laws, not just statistical correlations.</p>
+          </div>
+
+          <div class="value-item" data-animate data-stagger>
+            <h4>Operational Resilience</h4>
+            <p>We specialize in data-limited environments. We know how to extract signal from noise in complex, real-world agricultural landscapes.</p>
+          </div>
+
+          <div class="value-item" data-animate data-stagger>
+            <h4>Focused Partnerships</h4>
+            <p>By limiting our active engagements, we provide deep technical integration. We act as an extension of your R&D or policy team, not as a distant vendor.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="vision">
+      <div class="section-header" data-animate>
+        <h2 class="section-title">The Strategic Roadmap</h2>
+      </div>
+
+      <div style="max-width: 900px; margin: 0 auto;">
+        <div data-animate>
+          <p style="font-size: 1.1rem; line-height: 1.8; color: #a8b2c7; margin-bottom: 2rem;">
+            Our objective is to move from custom engagements to the industry standard for environmental evidence. We are building the foundational data architecture—integrating field-level ground truth with regional satellite intelligence—to create a unified decision-support layer for the climate economy.
+          </p>
+          <p style="font-size: 1.1rem; line-height: 1.8; color: #fff; font-weight: 500;">
+            We aren't just building projects; we are building a "Source of Truth" for soil health and water resources. As our repository of validated datasets grows, our ability to rapidly deploy models to new geographies increases, creating a compounding technical advantage.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="education" style="background: rgba(0, 150, 255, 0.02);">
+      <div class="section-header" data-animate>
+        <h2 class="section-title">Standardizing the Ecosystem</h2>
+      </div>
+
+      <div style="max-width: 900px; margin: 0 auto;">
+        <div data-animate>
+          <p style="font-size: 1.1rem; line-height: 1.8; color: #a8b2c7;">
+            We believe that for evidence to be defensible, the underlying protocols must be transparent. We release open-source modules for satellite data processing and field-data orchestration. By leading the development of these open standards, we ensure that our proprietary decision-support tools remain compatible with the global research and policy landscape.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section class="contact-section" id="contact">
       <div class="contact-container">
         <div class="section-header" data-animate>
-          <h2 class="section-title">Ready to Accelerate Your Simulations?</h2>
+          <h2 class="section-title">Get in Touch</h2>
           <p class="section-subtitle">
-            Let's discuss how we can help you reduce simulation time and accelerate innovation.
+            If you need evidence that a soil, watershed, or climate intervention is working — and you operate on research timelines — reach out.
+          </p>
+          <p class="section-subtitle" style="margin-top: 1rem;">
+            We work with 2-3 partners at a time. Engagements typically run 6-18 months. We are not a good fit for short visualization projects or one-off dashboards.
           </p>
         </div>
 
@@ -441,7 +415,7 @@
           <div class="contact-item" data-animate data-stagger>
             <span class="contact-label">Email</span>
             <span class="contact-value">
-              <a href="mailto:info@chakradhari.com">xxxx@xxxxxx.com</a>
+              <a href="/cdn-cgi/l/email-protection#92fbfcf4fdd2f1faf3f9e0f3f6faf3e0fbbcf1fdff"><span class="__cf_email__" data-cfemail="e1888f878ea18289808a93808589809388cf828e8c">[email&#160;protected]</span></a>
             </span>
           </div>
 
@@ -456,32 +430,28 @@
 
   </main>
 
-  <!-- LEGAL INFORMATION -->
-    <section class="content-section" style="padding: 3rem clamp(1.5rem, 5vw, 3rem); background: rgba(0, 0, 0, 0.3);">
-      <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-        <p style="font-size: 0.9rem; color: #6b7280; line-height: 1.6;">
-          CHAKRADHARI COMPUTATIONAL TECHNOLOGIES PRIVATE LIMITED<br>
-          CIN: U72100KA2025PTC209662 | Incorporated: 14th October, 2025<br>
-          Registered with MCA under ROC-Bangalore (Registration No. 209662)
-        </p>
-      </div>
-    </section>
+  <section class="content-section" style="padding: 3rem clamp(1.5rem, 5vw, 3rem); background: rgba(0, 0, 0, 0.3);">
+    <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+      <p style="font-size: 0.9rem; color: #6b7280; line-height: 1.6;">
+        CHAKRADHARI COMPUTATIONAL TECHNOLOGIES PRIVATE LIMITED<br>
+        CIN: U72100KA2025PTC209662 | Incorporated: 14th October, 2025<br>
+        Registered with MCA under ROC-Bangalore (Registration No. 209662)
+      </p>
+    </div>
+  </section>
 
-  <!-- ============================================
-       FOOTER
-       ============================================ -->
   <footer class="site-footer">
     <div class="footer-content">
       <nav class="footer-links">
+        <a href="#what-we-do">What We Do</a>
+        <a href="#engagements">How We Work</a>
+        <a href="#proof">Our Work</a>
         <a href="#about">Why Us</a>
-        <a href="#expertise">Team</a>
-        <a href="#capabilities">What We Do</a>
-        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
 
-<div class="footer-bottom">
+    <div class="footer-bottom">
       <p>CHAKRADHARI COMPUTATIONAL TECHNOLOGIES PVT. LTD. | CIN: U72100KA2025PTC209662</p>
       <p>&copy; 2025 Chakradhari Computational Technologies Pvt. Ltd. All rights reserved.</p>
     </div>
@@ -495,6 +465,5 @@
   <script src="js/main.js"></script>
   <script src="js/lazy.js"></script>
 
-
 </body>
-</html>
+</html> 
