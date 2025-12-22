@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Chakradhari - Computational systems for physical problems where data is incomplete and wrong assumptions propagate silently." />
+  <meta name="description" content="Chakradhari - Computational infrastructure for high-stakes physical systems. We validate measurements and models where data is sparse." />
   <title>Chakradhari Computational Technologies</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -33,9 +34,9 @@
       </a>
       
       <nav class="header-nav">
-        <a href="#problem" class="nav-link">The Problem</a>
+        <a href="#problem" class="nav-link">The Challenge</a>
         <a href="#services" class="nav-link">Services</a>
-        <a href="#capabilities" class="nav-link">How We Work</a>
+        <a href="#capabilities" class="nav-link">Capabilities</a>
         <a href="#contact" class="nav-cta">Contact</a>
       </nav>
 
@@ -52,15 +53,15 @@
     <section class="hero-section" id="hero">
       <div class="hero-content">
         <div class="hero-text" data-animate data-animation="fade-in-left">
-          <h1>We Work on Physical Systems Where You Cannot Directly Measure What Matters</h1>
+          <h1>Solving Physical Problems Where Data is Sparse and Decisions Matter</h1>
           <p class="hero-subtitle">
-            Real systems are partially observable. Measurements are noisy, indirect, delayed. Short-term data misleads. Models break when conditions shift. Data alone fails. Physics alone drifts.
+            Real-world systems are messy. Incomplete measurements and silent assumptions lead to model failure. We build the computational infrastructure to measure what matters, validate assumptions, and ensure models survive contact with reality.
           </p>
           <p class="hero-subtitle" style="margin-top: 1rem; font-weight: 500; color: #fff;">
-            We combine field measurements, physics-based simulation, and statistical inference to produce results that survive technical scrutiny. Current focus: environmental and climate systems where validation takes years.
+            We combine field campaigns, physics-based simulation, and statistical inference to generate defensible evidence.
           </p>
           <p class="hero-subtitle" style="margin-top: 1rem; color: #a8b2c7;">
-            Projects run 6 to 18 months. We maintain 2 to 3 active partnerships.
+            Engagements: 6–18 months. Portfolio limit: 2–3 active partnerships.
           </p>
           <div class="hero-cta-group">
             <a href="#services" class="btn-primary">Our Services</a>
@@ -82,50 +83,44 @@
 
     <section class="content-section" id="problem" style="background: rgba(0, 150, 255, 0.02);">
       <div class="section-header" data-animate>
-        <h2 class="section-title">Why Modeling Real Systems Is Hard</h2>
+        <h2 class="section-title">Why Models Fail in the Real World</h2>
       </div>
       
       <div style="max-width: 900px; margin: 0 auto;">
         
         <div data-animate style="margin-bottom: 3rem;">
           <p style="font-size: 1.2rem; line-height: 1.8; color: #fff; font-weight: 500; margin-bottom: 1.5rem;">
-            Most real-world systems cannot be observed directly. What you measure is partial, noisy, indirect, often delayed relative to the actual process of interest.
-          </p>
-          <p style="font-size: 1.1rem; line-height: 1.8; color: #a8b2c7;">
-            The variables that matter most are not the ones you can easily measure. Decision-making relies on proxies, short-term correlations, or simplified models that appear accurate initially but fail when conditions change.
+            Decision-makers often rely on proxies, short-term correlations, or simplified dashboards. In complex physical systems, these create a false sense of security that breaks when conditions shift.
           </p>
         </div>
 
         <div style="margin-bottom: 3rem;" data-animate>
-          <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 1rem;">Pure data-driven models collapse outside the training regime</h3>
+          <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 1rem;">Data-only models collapse when reality shifts</h3>
           <p style="font-size: 1.05rem; line-height: 1.8; color: #a8b2c7;">
-            When conditions shift (seasonal changes, regime transitions, external shocks, long-term trends), models trained on historical data fail silently. High apparent accuracy masks poor generalization. This creates confident but incorrect decisions.
-          </p>
-          <p style="font-size: 1.05rem; line-height: 1.8; color: #a8b2c7; margin-top: 1rem;">
-            This failure mode appears across environmental monitoring, healthcare signals, industrial sensing, and any system governed by physical constraints.
+            Models trained solely on historical data fail silently during regime changes, seasonal shifts, or external shocks. High apparent accuracy often masks poor generalization. This creates confident but incorrect decisions in environmental, industrial, and healthcare settings.
           </p>
         </div>
 
         <div style="margin-bottom: 3rem;" data-animate>
-          <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 1rem;">Pure physics models drift when boundary conditions are uncertain</h3>
+          <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 1rem;">Physics models drift without calibration</h3>
           <p style="font-size: 1.05rem; line-height: 1.8; color: #a8b2c7;">
-            Physics-based models encode valuable structure, but they rely on parameters that are difficult or impossible to measure directly and boundary conditions that vary across space and time. Without careful calibration against real observations, these models drift from reality while still appearing internally consistent.
+            Physics-based models provide structure but rely on boundary conditions that vary across space and time. Without rigorous calibration against ground truth, these models drift from reality while remaining mathematically consistent.
           </p>
         </div>
 
         <div style="margin-bottom: 3rem;" data-animate>
-          <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 1rem;">Dashboards without validated models create false confidence</h3>
+          <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 1rem;">Visualizations without validation hide risk</h3>
           <p style="font-size: 1.05rem; line-height: 1.8; color: #a8b2c7;">
-            Visualization tools give the appearance of control. But if the underlying models are not validated against real-world observations, or if uncertainty is ignored, these systems produce confident outputs that mislead rather than inform. Single-sensor metrics hide compensating errors.
+            Dashboards are not evidence. If the underlying data pipeline ignores uncertainty or relies on unvalidated sensors, the system produces misleading signals. Single-sensor metrics often hide compensating errors.
           </p>
         </div>
 
         <div data-animate style="padding: 2rem; background: rgba(0, 150, 255, 0.08); border-left: 3px solid #0096ff; border-radius: 6px;">
           <p style="font-size: 1.1rem; line-height: 1.8; color: #fff; font-weight: 500; margin: 0;">
-            The real problem is not building models. It is deciding when a model should be trusted.
+            The challenge is not building the model. It is knowing when to trust it.
           </p>
           <p style="font-size: 1.05rem; line-height: 1.8; color: #a8b2c7; margin-top: 1rem; margin-bottom: 0;">
-            This requires explicit handling of uncertainty, calibration against real observations (not benchmarks), understanding which signals are informative and which are misleading, and designing data collection strategies that reduce ambiguity, not just volume.
+            This requires explicit uncertainty handling, continuous calibration against real observations (not just benchmarks), and designing data collection strategies that reduce ambiguity.
           </p>
         </div>
 
@@ -140,43 +135,43 @@
       <div style="max-width: 900px; margin: 0 auto;">
         <div data-animate style="margin-bottom: 3rem;">
           <p style="font-size: 1.15rem; line-height: 1.8; color: #fff; font-weight: 500;">
-            We work on problems where direct measurement is impossible or impractical, data is sparse or incomplete, decisions must hold under changing conditions, and short-term validation is misleading.
+            We solve problems where direct measurement is impractical, data is sparse, and decisions must hold up under technical scrutiny.
           </p>
         </div>
 
         <div class="mission-grid">
           <div class="pillar-card" data-animate data-stagger>
-            <h3>Physics-aware modeling to enforce structure</h3>
+            <h3>Physics as the backbone</h3>
             <p>
-              Models must respect physical constraints. This prevents the system from producing outputs that are mathematically plausible but physically impossible.
+              We enforce physical constraints to ensure models remain grounded in reality, preventing outputs that are statistically plausible but physically impossible.
             </p>
           </div>
 
           <div class="pillar-card" data-animate data-stagger>
-            <h3>Statistical inference to quantify uncertainty</h3>
+            <h3>Uncertainty as a feature</h3>
             <p>
-              Uncertainty is not an afterthought. Every prediction includes confidence bounds derived from parameter sensitivity analysis and ensemble methods.
+              We treat uncertainty as a core deliverable. Every prediction includes confidence bounds derived from parameter sensitivity analysis and ensemble methods.
             </p>
           </div>
 
           <div class="pillar-card" data-animate data-stagger>
-            <h3>Data-driven methods where they add value</h3>
+            <h3>ML for pattern recognition</h3>
             <p>
-              Machine learning is useful for pattern recognition within calibrated regimes. It is not a replacement for physical understanding.
+              We utilize machine learning to detect patterns within calibrated regimes, not as a black-box replacement for physical understanding.
             </p>
           </div>
 
           <div class="pillar-card" data-animate data-stagger>
-            <h3>Real-world validation to test assumptions</h3>
+            <h3>Continuous Validation</h3>
             <p>
-              Models are tested against independent field campaigns. Validation is continuous, not a one-time exercise at the end of a project.
+              Models are tested against independent field campaigns throughout the lifecycle, not just a one-time validation at the project's end.
             </p>
           </div>
         </div>
 
         <div data-animate style="margin-top: 3rem; text-align: center;">
           <p style="font-size: 1.1rem; line-height: 1.8; color: #a8b2c7;">
-            We focus on long-horizon problems where credibility matters more than speed, and where models must survive contact with reality. We demonstrate these capabilities in environmental systems because they are among the most unforgiving. The same methods apply wherever direct measurement is impossible.
+            We focus on long-horizon problems where credibility outweighs speed. While our current proving ground is environmental systems—among the most complex and unforgiving contexts—our methods apply wherever robust physical modeling is required.
           </p>
         </div>
       </div>
@@ -184,9 +179,9 @@
 
     <section class="content-section" id="services" style="background: radial-gradient(ellipse at center, rgba(0, 150, 255, 0.05) 0%, transparent 70%);">
       <div class="section-header" data-animate>
-        <h2 class="section-title">Services</h2>
+        <h2 class="section-title">Core Services</h2>
         <p class="section-subtitle">
-          Three types of engagements
+          Specialized engagements for complex systems
         </p>
       </div>
 
@@ -197,18 +192,18 @@
             <div class="pillar-icon" style="width: 60px; height: 60px; background: rgba(0, 150, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0096ff; font-size: 1.5rem; font-weight: bold;">
               01
             </div>
-            <h3>Impact Evaluation</h3>
+            <h3>Defensible Impact Evaluation</h3>
             <p style="margin-bottom: 1rem;">
-              <strong style="color: #fff;">Question:</strong> Did this intervention produce measurable outcomes, or are we seeing noise and confounding variables?
+              <strong style="color: #fff;">The Challenge:</strong> Did the intervention actually work, or is it just noise?
             </p>
             <p style="margin-bottom: 1rem;">
-              <strong style="color: #fff;">What we do:</strong> Build site-specific models calibrated against multi-year field data. Apply statistical hypothesis testing and uncertainty quantification to assess impact. Results include effect size estimates with confidence bounds and identification of confounding factors.
+              <strong style="color: #fff;">Execution:</strong> We build site-specific models calibrated against multi-year field data, applying rigorous hypothesis testing. We deliver effect size estimates with clear confidence bounds and identify confounding variables.
             </p>
             <p style="margin-bottom: 1rem;">
-              <strong style="color: #fff;">Clients:</strong> Research institutes evaluating long-term programs. Government departments assessing policy effectiveness. Development agencies measuring climate adaptation outcomes.
+              <strong style="color: #fff;">For:</strong> Research institutes, government monitoring bodies, and climate adaptation agencies.
             </p>
             <p style="color: #0096ff; font-weight: 500;">
-              This represents the majority of our work.
+              This is our primary engagement model.
             </p>
           </div>
 
@@ -216,15 +211,15 @@
             <div class="pillar-icon" style="width: 60px; height: 60px; background: rgba(0, 150, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0096ff; font-size: 1.5rem; font-weight: bold;">
               02
             </div>
-            <h3>Data Pipelines & Infrastructure</h3>
+            <h3>Computational Infrastructure</h3>
             <p style="margin-bottom: 1rem;">
-              <strong style="color: #fff;">Problem:</strong> You collect field data but lack the computational infrastructure to turn observations into research-grade evidence.
+              <strong style="color: #fff;">The Challenge:</strong> You have field data but lack the pipeline to turn it into evidence.
             </p>
             <p style="margin-bottom: 1rem;">
-              <strong style="color: #fff;">What we deliver:</strong> Automated data processing pipelines that integrate field measurements with satellite observations and simulation models. This includes quality control algorithms, gap-filling methods, and model calibration workflows.
+              <strong style="color: #fff;">Execution:</strong> We architect automated pipelines integrating field sensors, satellite feeds, and simulation models. We implement QC algorithms, gap-filling logic, and automated calibration workflows.
             </p>
             <p style="margin-bottom: 1rem;">
-              <strong style="color: #fff;">Clients:</strong> Research groups needing automated boundary detection for farm-scale analysis. Institutes with incomplete time-series requiring statistical gap-filling. Monitoring programs seeking reproducible processing protocols.
+              <strong style="color: #fff;">For:</strong> Research groups, agricultural analysis firms, and long-term monitoring programs.
             </p>
           </div>
 
@@ -232,15 +227,15 @@
             <div class="pillar-icon" style="width: 60px; height: 60px; background: rgba(0, 150, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0096ff; font-size: 1.5rem; font-weight: bold;">
               03
             </div>
-            <h3>Decision Support & Policy Analysis</h3>
+            <h3>Evidence-Based Policy Support</h3>
             <p style="margin-bottom: 1rem;">
-              <strong style="color: #fff;">Question:</strong> Does our policy have empirical support for its claimed effectiveness?
+              <strong style="color: #fff;">The Challenge:</strong> Does the policy have empirical support?
             </p>
             <p style="margin-bottom: 1rem;">
-              <strong style="color: #fff;">What we deliver:</strong> Retrospective analysis of policy interventions using available monitoring data and satellite observations. Results are presented as technical reports with uncertainty estimates and methodological documentation suitable for policy review.
+              <strong style="color: #fff;">Execution:</strong> Retrospective analysis of interventions using historical data and remote sensing. We provide technical reports with methodological transparency suitable for high-level peer review and policy justification.
             </p>
             <p style="margin-bottom: 1rem;">
-              <strong style="color: #fff;">Clients:</strong> Government agencies evaluating long-term programs. Policy teams requiring independent technical assessment of intervention outcomes.
+              <strong style="color: #fff;">For:</strong> Policy teams and government agencies requiring independent technical assessment.
             </p>
           </div>
 
@@ -248,7 +243,7 @@
 
         <div data-animate style="margin-top: 3rem; padding: 2rem; background: rgba(0, 150, 255, 0.05); border-left: 3px solid #0096ff; border-radius: 6px;">
           <p style="font-size: 1.05rem; line-height: 1.8; color: #fff; font-weight: 500; margin: 0;">
-            We focus on engagements of at least 6 months where computational modeling and data validation are central. We don't produce dashboards without underlying model validation.
+            We do not engage in projects shorter than 6 months. Computational rigor requires time to build, calibrate, and validate.
           </p>
         </div>
       </div>
@@ -256,9 +251,9 @@
 
     <section class="content-section" id="capabilities">
       <div class="section-header" data-animate>
-        <h2 class="section-title">How We Work</h2>
+        <h2 class="section-title">Capabilities</h2>
         <p class="section-subtitle">
-          Methods demonstrated in environmental systems
+          Proven methods for noisy, real-world systems
         </p>
       </div>
 
@@ -267,12 +262,12 @@
           <div class="capability-content">
             <h3>Field Instrumentation & Ground Truth</h3>
             <p>
-              We design and deploy sensor networks for physical measurement campaigns. High temporal resolution observations serve as calibration targets for computational models and validation datasets for remote sensing. Our team has managed climate and soil monitoring networks across multiple catchments, including the Berambadi watershed in India. We understand sensor calibration drift, seasonal variability, and incomplete records.
+              We design and manage high-frequency sensor networks. Validated field data is the only defense against model drift. Our team has managed climate and soil networks across diverse catchments. We account for sensor drift, seasonal gaps, and environmental noise in every dataset we touch.
             </p>
             <div class="capability-tags">
-              <span class="tag">Sensor Networks</span>
-              <span class="tag">Data Collection</span>
-              <span class="tag">Quality Control</span>
+              <span class="tag">Network Design</span>
+              <span class="tag">Calibration Protocols</span>
+              <span class="tag">Automated QC</span>
             </div>
           </div>
           <div class="capability-image">
@@ -286,12 +281,12 @@
           <div class="capability-content">
             <h3>Inverse Problems & Parameter Estimation</h3>
             <p>
-              We apply non-invasive sensing techniques combined with inverse modeling to quantify subsurface processes. These methods provide higher spatial resolution than traditional point measurements. The computational approaches are validated against field observations under varying conditions. This applies to any physical system where direct measurement is difficult or expensive (industrial processes, medical imaging, subsurface characterization).
+              We use non-invasive sensing and inverse modeling to see what sensors miss. This allows us to quantify subsurface or internal processes at high spatial resolution. By validating these estimates against point measurements, we reconstruct system states where direct observation is impossible.
             </p>
             <div class="capability-tags">
               <span class="tag">Inverse Modeling</span>
+              <span class="tag">State Reconstruction</span>
               <span class="tag">Parameter Estimation</span>
-              <span class="tag">Uncertainty Quantification</span>
             </div>
           </div>
           <div class="capability-image">
@@ -305,12 +300,12 @@
           <div class="capability-content">
             <h3>Multi-Scale Data Fusion</h3>
             <p>
-              We develop retrieval algorithms that convert satellite observations into quantitative physical parameters. Our methods include site-specific calibration using ground measurements to improve accuracy beyond generic products. This enables regional-scale monitoring while maintaining field-validated precision. The same data fusion principles apply to industrial sensing, medical imaging, and other multi-scale observation problems.
+              We bridge the gap between point sensors and satellite feeds. Our retrieval algorithms use site-specific ground calibration to improve satellite accuracy beyond generic global products. This allows for regional-scale monitoring without sacrificing field-level precision.
             </p>
             <div class="capability-tags">
-              <span class="tag">Remote Sensing</span>
+              <span class="tag">Sensor Fusion</span>
               <span class="tag">SAR Processing</span>
-              <span class="tag">Algorithm Validation</span>
+              <span class="tag">Regional Scaling</span>
             </div>
           </div>
           <div class="capability-image">
@@ -324,7 +319,7 @@
           <div class="capability-content">
             <h3>Physics-Based Simulation</h3>
             <p>
-              We build decision support systems that couple process-based models with statistical learning for parameter estimation. These systems enable scenario testing: evaluating how management changes or external conditions might affect system behavior over multi-year timescales. Model predictions include uncertainty bounds derived from ensemble methods and sensitivity analysis. The same framework supports digital twins for manufacturing, energy systems, and other complex physical domains.
+              We build "Digital Twins" that respect the laws of physics. By coupling process models with statistical learning, we enable robust scenario testing. We evaluate how systems react to external shocks or management changes over multi-year timescales, providing uncertainty bounds for every prediction.
             </p>
             <div class="capability-tags">
               <span class="tag">Process Modeling</span>
@@ -339,12 +334,6 @@
           </div>
         </div>
       </div>
-
-      <div style="max-width: 900px; margin: 3rem auto 0;" data-animate>
-        <p style="font-size: 1.05rem; line-height: 1.8; color: #a8b2c7; text-align: center;">
-          Our approach emphasizes validation against real-world observations. We produce results that are reproducible and defensible under technical review. Current projects involve environmental and climate systems where validation is brutal and data collection is essential. The same computational principles apply wherever measurements are sparse, indirect, and noisy.
-        </p>
-      </div>
     </section>
 
     <section class="content-section" id="clients" style="background: rgba(0, 150, 255, 0.02);">
@@ -354,32 +343,29 @@
 
       <div style="max-width: 900px; margin: 0 auto; margin-bottom: 2rem;" data-animate>
         <p style="font-size: 1.1rem; line-height: 1.8; color: #fff; font-weight: 500; text-align: center; margin-bottom: 1.5rem;">
-          We work with organizations running long-horizon research and development programs where decisions depend on uncertain, incomplete data.
-        </p>
-        <p style="font-size: 1.05rem; line-height: 1.8; color: #a8b2c7; text-align: center;">
-          Our current focus is environmental and climate research where rigorous evaluation methods are required. The same computational approach applies to industrial R&D, healthcare monitoring, and other data-intensive domains.
+          We partner with organizations requiring rigorous evaluation of physical systems, where decisions depend on uncertain, incomplete data.
         </p>
       </div>
 
       <div class="values-grid">
         <div class="value-item" data-animate data-stagger>
-          <h4>Research Institutes & University Groups</h4>
-          <p>Academic research groups, national labs, and agricultural experiment stations conducting field trials of interventions requiring multi-year validation. These represent our primary client base.</p>
+          <h4>Research Institutes</h4>
+          <p>Labs and experiment stations conducting field trials requiring multi-year validation. We provide the computational backbone for long-term studies.</p>
         </div>
 
         <div class="value-item" data-animate data-stagger>
-          <h4>Government Monitoring Programs</h4>
-          <p>Departments operating multi-year monitoring programs requiring retrospective evaluation of intervention effectiveness. These clients need technical reports with uncertainty estimates suitable for policy review.</p>
+          <h4>Government Monitoring</h4>
+          <p>Departments needing retrospective evaluation of intervention effectiveness. We deliver technical reporting suitable for policy review.</p>
         </div>
 
         <div class="value-item" data-animate data-stagger>
-          <h4>Development Projects</h4>
-          <p>NGOs and development agencies implementing programs where field validation is critical and remote sensing alone is insufficient for credible impact assessment. We require sustained funding commitments.</p>
+          <h4>Development Agencies</h4>
+          <p>Organizations needing credible impact assessment in data-sparse regions. We bridge the gap between remote sensing and ground reality.</p>
         </div>
 
         <div class="value-item" data-animate data-stagger>
           <h4>Industrial R&D</h4>
-          <p>Organizations developing process monitoring systems, quality control protocols, or decision support tools where sparse data and model validation are central challenges. Our environmental work demonstrates capabilities applicable to manufacturing, energy, and other industrial domains.</p>
+          <p>Entities developing process monitoring or quality control systems. Our methods extend to manufacturing, energy, and complex industrial systems.</p>
         </div>
       </div>
     </section>
@@ -393,38 +379,38 @@
         
         <div data-animate style="margin-bottom: 2rem;">
           <p style="font-size: 1.1rem; line-height: 1.8; color: #fff; font-weight: 500; margin-bottom: 1rem;">
-            We maintain a limited portfolio of 2 to 3 active partnerships. Typical engagements run 6 to 18 months.
+            We strictly maintain a limit of 2 to 3 active partnerships.
           </p>
           <p style="font-size: 1.05rem; line-height: 1.8; color: #a8b2c7;">
-            This is not because we are slow. It is because physical systems change slowly, and validation cannot be rushed. Organizations looking for quick wins or short-term consulting will find better options elsewhere.
+            Physical systems change slowly, and true validation cannot be rushed. Organizations seeking quick consulting or surface-level insights will find better options elsewhere.
           </p>
         </div>
 
         <div class="values-grid">
           <div class="value-item" data-animate data-stagger>
-            <h4>We Don't Build Dashboards Without Models</h4>
-            <p>Visualization is useful when there is something validated underneath. We don't produce standalone visualization tools that give the appearance of control without rigorous model validation.</p>
+            <h4>No Unvalidated Dashboards</h4>
+            <p>Visualization is only valuable when the underlying model is proven. We do not build tools that create a false sense of control.</p>
           </div>
 
           <div class="value-item" data-animate data-stagger>
-            <h4>We Don't Do Short-Term Projects</h4>
-            <p>If your timeline is measured in weeks or a few months, we are not the right partner. Computational depth requires sustained engagement.</p>
+            <h4>No Short-Term Projects</h4>
+            <p>If the timeline is measured in weeks, we are not the right fit. Deep computational work requires sustained engagement.</p>
           </div>
 
           <div class="value-item" data-animate data-stagger>
-            <h4>We Require Real Data Access</h4>
-            <p>If your organization cannot share field measurements, measurement protocols, or validation data, we cannot deliver defensible results. Models without ground truth are speculation.</p>
+            <h4>Access to Ground Truth</h4>
+            <p>We require access to field measurements or validation data. Models without ground truth are merely speculation.</p>
           </div>
 
           <div class="value-item" data-animate data-stagger>
-            <h4>We Work Where Uncertainty Matters</h4>
-            <p>If your decision framework does not account for uncertainty, or if failure modes are acceptable, our approach may be excessive for your needs.</p>
+            <h4>Handling Uncertainty</h4>
+            <p>If your decision framework cannot tolerate uncertainty ranges, our rigorous approach may be excessive for your needs.</p>
           </div>
         </div>
 
         <div data-animate style="margin-top: 3rem; padding: 2rem; background: rgba(0, 150, 255, 0.08); border-left: 3px solid #0096ff; border-radius: 6px;">
           <p style="font-size: 1.05rem; line-height: 1.8; color: #fff; font-weight: 500; margin: 0;">
-            If you need quantitative evaluation of interventions in physical systems and operate on research timelines, we are interested in discussing potential collaboration.
+            If you need defensible, quantitative evaluation of physical systems and operate on research timelines, we are interested in discussing collaboration.
           </p>
         </div>
 
@@ -433,16 +419,16 @@
 
     <section class="content-section" id="future" style="background: rgba(0, 150, 255, 0.02);">
       <div class="section-header" data-animate>
-        <h2 class="section-title">Long-Term Direction</h2>
+        <h2 class="section-title">Long-Term Vision</h2>
       </div>
 
       <div style="max-width: 900px; margin: 0 auto;">
         <div data-animate>
           <p style="font-size: 1.05rem; line-height: 1.8; color: #a8b2c7; margin-bottom: 1.5rem;">
-            Our goal is to develop reusable computational infrastructure for physical system evaluation that can be deployed across multiple domains. Current projects involve site-specific model development in environmental systems. As our validated dataset library grows, we expect to reduce deployment time for calibrated models in new study areas and application domains.
+            We are building reusable computational infrastructure for physical system evaluation. While our current focus is environmental systems, our library of validated models and datasets is designed to scale.
           </p>
           <p style="font-size: 1.05rem; line-height: 1.8; color: #fff; font-weight: 500;">
-            The long-term objective is to establish a reference database for physical system assessments. This would allow rapid evaluation of new interventions by leveraging existing validation work, creating computational efficiency that scales with project portfolio size.
+            Our objective is to establish a reference standard for physical assessments—allowing rapid, cost-effective evaluation of new interventions by leveraging existing, rigorous validation work.
           </p>
         </div>
       </div>
@@ -453,7 +439,7 @@
         <div class="section-header" data-animate>
           <h2 class="section-title">Get in Touch</h2>
           <p class="section-subtitle">
-            If your organization operates on research timelines and needs quantitative evaluation of interventions in physical systems, let's talk.
+            If your organization values rigorous validation over speed, let's talk.
           </p>
         </div>
 
@@ -489,9 +475,9 @@
   <footer class="site-footer">
     <div class="footer-content">
       <nav class="footer-links">
-        <a href="#problem">The Problem</a>
+        <a href="#problem">The Challenge</a>
         <a href="#services">Services</a>
-        <a href="#capabilities">How We Work</a>
+        <a href="#capabilities">Capabilities</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -509,3 +495,4 @@
 
 </body>
 </html>
+
