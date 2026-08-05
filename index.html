@@ -1,460 +1,529 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Chakradhari - Computational infrastructure for high-stakes physical systems. We validate measurements and models where data is sparse." />
-  <title>Chakradhari Computational Technologies</title>
+  <meta name="description" content="Chakradhari builds AI for agriculture, water, and Earth observation. We combine satellite data, field sensors, and physics with machine learning to build models teams can trust." />
+  <meta name="theme-color" content="#080B11" />
+  <title>Chakradhari · AI for Agriculture, Water and Earth Systems</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/intro.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/site.css">
 
-  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="icon" type="image/gif" href="assets/images/logo.gif">
 </head>
 <body>
-  
-  <section id="intro">
-    <div class="intro-container">
-      <img src="assets/images/logo.gif" alt="Chakradhari Logo" class="logo" />
-      <div class="company-text"></div>
-    </div>
-  </section>
 
+  <!-- Preloader -->
+  <div id="preloader" aria-hidden="true">
+    <div class="pl-inner">
+      <img src="assets/images/logo.gif" alt="" width="46" height="46" decoding="async" />
+      <span class="pl-name">Chakradhari</span>
+    </div>
+    <div class="pl-bar"></div>
+  </div>
+
+  <!-- Header -->
   <header class="site-header">
-    <div class="header-container">
-      <a href="#hero" class="header-brand">
-        <img src="assets/images/logo.gif" alt="Chakradhari Logo" class="header-logo" />
-        <span class="header-company-name">
-          Chakradhari <span class="highlight">Computational</span> Technologies
-        </span>        
+    <div class="wrap header-inner">
+      <a href="#top" class="brand" aria-label="Chakradhari home">
+        <img src="assets/images/logo.gif" alt="Chakradhari logo" width="34" height="34" decoding="async" />
+        <span class="brand-name">Chakradhari<b>.</b></span>
       </a>
-      
-      <nav class="header-nav">
-        <a href="#problem" class="nav-link">The Challenge</a>
-        <a href="#services" class="nav-link">Services</a>
+
+      <nav class="nav" id="nav">
         <a href="#capabilities" class="nav-link">Capabilities</a>
-        <a href="#contact" class="nav-cta">Contact</a>
+        <a href="#approach" class="nav-link">Approach</a>
+        <a href="#focus" class="nav-link">Focus</a>
+        <a href="#team" class="nav-link">Team</a>
+        <a href="#contact" class="btn btn-primary">Start a conversation</a>
       </nav>
 
-      <div class="menu-toggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <main id="main-content">
+  <main id="top">
 
-    <section class="hero-section" id="hero">
-      <div class="hero-content">
-        <div class="hero-text" data-animate data-animation="fade-in-left">
-          <h1>Solving Physical Problems Where Data is Sparse and Decisions Matter</h1>
-          <p class="hero-subtitle">
-            Real-world systems are messy. Incomplete measurements and silent assumptions lead to model failure. We build the computational infrastructure to measure what matters, validate assumptions, and ensure models survive contact with reality.
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow" data-reveal>AI for the physical world</span>
+          <h1 data-reveal>
+            AI for agriculture, water, and the
+            <span class="accent">living world</span>.
+          </h1>
+          <p class="hero-lead" data-reveal>
+            We combine satellite data, field sensors, and physics with machine learning.
+            The result is models that stay reliable where data is sparse and noisy, built
+            for teams that have to make real decisions.
           </p>
-          <p class="hero-subtitle" style="margin-top: 1rem; font-weight: 500; color: #fff;">
-            We combine measured data (collected or provided), physics-based simulation, and statistical inference to generate defensible evidence.
-          </p>
-          <p class="hero-subtitle" style="margin-top: 1rem; color: #a8b2c7;">
-            Engagements: 6–18 months or longer. Portfolio limit: 2–3 active partnerships.
-          </p>
-          <div class="hero-cta-group">
-            <a href="#services" class="btn-primary">Our Services</a>
-            <a href="#contact" class="btn-secondary">Get in Touch</a>
+          <div class="hero-cta" data-reveal>
+            <a href="#capabilities" class="btn btn-primary">What we build</a>
+            <a href="#contact" class="btn btn-ghost">Work with us</a>
+          </div>
+          <div class="hero-meta" data-reveal>
+            <div class="m"><b>Soil&nbsp;&amp;&nbsp;water</b><span>domain focus</span></div>
+            <div class="m"><b>Satellite&nbsp;+&nbsp;field</b><span>multi-source fusion</span></div>
+            <div class="m"><b>Physics&nbsp;+&nbsp;ML</b><span>modelling with uncertainty</span></div>
           </div>
         </div>
-        
-        <div class="hero-visual" data-animate data-animation="fade-in-right">
-          <div class="hero-image-wrapper">
-            <div class="hero-image-placeholder">
-              <video autoplay loop muted playsinline loading="eager" style="width: 100%; height: 100%; object-fit: cover;">
-                <source src="assets/images/plants.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
+
+        <!-- Animated hero: a seed germinates while EO + AI signals gather around it -->
+        <div class="hero-stage" id="stage" aria-label="Animation: a seed germinating into a plant while satellite and AI data layers form around it" role="img">
+          <canvas class="particles" id="particles"></canvas>
+          <svg class="scene" id="scene" viewBox="0 0 560 560" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="soilGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#0F1826"/>
+                <stop offset="1" stop-color="#070A10"/>
+              </linearGradient>
+              <linearGradient id="stemGrad" x1="0" y1="1" x2="0" y2="0">
+                <stop offset="0" stop-color="#2E9BFF"/>
+                <stop offset="1" stop-color="#57E0A6"/>
+              </linearGradient>
+              <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0" stop-color="#2E9BFF" stop-opacity="0.5"/>
+                <stop offset="1" stop-color="#2E9BFF" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <!-- orbital data rings -->
+            <g id="rings" opacity="0.5">
+              <ellipse class="ring" cx="280" cy="250" rx="235" ry="235" stroke="var(--line)" stroke-width="1"/>
+              <ellipse class="ring" cx="280" cy="250" rx="180" ry="70" stroke="var(--line-blue)" stroke-width="1" stroke-dasharray="3 7"/>
+            </g>
+
+            <!-- soil-moisture ripples -->
+            <g id="ripples" opacity="0">
+              <ellipse cx="280" cy="392" rx="70" ry="16" stroke="var(--blue)" stroke-width="1.2" opacity="0.5"/>
+              <ellipse cx="280" cy="392" rx="120" ry="27" stroke="var(--blue)" stroke-width="1" opacity="0.3"/>
+              <ellipse cx="280" cy="392" rx="170" ry="38" stroke="var(--blue)" stroke-width="1" opacity="0.16"/>
+            </g>
+
+            <!-- soil -->
+            <path d="M40 392 H520 V520 H40 Z" fill="url(#soilGrad)"/>
+            <path d="M40 392 H520" stroke="var(--line)" stroke-width="1"/>
+            <line x1="40" y1="392" x2="520" y2="392" stroke="var(--blue)" stroke-width="2" opacity="0.25"/>
+
+            <!-- glow behind plant -->
+            <circle id="plantGlow" cx="280" cy="330" r="120" fill="url(#glow)" opacity="0"/>
+
+            <!-- root system -->
+            <g id="roots" stroke="#3a4a63" stroke-width="2" stroke-linecap="round" fill="none">
+              <path class="root" d="M280 392 C 278 430, 264 452, 244 476"/>
+              <path class="root" d="M280 392 C 282 430, 300 450, 322 470"/>
+              <path class="root" d="M280 392 C 280 440, 280 470, 280 500"/>
+            </g>
+
+            <!-- stem -->
+            <path id="stem" d="M280 392 C 280 356, 280 320, 280 286"
+                  stroke="url(#stemGrad)" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+            <!-- leaves -->
+            <g id="leaves">
+              <path class="leaf" d="M280 330 C 250 322, 224 332, 214 356 C 246 360, 272 352, 280 330 Z" fill="#35C48A"/>
+              <path class="leaf" d="M280 312 C 310 304, 336 314, 346 338 C 314 342, 288 334, 280 312 Z" fill="#57E0A6"/>
+              <path class="leaf" d="M280 300 C 262 276, 268 250, 280 232 C 292 250, 298 276, 280 300 Z" fill="#35C48A"/>
+            </g>
+
+            <!-- seed -->
+            <ellipse id="seed" cx="280" cy="392" rx="9" ry="12" fill="#5AB4FF"/>
+
+            <!-- satellite + scan beam -->
+            <g id="satellite" opacity="0">
+              <g id="satBody" transform="translate(120,96)">
+                <rect x="-9" y="-6" width="18" height="12" rx="2" fill="var(--white)"/>
+                <rect x="-28" y="-4" width="14" height="8" rx="1" fill="var(--blue-bright)"/>
+                <rect x="14" y="-4" width="14" height="8" rx="1" fill="var(--blue-bright)"/>
+              </g>
+              <path id="beam" d="M120 102 L 232 300 L 328 300 Z" fill="var(--blue)" opacity="0.10"/>
+              <line id="beamEdge1" x1="120" y1="102" x2="232" y2="300" stroke="var(--blue)" stroke-width="1" opacity="0.4"/>
+              <line id="beamEdge2" x1="120" y1="102" x2="328" y2="300" stroke="var(--blue)" stroke-width="1" opacity="0.4"/>
+            </g>
+
+            <!-- data connectors from plant to chips -->
+            <g id="connectors" stroke="var(--line-blue)" stroke-width="1" fill="none" opacity="0">
+              <path d="M300 300 C 360 290, 400 260, 452 232"/>
+              <path d="M262 322 C 200 330, 150 348, 108 372"/>
+              <path d="M296 262 C 350 250, 392 214, 430 150"/>
+            </g>
+          </svg>
+
+          <!-- floating data chips (positioned in %) -->
+          <span class="data-chip sat"  style="left:60%; top:36%">
+            <i></i> radar &amp; optical
+          </span>
+          <span class="data-chip"      style="left:6%;  top:64%">
+            <i></i> soil moisture
+          </span>
+          <span class="data-chip leaf" style="left:70%; top:16%">
+            <i></i> canopy · growth
+          </span>
+          <span class="data-chip"      style="left:2%;  top:30%">
+            <i></i> rainfall · recharge
+          </span>
         </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true"><span class="line"></span> scroll</div>
     </section>
 
-    <section class="content-section" id="problem" style="background: rgba(0, 150, 255, 0.02);">
-      <div class="section-header" data-animate>
-        <h2 class="section-title">Why Models Fail in the Real World</h2>
-      </div>
-      
-      <div style="max-width: 900px; margin: 0 auto;">
-        
-        <div data-animate style="margin-bottom: 3rem;">
-          <p style="font-size: 1.2rem; line-height: 1.8; color: #fff; font-weight: 500; margin-bottom: 1.5rem;">
-            Decision-makers often rely on proxies, short-term correlations, or simplified dashboards. In complex physical systems like in Soil Systems, these create a false sense of security that breaks when conditions shift.
-          </p>
-        </div>
-
-        <div style="margin-bottom: 3rem;" data-animate>
-          <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 1rem;">Data-only models collapse when reality shifts</h3>
-          <p style="font-size: 1.05rem; line-height: 1.8; color: #a8b2c7;">
-            ML Models trained solely on historical data fail silently during regime changes, seasonal shifts, or external shocks. High apparent accuracy often masks poor generalization. This creates confident but incorrect decisions in environmental, industrial, and healthcare settings.
-          </p>
-        </div>
-
-        <div style="margin-bottom: 3rem;" data-animate>
-          <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 1rem;">Physics models drift without calibration</h3>
-          <p style="font-size: 1.05rem; line-height: 1.8; color: #a8b2c7;">
-            Physics-based models provide structure but rely on physical laws that vary across space and time. Without rigorous calibration against ground truth, these models drift from reality while remaining mathematically consistent.
-          </p>
-        </div>
-
-        <div style="margin-bottom: 3rem;" data-animate>
-          <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 1rem;">Visualizations without validation hide risk</h3>
-          <p style="font-size: 1.05rem; line-height: 1.8; color: #a8b2c7;">
-            Dashboards are not evidence. If the underlying data pipeline ignores uncertainty or relies on unvalidated sensors, the system produces misleading signals. Single-sensor metrics often hide compensating errors.
-          </p>
-        </div>
-
-        <div data-animate style="padding: 2rem; background: rgba(0, 150, 255, 0.08); border-left: 3px solid #0096ff; border-radius: 6px;">
-          <p style="font-size: 1.1rem; line-height: 1.8; color: #fff; font-weight: 500; margin: 0;">
-            The challenge is not building the model. It is knowing when to trust it.
-          </p>
-          <p style="font-size: 1.05rem; line-height: 1.8; color: #a8b2c7; margin-top: 1rem; margin-bottom: 0;">
-            This requires explicit uncertainty handling, continuous calibration against real observations (not just benchmarks), and designing data collection strategies that reduce ambiguity.
-          </p>
-        </div>
-
+    <!-- ============ STATEMENT ============ -->
+    <section class="statement" id="mission">
+      <div class="wrap">
+        <span class="eyebrow" data-reveal>Why we exist</span>
+        <p data-reveal>
+          Decisions about food, water and land are made on <em>incomplete evidence</em>.
+          We build the AI that closes the gap.
+        </p>
+        <p class="sub" data-reveal>
+          Environmental data is sparse and slow. Clouds hide the ground, sensors drift, and
+          satellites miss the moments that matter most. Our systems fill those gaps, show
+          how confident they are, and stay honest when conditions change. We build
+          intelligence you can defend, not dashboards that look convincing until they fail.
+        </p>
       </div>
     </section>
 
-    <section class="content-section" id="approach">
-      <div class="section-header" data-animate>
-        <h2 class="section-title">Our Position</h2>
-      </div>
-
-      <div style="max-width: 900px; margin: 0 auto;">
-        <div data-animate style="margin-bottom: 3rem;">
-          <p style="font-size: 1.15rem; line-height: 1.8; color: #fff; font-weight: 500;">
-           We solve problems where direct measurement is impractical and data is sparse, using the same computational foundations across agriculture, healthcare, and other physical systems.
+    <!-- ============ ETHOS / THE NAME ============ -->
+    <section class="band ethos" id="ethos">
+      <div class="wrap ethos-grid">
+        <div class="section-head" data-reveal style="margin-bottom:0">
+          <span class="eyebrow">The name</span>
+          <h2>Chakradhari means carrying knowledge.</h2>
+          <p>
+            The chakra stands for vision, precision, and purposeful action. We read
+            Chakradhari as carrying knowledge forward. In practice that means turning
+            complex environmental and agricultural data into something clear, and turning
+            clarity into decisions that hold up. It shapes how we work.
           </p>
         </div>
 
-        <div class="mission-grid">
-          <div class="pillar-card" data-animate data-stagger>
-            <h3>Physics as the backbone</h3>
-            <p>
-              We enforce physical constraints to ensure models remain grounded in reality, preventing outputs that are statistically plausible but physically impossible.
-            </p>
-          </div>
-
-          <div class="pillar-card" data-animate data-stagger>
-            <h3>Uncertainty as a feature</h3>
-            <p>
-              We treat uncertainty as a core deliverable. Every prediction includes confidence bounds derived from parameter sensitivity analysis and ensemble methods.
-            </p>
-          </div>
-
-          <div class="pillar-card" data-animate data-stagger>
-            <h3>ML for pattern recognition</h3>
-            <p>
-              We utilize machine learning to detect patterns within calibrated regimes, not as a black-box replacement for physical understanding.
-            </p>
-          </div>
-
-          <div class="pillar-card" data-animate data-stagger>
-            <h3>Continuous Validation</h3>
-            <p>
-              Models are tested against independent field campaigns throughout the lifecycle, not just a one-time validation at the project's end.
-            </p>
-          </div>
-        </div>
-
-        <div data-animate style="margin-top: 3rem; text-align: center;">
-          <p style="font-size: 1.1rem; line-height: 1.8; color: #a8b2c7;">
-            We focus on long-horizon problems where credibility outweighs speed. While our current proving ground is environmental systems—among the most complex and unforgiving contexts—our methods apply wherever robust physical modeling is required.
-          </p>
-        </div>
+        <ul class="carry-list" data-reveal-stagger>
+          <li><span class="lead">We carry</span> knowledge.</li>
+          <li><span class="lead">We carry</span> scientific integrity.</li>
+          <li><span class="lead">We carry</span> clarity from complexity.</li>
+          <li><span class="lead">We carry</span> responsible AI.</li>
+          <li><span class="lead">We carry</span> decision intelligence for the real world.</li>
+        </ul>
       </div>
     </section>
 
-    <section class="content-section" id="services" style="background: radial-gradient(ellipse at center, rgba(0, 150, 255, 0.05) 0%, transparent 70%);">
-      <div class="section-header" data-animate>
-        <h2 class="section-title">Core Services</h2>
-        <p class="section-subtitle">
-          Specialized engagements for complex systems
+    <!-- ============ CAPABILITIES ============ -->
+    <section class="band" id="capabilities">
+      <div class="wrap section-head" data-reveal>
+        <span class="eyebrow">Capabilities</span>
+        <h2>Eight ways we turn measurement into decisions.</h2>
+        <p>
+          We organise around problems, not algorithms. Each of these is a different way to
+          take data from the field and turn it into something a team can act on.
         </p>
       </div>
 
-      <div style="max-width: 900px; margin: 0 auto;">
-        <div class="mission-grid">
-          
-          <div class="pillar-card" data-animate data-stagger>
-            <div class="pillar-icon" style="width: 60px; height: 60px; background: rgba(0, 150, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0096ff; font-size: 1.5rem; font-weight: bold;">
-              01
-            </div>
-            <h3>Defensible Impact Evaluation</h3>
-            <p style="margin-bottom: 1rem;">
-              <strong style="color: #fff;">The Challenge:</strong> Did the intervention actually work, or is it just noise?
-            </p>
-            <p style="margin-bottom: 1rem;">
-              <strong style="color: #fff;">Execution:</strong> We build site-specific models calibrated against multi-year field data, applying rigorous hypothesis testing. We deliver effect size estimates with clear confidence bounds and identify confounding variables.
-            </p>
-            <p style="margin-bottom: 1rem;">
-              <strong style="color: #fff;">For:</strong> Research institutes, government monitoring bodies, and climate adaptation agencies.
-            </p>
-            <p style="color: #0096ff; font-weight: 500;">
-              This is our primary engagement model.
-            </p>
-          </div>
+      <div class="wrap">
+        <div class="cap-grid" data-reveal-stagger>
 
-          <div class="pillar-card" data-animate data-stagger>
-            <div class="pillar-icon" style="width: 60px; height: 60px; background: rgba(0, 150, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0096ff; font-size: 1.5rem; font-weight: bold;">
-              02
-            </div>
-            <h3>Computational Infrastructure</h3>
-            <p style="margin-bottom: 1rem;">
-              <strong style="color: #fff;">The Challenge:</strong> You have field data but lack the pipeline to turn it into evidence.
-            </p>
-            <p style="margin-bottom: 1rem;">
-              <strong style="color: #fff;">Execution:</strong> We architect automated pipelines integrating field sensors, satellite feeds, and simulation models. We implement QC algorithms, gap-filling logic, and automated calibration workflows.
-            </p>
-            <p style="margin-bottom: 1rem;">
-              <strong style="color: #fff;">For:</strong> Research groups, agricultural analysis firms, and long-term monitoring programs.
-            </p>
-          </div>
+          <article class="cap">
+            <span class="cap-no">01</span>
+            <h3>Agricultural AI</h3>
+            <p>Models for soil moisture, crop stress, irrigation, and growth. Built for field scale, where ground data is thin and every season is different.</p>
+            <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21V9M12 9C12 6 9 3 4 3c0 5 3 6 8 6ZM12 12c0-2 3-4 7-4 0 4-3 4-7 4Z"/></svg>
+          </article>
 
-          <div class="pillar-card" data-animate data-stagger>
-            <div class="pillar-icon" style="width: 60px; height: 60px; background: rgba(0, 150, 255, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0096ff; font-size: 1.5rem; font-weight: bold;">
-              03
-            </div>
-            <h3>Evidence-Based Policy Support</h3>
-            <p style="margin-bottom: 1rem;">
-              <strong style="color: #fff;">The Challenge:</strong> Does the policy have empirical support?
-            </p>
-            <p style="margin-bottom: 1rem;">
-              <strong style="color: #fff;">Execution:</strong> Retrospective analysis of interventions using historical data and remote sensing. We provide technical reports with methodological transparency suitable for high-level peer review and policy justification.
-            </p>
-            <p style="margin-bottom: 1rem;">
-              <strong style="color: #fff;">For:</strong> Policy teams and government agencies requiring independent technical assessment.
-            </p>
-          </div>
+          <article class="cap">
+            <span class="cap-no">02</span>
+            <h3>Earth Observation AI</h3>
+            <p>We turn satellite radar and optical imagery into calibrated, gap-filled products. Retrieval, fusion, and downscaling, all anchored to local measurements.</p>
+            <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c3 3 3 13 0 16M12 4c-3 3-3 13 0 16"/></svg>
+          </article>
 
-        </div>
+          <article class="cap">
+            <span class="cap-no">03</span>
+            <h3>Scientific AI</h3>
+            <p>Machine learning that respects physics. Hybrid models, parameter estimation, and inverse problems for systems that follow physical laws.</p>
+            <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12M6 21h12M8 3v5l-4 9a3 3 0 0 0 3 4h10a3 3 0 0 0 3-4l-4-9V3"/></svg>
+          </article>
 
-        <div data-animate style="margin-top: 3rem; padding: 2rem; background: rgba(0, 150, 255, 0.05); border-left: 3px solid #0096ff; border-radius: 6px;">
-          <p style="font-size: 1.05rem; line-height: 1.8; color: #fff; font-weight: 500; margin: 0;">
-            We do not engage in projects shorter than 6 months. Computational rigor requires time to build, calibrate, and validate.
-          </p>
+          <article class="cap">
+            <span class="cap-no">04</span>
+            <h3>Environmental Intelligence</h3>
+            <p>Analytics for watersheds, groundwater, and hydrology. We measure how land and water respond over years, not in single snapshots.</p>
+            <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c4 5 7 8 7 12a7 7 0 0 1-14 0c0-4 3-7 7-12Z"/></svg>
+          </article>
+
+          <article class="cap">
+            <span class="cap-no">05</span>
+            <h3>Digital Twins</h3>
+            <p>Physics-based simulations, coupled with data. Test scenarios and interventions before you commit them to the ground, with uncertainty included.</p>
+            <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="8" height="8" rx="1"/><rect x="13" y="12" width="8" height="8" rx="1"/><path d="M11 8h4a2 2 0 0 1 2 2v2"/></svg>
+          </article>
+
+          <article class="cap">
+            <span class="cap-no">06</span>
+            <h3>Agentic AI Systems</h3>
+            <p>AI agents that carry out multi-step scientific work. They retrieve data, run models, and draft analysis, grounded in evidence with a person in the loop.</p>
+            <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="7" r="3"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2M12 10v3"/></svg>
+          </article>
+
+          <article class="cap">
+            <span class="cap-no">07</span>
+            <h3>AI Evaluation &amp; Benchmarking</h3>
+            <p>We build the datasets and benchmarks that AI gets measured against. Then we test where models hold, where they break, and whether you can trust them.</p>
+            <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 11l3 3 7-7M4 6h6M4 12h4M4 18h8"/></svg>
+          </article>
+
+          <article class="cap">
+            <span class="cap-no">08</span>
+            <h3>Data Platforms for Science</h3>
+            <p>Pipelines that turn sensors, satellites, and field records into clean datasets. Quality control, provenance, and licensing come built in, so the work stays reproducible.</p>
+            <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <section class="content-section" id="capabilities">
-      <div class="section-header" data-animate>
-        <h2 class="section-title">Capabilities</h2>
-        <p class="section-subtitle">
-          Proven methods for noisy, real-world systems
+    <!-- ============ APPROACH ============ -->
+    <section class="band approach" id="approach">
+      <div class="wrap approach-grid">
+        <div class="section-head" data-reveal style="margin-bottom:0">
+          <span class="eyebrow">How we work</span>
+          <h2>Built to survive contact with reality.</h2>
+          <p>
+            Environmental systems punish models that only look good on paper. Everything we
+            build is designed to stay grounded when the data is thin and the stakes are high.
+          </p>
+        </div>
+
+        <div class="approach-list" data-reveal-stagger>
+          <div class="approach-item">
+            <span class="idx">01</span>
+            <div>
+              <h4>Physics as the backbone</h4>
+              <p>We keep physical laws inside the model. Outputs stay physically possible, not just statistically plausible.</p>
+            </div>
+          </div>
+          <div class="approach-item">
+            <span class="idx">02</span>
+            <div>
+              <h4>Uncertainty as a deliverable</h4>
+              <p>Every estimate carries confidence bounds. Knowing when not to trust a number is as valuable as the number itself.</p>
+            </div>
+          </div>
+          <div class="approach-item">
+            <span class="idx">03</span>
+            <div>
+              <h4>Fusion over single sources</h4>
+              <p>We combine satellites, field sensors, and models. Each covers the others' blind spots, especially when one source goes dark.</p>
+            </div>
+          </div>
+          <div class="approach-item">
+            <span class="idx">04</span>
+            <div>
+              <h4>Validated against the ground</h4>
+              <p>We test models against independent field data, across seasons. Continuously, not once at the end of a project.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOCUS AREAS ============ -->
+    <section class="band" id="focus">
+      <div class="wrap section-head" data-reveal>
+        <span class="eyebrow">Focus areas</span>
+        <h2>Where our experience runs deepest.</h2>
+        <p>
+          The team has years of hands-on research in environmental science and Earth
+          observation. These are the areas where we move fastest and know the ground.
         </p>
       </div>
 
-      <div class="capabilities-grid">
-        <div class="capability-item" data-animate>
-          <div class="capability-content">
-            <h3>Field Instrumentation & Ground Truth</h3>
-            <p>
-              We design and manage high-frequency sensor networks. Validated field data is the only defense against model drift. Our team has managed climate and soil networks across diverse catchments. We account for sensor drift, seasonal gaps, and environmental noise in every dataset we touch.
-            </p>
-            <div class="capability-tags">
-              <span class="tag">Network Design</span>
-              <span class="tag">Calibration Protocols</span>
-              <span class="tag">Automated QC</span>
-            </div>
-          </div>
-          <div class="capability-image">
-            <video autoplay loop muted playsinline loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-              <source src="assets/images/field.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
+      <div class="wrap">
+        <div class="focus-grid" data-reveal-stagger>
 
-        <div class="capability-item" data-animate>
-          <div class="capability-content">
-            <h3>Inverse Problems & Parameter Estimation</h3>
-            <p>
-              We use non-invasive sensing and inverse modeling to see what sensors miss. This allows us to quantify subsurface or internal processes at high spatial resolution. By validating these estimates against point measurements, we reconstruct system states where direct observation is impossible.
-            </p>
-            <div class="capability-tags">
-              <span class="tag">Inverse Modeling</span>
-              <span class="tag">State Reconstruction</span>
-              <span class="tag">Parameter Estimation</span>
-            </div>
-          </div>
-          <div class="capability-image">
-            <video autoplay loop muted playsinline loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-              <source src="assets/images/satellite.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
+          <article class="focus-card">
+            <span class="tag">Agriculture &amp; Soil</span>
+            <h3>Soil moisture &amp; crop-water intelligence</h3>
+            <p>We reconstruct soil moisture and crop-water stress by fusing satellite radar with ground sensors. This fills the monsoon and cloud-cover gaps where standard products go quiet.</p>
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 21V9M12 9C12 6 9 3 4 3c0 5 3 6 8 6ZM12 12c0-2 3-4 7-4 0 4-3 4-7 4Z"/></svg>
+          </article>
 
-        <div class="capability-item" data-animate>
-          <div class="capability-content">
-            <h3>Multi-Scale Data Fusion</h3>
-            <p>
-              We bridge the gap between point sensors and satellite feeds. Our retrieval algorithms use site-specific ground calibration to improve satellite accuracy beyond generic global products. This allows for regional-scale monitoring without sacrificing field-level precision.
-            </p>
-            <div class="capability-tags">
-              <span class="tag">Sensor Fusion</span>
-              <span class="tag">SAR Processing</span>
-              <span class="tag">Regional Scaling</span>
-            </div>
-          </div>
-          <div class="capability-image">
-            <video autoplay loop muted playsinline loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-              <source src="assets/images/twin.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
+          <article class="focus-card">
+            <span class="tag">Water &amp; Watersheds</span>
+            <h3>Watershed &amp; groundwater analytics</h3>
+            <p>We study how watersheds respond over time. That means measuring the effect of interventions, tracking recharge and water availability, and tying both to decisions on the ground.</p>
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3c4 5 7 8 7 12a7 7 0 0 1-14 0c0-4 3-7 7-12Z"/></svg>
+          </article>
 
-        <div class="capability-item" data-animate>
-          <div class="capability-content">
-            <h3>Physics-Based Simulation</h3>
-            <p>
-              We build "Digital Twins" that respect the laws of physics. By coupling process models with statistical learning, we enable robust scenario testing. We evaluate how systems react to external shocks or management changes over multi-year timescales, providing uncertainty bounds for every prediction.
-            </p>
-            <div class="capability-tags">
-              <span class="tag">Process Modeling</span>
-              <span class="tag">Scenario Analysis</span>
-              <span class="tag">Digital Twins</span>
-            </div>
-          </div>
-          <div class="capability-image">
-            <video autoplay loop muted playsinline loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-              <source src="assets/images/plants.mp4" type="video/mp4">
-            </video>
-          </div>
+          <article class="focus-card">
+            <span class="tag">Earth Observation</span>
+            <h3>Remote sensing &amp; sensor fusion</h3>
+            <p>Retrieval and fusion methods that make satellite data trustworthy at local scale. Everything is calibrated against ground measurements, not taken on faith.</p>
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c3 3 3 13 0 16M12 4c-3 3-3 13 0 16"/></svg>
+          </article>
+
+          <article class="focus-card">
+            <span class="tag">Scientific Software</span>
+            <h3>AI-assisted scientific computing</h3>
+            <p>Hybrid physics and ML models, scientific data engineering, and agentic workflows. We help research and engineering teams run, check, and scale their analysis.</p>
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 3h12M6 21h12M8 3v5l-4 9a3 3 0 0 0 3 4h10a3 3 0 0 0 3-4l-4-9V3"/></svg>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <section class="content-section" id="clients" style="background: rgba(0, 150, 255, 0.02);">
-      <div class="section-header" data-animate>
-        <h2 class="section-title">Who We Work With</h2>
-      </div>
-
-      <div style="max-width: 900px; margin: 0 auto; margin-bottom: 2rem;" data-animate>
-        <p style="font-size: 1.1rem; line-height: 1.8; color: #fff; font-weight: 500; text-align: center; margin-bottom: 1.5rem;">
-          We partner with organizations requiring rigorous evaluation of physical systems, where decisions depend on uncertain, incomplete data.
+    <!-- ============ BUILD: DATASETS · BENCHMARKS · AGENTS ============ -->
+    <section class="band build" id="build">
+      <div class="wrap section-head" data-reveal>
+        <span class="eyebrow">What we're building</span>
+        <h2>The data behind trustworthy AI.</h2>
+        <p>
+          Good AI needs good ground truth. We collect and structure agricultural and
+          environmental data, turn it into benchmarks, and build agents that are measured
+          against them. What we ship can be checked, not just claimed.
         </p>
       </div>
 
-      <div class="values-grid">
-        <div class="value-item" data-animate data-stagger>
-          <h4>Research Institutes</h4>
-          <p>Labs and experiment stations conducting field trials requiring multi-year validation. We provide the computational backbone for long-term studies.</p>
-        </div>
-
-        <div class="value-item" data-animate data-stagger>
-          <h4>Government Monitoring</h4>
-          <p>Departments needing retrospective evaluation of intervention effectiveness. We deliver technical reporting suitable for policy review.</p>
-        </div>
-
-        <div class="value-item" data-animate data-stagger>
-          <h4>Development Agencies</h4>
-          <p>Organizations needing credible impact assessment in data-sparse regions. We bridge the gap between remote sensing and ground reality.</p>
-        </div>
-
-        <div class="value-item" data-animate data-stagger>
-          <h4>Industrial R&D</h4>
-          <p>Entities developing process monitoring or quality control systems. Our methods extend to manufacturing, energy, and complex industrial systems.</p>
+      <div class="wrap">
+        <div class="triad" data-reveal-stagger>
+          <article class="t-card">
+            <span class="t-no">01</span>
+            <h3>Curated datasets</h3>
+            <p>We gather field, sensor, and satellite data and turn it into clean, documented datasets. Clear provenance and licensing, ready for science and machine learning.</p>
+          </article>
+          <article class="t-card">
+            <span class="t-no">02</span>
+            <h3>Benchmarks &amp; evaluation</h3>
+            <p>We design evaluation sets that test whether AI is accurate, calibrated, and honest on real agricultural and environmental tasks. Not just on generic leaderboards.</p>
+          </article>
+          <article class="t-card">
+            <span class="t-no">03</span>
+            <h3>Grounded AI agents</h3>
+            <p>We build agents that retrieve data, run models, and draft analysis. They are measured against those benchmarks, and a person stays in the loop.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="content-section" id="constraints">
-      <div class="section-header" data-animate>
-        <h2 class="section-title">We Are Not For Everyone</h2>
+    <!-- ============ AUDIENCES ============ -->
+    <section class="band audiences" id="audiences">
+      <div class="wrap section-head" data-reveal>
+        <span class="eyebrow">Who we work with</span>
+        <h2>Built for teams that can't get the science wrong.</h2>
+        <p>
+          We work with organisations where the science has to be right. Where decisions
+          carry weight, and the evidence has to hold up to scrutiny.
+        </p>
       </div>
-
-      <div style="max-width: 900px; margin: 0 auto;">
-        
-        <div data-animate style="margin-bottom: 2rem;">
-          <p style="font-size: 1.1rem; line-height: 1.8; color: #fff; font-weight: 500; margin-bottom: 1rem;">
-            We strictly maintain a limit of 2 to 3 active partnerships.
-          </p>
-          <p style="font-size: 1.05rem; line-height: 1.8; color: #a8b2c7;">
-            Physical systems change slowly, and true validation cannot be rushed. Organizations seeking quick consulting or surface-level insights will find better options elsewhere.
-          </p>
-        </div>
-
-        <div class="values-grid">
-          <div class="value-item" data-animate data-stagger>
-            <h4>No Unvalidated Dashboards</h4>
-            <p>Visualization is only valuable when the underlying model is proven. We do not build tools that create a false sense of control.</p>
-          </div>
-
-          <div class="value-item" data-animate data-stagger>
-            <h4>No Short-Term Projects</h4>
-            <p>If the timeline is measured in weeks, we are not the right fit. Deep computational work requires sustained engagement.</p>
-          </div>
-
-          <div class="value-item" data-animate data-stagger>
-            <h4>Access to Ground Truth</h4>
-            <p>We require access to field measurements or validation data. Models without ground truth are merely speculation.</p>
-          </div>
-
-          <div class="value-item" data-animate data-stagger>
-            <h4>Handling Uncertainty</h4>
-            <p>If your decision framework cannot tolerate uncertainty ranges, our rigorous approach may be excessive for your needs.</p>
-          </div>
-        </div>
-
-        <div data-animate style="margin-top: 3rem; padding: 2rem; background: rgba(0, 150, 255, 0.08); border-left: 3px solid #0096ff; border-radius: 6px;">
-          <p style="font-size: 1.05rem; line-height: 1.8; color: #fff; font-weight: 500; margin: 0;">
-            If you need defensible, quantitative evaluation of physical systems and operate on research timelines, we are interested in discussing collaboration.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="content-section" id="future" style="background: rgba(0, 150, 255, 0.02);">
-      <div class="section-header" data-animate>
-        <h2 class="section-title">Long-Term Vision</h2>
-      </div>
-
-      <div style="max-width: 900px; margin: 0 auto;">
-        <div data-animate>
-          <p style="font-size: 1.05rem; line-height: 1.8; color: #a8b2c7; margin-bottom: 1.5rem;">
-            We are building reusable computational infrastructure for physical system evaluation. While our current focus is environmental systems, our library of validated models and datasets is designed to scale.
-          </p>
-          <p style="font-size: 1.05rem; line-height: 1.8; color: #fff; font-weight: 500;">
-            Our objective is to establish a reference standard for physical assessments—allowing rapid, cost-effective evaluation of new interventions by leveraging existing, rigorous validation work.
-          </p>
+      <div class="wrap">
+        <div class="aud-flow" data-reveal>
+          <span>Research organisations</span>
+          <span>Governments</span>
+          <span>NGOs</span>
+          <span>Agri-tech companies</span>
+          <span>Climate-tech startups</span>
+          <span>Engineering companies</span>
+          <span>International funding agencies</span>
         </div>
       </div>
     </section>
 
-    <section class="contact-section" id="contact">
-      <div class="contact-container">
-        <div class="section-header" data-animate>
-          <h2 class="section-title">Get in Touch</h2>
-          <p class="section-subtitle">
-            If your organization values rigorous validation over speed, let's talk.
+    <!-- ============ TEAM / FOUNDERS ============ -->
+    <section class="band" id="team">
+      <div class="wrap section-head" data-reveal>
+        <span class="eyebrow">Team</span>
+        <h2>Founded by researchers who work close to the problem.</h2>
+        <p>
+          Chakradhari was started by two researchers in physics, computation, and
+          environmental science. We have spent years turning field measurements into models
+          that hold up, and built the company to keep doing exactly that.
+        </p>
+      </div>
+
+      <div class="wrap">
+        <div class="founders-grid" data-reveal-stagger>
+
+          <article class="founder">
+            <span class="role">Co-founder</span>
+            <a class="f-site" href="https://www.drsrao.com" target="_blank" rel="noopener">
+              www.drsrao.com
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+            <p>
+              Computational scientist in hydrology, digital agriculture, and scientific
+              machine learning. Works on soil, water, and crop modelling, remote sensing,
+              sensor fusion, and high-performance computing. Writes and teaches widely on
+              making computational science accessible.
+            </p>
+            <div class="f-tags">
+              <span>Scientific ML</span>
+              <span>Soil &amp; hydrology</span>
+              <span>Remote sensing</span>
+              <span>HPC</span>
+            </div>
+            <span class="f-name">Sathyanarayan Rao</span>
+          </article>
+
+          <article class="founder">
+            <span class="role">Co-founder</span>
+            <a class="f-site" href="https://praveenr.com" target="_blank" rel="noopener">
+              www.praveenr.com
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+            <p>
+              Physicist and engineer turned computational scientist. Works across applied
+              physics, machine intelligence, and systems engineering, with a background in
+              radar signal processing, research systems, and machine learning applied to
+              real-world environments.
+            </p>
+            <div class="f-tags">
+              <span>Signal processing</span>
+              <span>Applied physics</span>
+              <span>ML systems</span>
+              <span>Engineering</span>
+            </div>
+            <span class="f-name">Praveen Ranganath</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="band contact" id="contact">
+      <div class="wrap contact-grid">
+        <div data-reveal>
+          <span class="eyebrow">Contact</span>
+          <h2>Let's build something that holds up.</h2>
+          <p style="color:var(--text-soft); margin-top:1.2rem; max-width:34rem;">
+            Running a monitoring programme, funding environmental work, or building an agri-
+            or climate-tech product? If the science has to be right, let's talk.
           </p>
+          <p style="color:var(--text-faint); margin-top:1.4rem; font-size:0.95rem;">Reach the founders directly through their sites:</p>
+          <div class="contact-sites">
+            <a href="https://www.drsrao.com" target="_blank" rel="noopener">www.drsrao.com <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            <a href="https://praveenr.com" target="_blank" rel="noopener">www.praveenr.com <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          </div>
         </div>
 
-        <div class="contact-info">
-          <div class="contact-item" data-animate data-stagger>
-            <span class="contact-label">Email</span>
-            <span class="contact-value">
-              <a href="mailto:contact@chakradhari.com">contact@chakradhari.com</a>
-            </span>
+        <div class="contact-card" data-reveal>
+          <div class="row">
+            <div class="k">Studio</div>
+            <div class="v">Om Chambers, 648/A, 4th Floor,<br>1st Stage, Indiranagar,<br>Bengaluru 560038, Karnataka, India</div>
           </div>
-
-          <div class="contact-item" data-animate data-stagger>
-            <span class="contact-label">Location</span>
-            <span class="contact-value">Om Chambers, 648/a, 4th Floor, 1st Stage, Indiranagar, Bengaluru - 560038, Karnataka, India
-            </span>
+          <div class="row">
+            <div class="k">Web</div>
+            <div class="v">www.cctech.in</div>
           </div>
         </div>
       </div>
@@ -462,37 +531,32 @@
 
   </main>
 
-  <section class="content-section" style="padding: 3rem clamp(1.5rem, 5vw, 3rem); background: rgba(0, 0, 0, 0.3);">
-    <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-      <p style="font-size: 0.9rem; color: #6b7280; line-height: 1.6;">
-        CHAKRADHARI COMPUTATIONAL TECHNOLOGIES PRIVATE LIMITED<br>
-        CIN: U72100KA2025PTC209662 | Incorporated: 14th October, 2025<br>
-        Registered with MCA under ROC-Bangalore (Registration No. 209662)
-      </p>
-    </div>
-  </section>
-
+  <!-- ============ FOOTER ============ -->
   <footer class="site-footer">
-    <div class="footer-content">
-      <nav class="footer-links">
-        <a href="#problem">The Challenge</a>
-        <a href="#services">Services</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-
-    <div class="footer-bottom">
-      <p>CHAKRADHARI COMPUTATIONAL TECHNOLOGIES PVT. LTD. | CIN: U72100KA2025PTC209662</p>
-      <p>&copy; 2025 Chakradhari Computational Technologies Pvt. Ltd. All rights reserved.</p>
+    <div class="wrap">
+      <div class="footer-top">
+        <a href="#top" class="footer-brand">
+          <img src="assets/images/logo.gif" alt="Chakradhari logo" width="32" height="32" loading="lazy" decoding="async" />
+          <span>Chakradhari</span>
+        </a>
+        <nav class="footer-nav">
+          <a href="#capabilities">Capabilities</a>
+          <a href="#approach">Approach</a>
+          <a href="#focus">Focus</a>
+          <a href="#team">Team</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-legal">
+        <span class="cin">CHAKRADHARI COMPUTATIONAL TECHNOLOGIES PRIVATE LIMITED</span><br>
+        CIN: U72100KA2025PTC209662 &nbsp;·&nbsp; Incorporated 14 October 2025 &nbsp;·&nbsp; ROC-Bangalore (Reg. No. 209662)<br>
+        © 2025 Chakradhari Computational Technologies Pvt. Ltd. All rights reserved.
+      </div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3"></script>
-  <script src="js/intro.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/lazy.js"></script>
-
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script defer src="js/hero.js"></script>
+  <script defer src="js/app.js"></script>
 </body>
 </html>
-
