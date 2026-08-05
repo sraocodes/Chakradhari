@@ -2,43 +2,94 @@
    Chakradhari — Site components (black · blue · white)
    ========================================================= */
 
-/* ---------- Preloader ---------- */
-#preloader {
+/* ---------- Intro (rotating emblem + name reveal) ---------- */
+#intro {
   position: fixed;
   inset: 0;
   z-index: 1000;
   display: grid;
   place-items: center;
-  background: var(--bg);
-  animation: plHide 0.6s var(--ease) 1.05s forwards;
+  background: radial-gradient(ellipse at center, #0C1220 0%, #04070C 100%);
+  animation: introOut 0.8s var(--ease) 2.7s forwards;
 }
-#preloader .pl-inner {
+/* blue scan-stripes */
+#intro::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg, transparent, transparent 2px,
+    rgba(46,155,255,0.045) 2px, rgba(46,155,255,0.045) 4px);
+  opacity: 0.6;
+  pointer-events: none;
+  animation: introStripes 6s linear infinite;
+}
+.intro-inner {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  padding: 2rem;
+  position: relative;
+}
+.intro-logo {
+  width: clamp(150px, 24vw, 300px);
+  height: auto;
   opacity: 0;
-  transform: translateY(6px);
-  animation: plIn 0.5s var(--ease) 0.05s forwards;
+  filter: drop-shadow(0 10px 34px rgba(46,155,255,0.35));
+  animation: introLogo 0.7s var(--ease) 0.1s forwards, introGlow 3s ease-in-out 0.8s infinite;
+  will-change: transform, opacity;
 }
-#preloader img { width: 46px; height: 46px; border-radius: 10px; }
-#preloader .pl-name {
-  font-family: var(--serif);
-  font-size: 1.4rem;
-  letter-spacing: -0.01em;
+.intro-text { display: flex; flex-direction: column; gap: 0.12em; }
+.intro-line {
+  position: relative;
+  overflow: hidden;
+  font-family: var(--sans);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.02;
   color: var(--white);
+  opacity: 0;
+  transform: translateY(14px);
+  animation: introLine 0.6s var(--ease) forwards;
 }
-#preloader .pl-bar {
-  position: absolute;
-  bottom: 0; left: 0;
-  height: 2px;
-  width: 0;
-  background: linear-gradient(90deg, var(--blue-deep), var(--blue-bright));
-  animation: plBar 0.95s var(--ease) 0.15s forwards;
+.intro-line.l1 { font-size: clamp(2rem, 5vw, 3.9rem); animation-delay: 0.5s; }
+.intro-line.l2 {
+  font-size: clamp(1.7rem, 4.4vw, 3.4rem);
+  background: linear-gradient(90deg, var(--blue) 0%, var(--blue-bright) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  animation-delay: 0.66s;
 }
-@keyframes plIn  { to { opacity: 1; transform: none; } }
-@keyframes plBar { to { width: 100%; } }
-@keyframes plHide { to { opacity: 0; visibility: hidden; pointer-events: none; } }
-body.loaded #preloader { pointer-events: none; }
+.intro-line.l3 {
+  font-size: clamp(0.95rem, 2.3vw, 1.6rem);
+  font-weight: 600;
+  color: var(--text-soft);
+  letter-spacing: 0.12em;
+  animation-delay: 0.82s;
+}
+/* scan sweep across the name */
+.intro-line::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(46,155,255,0.5), transparent);
+  transform: translateX(-100%);
+  animation: introScan 2.2s ease-out 1s infinite;
+}
+@keyframes introLogo { to { opacity: 1; transform: none; } }
+@keyframes introLine { to { opacity: 1; transform: none; } }
+@keyframes introGlow {
+  50% { filter: drop-shadow(0 10px 44px rgba(46,155,255,0.6)); }
+}
+@keyframes introScan { to { transform: translateX(100%); } }
+@keyframes introStripes { to { background-position: 0 24px; } }
+@keyframes introOut {
+  to { opacity: 0; visibility: hidden; pointer-events: none; transform: scale(1.02); filter: blur(6px); }
+}
+@media (max-width: 640px) {
+  .intro-inner { flex-direction: column; gap: 1.6rem; text-align: center; }
+  .intro-text { align-items: center; }
+}
 
 /* ---------- Header ---------- */
 .site-header {

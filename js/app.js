@@ -5,14 +5,14 @@
 (function () {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- Preloader ----------
-     Dismissal is CSS-driven (guaranteed, independent of JS/GSAP).
-     JS only removes it fully from the tree once the fade completes. */
-  const preloader = document.getElementById('preloader');
-  if (preloader) {
-    const kill = () => { preloader.style.display = 'none'; };
-    preloader.addEventListener('animationend', (e) => { if (e.animationName === 'plHide') kill(); });
-    setTimeout(kill, 2200); // safety net
+  /* ---------- Intro ----------
+     The reveal and fade-out are CSS-driven (guaranteed, independent of JS).
+     JS only removes the overlay from the tree once the fade completes. */
+  const intro = document.getElementById('intro');
+  if (intro) {
+    const kill = () => { intro.style.display = 'none'; };
+    intro.addEventListener('animationend', (e) => { if (e.animationName === 'introOut') kill(); });
+    setTimeout(kill, 4200); // safety net
   }
 
   /* ---------- Sticky header state ---------- */
