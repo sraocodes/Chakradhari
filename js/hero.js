@@ -1,8 +1,10 @@
 /* =========================================================
    Chakradhari — Hero animation
-   Scientific observations, models and open tools gather around a
-   physical system. Communicates: open scientific work can become
-   serious applied R&D.
+   A model graph resolves at the centre of orbiting data rings,
+   observed by a scanning instrument and traced by a signal
+   waveform. Communicates: open scientific work, computation and
+   observation converge into applied R&D. Domain-neutral — no
+   single subject (agriculture, AI, etc.) is implied.
    Built on GSAP. Respects prefers-reduced-motion.
    ========================================================= */
 (function () {
@@ -13,21 +15,23 @@
   const $ = (s, ctx = scene) => ctx.querySelector(s);
   const $$ = (s, ctx = document) => Array.from(ctx.querySelectorAll(s));
 
-  const stem = $('#stem');
-  const roots = $$('.root', scene);
-  const leaves = $$('.leaf', scene);
-  const seed = $('#seed');
-  const plantGlow = $('#plantGlow');
+  const edges = $$('.edge', scene);
+  const mainEdge = $('#mainEdge');
+  const crossLinks = $('#crossLinks');
+  const nodes = $$('.node', scene);
+  const core = $('#core');
+  const coreGlow = $('#coreGlow');
   const ripples = $('#ripples');
-  const satellite = $('#satellite');
-  const satBody = $('#satBody');
+  const instrument = $('#instrument');
+  const instrumentBody = $('#instrumentBody');
   const beam = $('#beam');
   const connectors = $('#connectors');
+  const waveTrack = $('#waveTrack');
   const chips = $$('.data-chip');
   const rings = $$('.ring', scene);
 
-  // Attach points (svg coords) for model nodes so they resolve from their centers.
-  const leafOrigins = ['232 330', '344 318', '280 246'];
+  // Attach points (svg coords) for node centres so scale resolves correctly.
+  const nodeOrigins = ['264 186', '364 238', '347 347', '213 347', '193 239'];
 
   // Prime drawable strokes
   function prime(path) {
@@ -40,78 +44,89 @@
   function staticFallback() {
     // Everything already drawn in the SVG markup; just reveal chips/glow.
     $$('.data-chip').forEach(c => { c.style.opacity = 1; c.style.transform = 'none'; });
-    const g = document.getElementById('plantGlow'); if (g) g.setAttribute('opacity', '0.6');
+    const g = document.getElementById('coreGlow'); if (g) g.setAttribute('opacity', '0.6');
     const c = document.getElementById('connectors'); if (c) c.setAttribute('opacity', '1');
-    const s = document.getElementById('satellite'); if (s) s.setAttribute('opacity', '1');
+    const i = document.getElementById('instrument'); if (i) i.setAttribute('opacity', '1');
+    const x = document.getElementById('crossLinks'); if (x) x.setAttribute('opacity', '0.6');
+    const r = document.getElementById('ripples'); if (r) r.setAttribute('opacity', '0.7');
     particles(true);
   }
 
   if (reduce) { staticFallback(); return; }
 
   // Initial hidden state
-  gsap.set([stem, ...roots], { visibility: 'visible' });
-  prime(stem);
-  roots.forEach(prime);
-  gsap.set(leaves, { scale: 0, opacity: 0 });
-  leaves.forEach((lf, i) => gsap.set(lf, { svgOrigin: leafOrigins[i] || '280 320' }));
-  gsap.set(seed, { scale: 0.4, opacity: 0, svgOrigin: '280 392' });
-  gsap.set(plantGlow, { opacity: 0 });
+  gsap.set([mainEdge, ...edges], { visibility: 'visible' });
+  prime(mainEdge);
+  edges.forEach(prime);
+  gsap.set(nodes, { scale: 0, opacity: 0 });
+  nodes.forEach((n, i) => gsap.set(n, { svgOrigin: nodeOrigins[i] || '280 280' }));
+  gsap.set(core, { scale: 0.4, opacity: 0, svgOrigin: '280 280' });
+  gsap.set(coreGlow, { opacity: 0 });
   gsap.set(ripples, { opacity: 0 });
-  gsap.set(satellite, { opacity: 0 });
+  gsap.set(instrument, { opacity: 0 });
   gsap.set(connectors, { opacity: 0 });
+  gsap.set(crossLinks, { opacity: 0 });
   gsap.set(chips, { opacity: 0, y: 8, scale: 0.96 });
+  gsap.set(waveTrack, { x: 0 });
 
-  // Continuous ambient: rings breathe & slowly rotate around the plant
+  // Continuous ambient: rings breathe & slowly rotate around the graph
   gsap.to(rings[0], { rotation: 360, duration: 60, repeat: -1, ease: 'none', svgOrigin: '280 250' });
   gsap.to(rings[1], { rotation: -360, duration: 44, repeat: -1, ease: 'none', svgOrigin: '280 250' });
 
   const tl = gsap.timeline({ delay: 0.5, defaults: { ease: 'power2.out' } });
 
   tl
-    // 1. model core appears and settles into the computation layer
-    .to(seed, { scale: 1, opacity: 1, duration: 0.5, ease: 'back.out(2)' })
-    .to(seed, { y: 4, duration: 0.3 }, '-=0.1')
+    // 1. model core appears and settles
+    .to(core, { scale: 1, opacity: 1, duration: 0.5, ease: 'back.out(2)' })
+    .to(core, { y: 4, duration: 0.3 }, '-=0.1')
 
-    // 2. dependency paths resolve
-    .to(roots, { strokeDashoffset: 0, duration: 1.1, stagger: 0.12, ease: 'power1.inOut' }, '-=0.1')
+    // 2. graph edges resolve
+    .to(edges, { strokeDashoffset: 0, duration: 1.1, stagger: 0.12, ease: 'power1.inOut' }, '-=0.1')
 
-    // 3. model spine rises, core dims into the graph
-    .to(stem, { strokeDashoffset: 0, duration: 1.0, ease: 'power1.inOut' }, '-=0.9')
-    .to(seed, { opacity: 0.15, duration: 0.5 }, '-=0.4')
+    // 3. primary edge draws, core dims into the graph
+    .to(mainEdge, { strokeDashoffset: 0, duration: 1.0, ease: 'power1.inOut' }, '-=0.9')
+    .to(core, { opacity: 0.15, duration: 0.5 }, '-=0.4')
 
     // 4. soft glow of activity
-    .to(plantGlow, { opacity: 0.55, duration: 0.8 }, '-=0.6')
+    .to(coreGlow, { opacity: 0.55, duration: 0.8 }, '-=0.6')
 
     // 5. model nodes resolve
-    .to(leaves, { scale: 1, opacity: 1, duration: 0.55, stagger: 0.14, ease: 'back.out(1.7)' }, '-=0.5')
+    .to(nodes, { scale: 1, opacity: 1, duration: 0.55, stagger: 0.14, ease: 'back.out(1.7)' }, '-=0.5')
 
-    // 6. observations arrive and the physical system answers
-    .to(satellite, { opacity: 1, duration: 0.5 }, '-=0.3')
-    .fromTo(satBody, { x: -40 }, { x: 0, duration: 1.4, ease: 'sine.inOut' }, '<')
+    // 6. graph texture: secondary cross-links fade in
+    .to(crossLinks, { opacity: 0.6, duration: 0.6 }, '-=0.2')
+
+    // 7. instrument arrives, signal field radiates outward
+    .to(instrument, { opacity: 1, duration: 0.5 }, '-=0.3')
+    .fromTo(instrumentBody, { x: -40 }, { x: 0, duration: 1.4, ease: 'sine.inOut' }, '<')
     .to(ripples, { opacity: 1, duration: 0.6 }, '-=0.9')
 
-    // 7. connectors + data chips resolve around the plant
+    // 8. connectors + data chips resolve around the graph
     .to(connectors, { opacity: 1, duration: 0.6 }, '-=0.4')
     .to(chips, { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.12, ease: 'back.out(1.6)' }, '-=0.3')
 
-    // 8. settle into a gentle idle loop
+    // 9. settle into a gentle idle loop
     .add(idle);
 
   function idle() {
     // beam sweep
     gsap.to(beam, { opacity: 0.2, duration: 1.6, yoyo: true, repeat: -1, ease: 'sine.inOut' });
-    // satellite drift
-    gsap.to(satBody, { x: 12, duration: 5, yoyo: true, repeat: -1, ease: 'sine.inOut' });
-    // ripple breathing
-    gsap.to(ripples, { opacity: 0.55, scale: 1.04, transformOrigin: '280px 392px',
+    // instrument drift
+    gsap.to(instrumentBody, { x: 12, duration: 5, yoyo: true, repeat: -1, ease: 'sine.inOut' });
+    // signal field breathing
+    gsap.to(ripples, { opacity: 0.55, scale: 1.04, transformOrigin: '280px 280px',
       duration: 2.6, yoyo: true, repeat: -1, ease: 'sine.inOut' });
-    // model marker drift
-    gsap.to(leaves, { rotation: 2.5, duration: 3.2, yoyo: true, repeat: -1, ease: 'sine.inOut',
-      svgOrigin: '280 340', stagger: { each: 0.2, yoyo: true } });
+    // node drift
+    gsap.to(nodes, { rotation: 2.5, duration: 3.2, yoyo: true, repeat: -1, ease: 'sine.inOut',
+      svgOrigin: '280 280', stagger: { each: 0.2, yoyo: true } });
     // chips float
     chips.forEach((c, i) => {
       gsap.to(c, { y: (i % 2 ? -6 : 6), duration: 2.4 + i * 0.3, yoyo: true, repeat: -1, ease: 'sine.inOut' });
     });
+    // signal trace scrolls continuously (seamless loop: track is two copies, width 480)
+    if (waveTrack) {
+      gsap.to(waveTrack, { x: -480, duration: 9, ease: 'none', repeat: -1 });
+    }
   }
 
   // ---------- Particle field (data signals drifting up) ----------

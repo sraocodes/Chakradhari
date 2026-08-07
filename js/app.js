@@ -71,8 +71,31 @@
     revealTargets.forEach(el => io.observe(el));
   }
 
+  /* ---------- Content filters (progressive enhancement) ----------
+     Toolbar buttons filter sibling cards by data-type. Falls back to
+     showing every card when JS doesn't run, since nothing starts hidden. */
+  document.querySelectorAll('.filter-toolbar[data-filter-target]').forEach(toolbar => {
+    const cards = Array.from(document.querySelectorAll(toolbar.dataset.filterTarget));
+    const buttons = Array.from(toolbar.querySelectorAll('.filter-pill'));
+    if (!cards.length || !buttons.length) return;
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        buttons.forEach(b => {
+          const active = b === btn;
+          b.classList.toggle('is-active', active);
+          b.setAttribute('aria-pressed', String(active));
+        });
+        cards.forEach(card => {
+          const match = filter === 'all' || card.dataset.type === filter;
+          card.classList.toggle('is-hidden', !match);
+        });
+      });
+    });
+  });
+
   /* ---------- Active nav link on scroll ---------- */
-  const sections = ['open-lab', 'domains', 'courses', 'consulting', 'about']
+  const sections = ['explore', 'open-lab', 'research', 'work-with-us', 'about']
     .map(id => document.getElementById(id))
     .filter(Boolean);
   const navLinks = new Map(

@@ -46,13 +46,16 @@
       </a>
 
       <nav class="nav" id="nav">
+        <a href="#explore" class="nav-link">Explore</a>
         <a href="#open-lab" class="nav-link">Open Lab</a>
-        <a href="#domains" class="nav-link">Domains</a>
-        <a href="#courses" class="nav-link">Courses</a>
-        <a href="#consulting" class="nav-link">Consulting</a>
+        <a href="#research" class="nav-link">Research</a>
+        <a href="#work-with-us" class="nav-link">Work With Us</a>
         <a href="#about" class="nav-link">About</a>
-        <a href="https://www.youtube.com/@ComputeStories" class="nav-icon" target="_blank" rel="noopener" aria-label="Compute Stories on YouTube" title="Compute Stories">
+        <a href="https://www.youtube.com/@ComputeStories" class="nav-icon yt" target="_blank" rel="noopener" aria-label="Compute Stories on YouTube" title="Compute Stories">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.8 2.8 0 0 0-2-2c-1.8-.5-7.6-.5-7.6-.5s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2A29.4 29.4 0 0 0 2 12a29.4 29.4 0 0 0 .4 4.8 2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2A29.4 29.4 0 0 0 22 12a29.4 29.4 0 0 0-.4-4.8Z"/><path d="m10 15.4 5.2-3.4L10 8.6v6.8Z"/></svg>
+        </a>
+        <a href="https://github.com/sraocodes" class="nav-icon gh" target="_blank" rel="noopener" aria-label="Chakradhari founders on GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.5 9.5 0 0 1 5 0c1.9-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.85-2.35 4.7-4.58 4.94.36.31.68.92.68 1.85v2.75c0 .26.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
         </a>
         <a href="#contact" class="btn btn-primary">Discuss a problem</a>
       </nav>
@@ -71,17 +74,17 @@
         <div class="hero-copy">
           <span class="eyebrow" data-reveal>Open scientific knowledge, sustained by applied work</span>
           <h1 data-reveal>
-            Chakradhari Computational
-            <span class="accent">Technologies</span>.
+            Science, openly explored.
+            <span class="accent">Seriously applied</span>.
           </h1>
           <p class="hero-lead" data-reveal>
-            <strong>Science should travel.</strong> We explain it openly, build with it,
-            and work with researchers, universities and companies on problems that need
-            deeper scientific and engineering involvement.
+            Chakradhari Computational Technologies explains difficult science, builds
+            tools in the open, and works with researchers and organisations to solve
+            specialised scientific problems.
           </p>
           <div class="hero-cta" data-reveal>
-            <a href="#open-lab" class="btn btn-primary">Explore our work</a>
-            <a href="#consulting" class="btn btn-ghost">Work with us</a>
+            <a href="#explore" class="btn btn-primary">Explore our science</a>
+            <a href="#work-with-us" class="btn btn-ghost">Work with us</a>
           </div>
           <a class="hero-channel" href="https://www.youtube.com/@ComputeStories" target="_blank" rel="noopener" data-reveal>
             <span class="play-dot" aria-hidden="true">
@@ -99,16 +102,12 @@
           </div>
         </div>
 
-        <!-- Animated hero: scientific observations, models and open tools connecting around a physical system -->
-        <div class="hero-stage" id="stage" aria-label="Animation: scientific observations, models and open tools connecting around a physical system" role="img">
+        <!-- Animated hero: a resolving model graph, observed and traced by signal -->
+        <div class="hero-stage" id="stage" aria-label="Animation: a network of scientific model nodes resolves at the centre of orbiting data rings, observed by a scanning instrument and traced by a signal waveform" role="img">
           <canvas class="particles" id="particles"></canvas>
           <svg class="scene" id="scene" viewBox="0 0 560 560" fill="none" aria-hidden="true">
             <defs>
-              <linearGradient id="soilGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#0F1826"/>
-                <stop offset="1" stop-color="#070A10"/>
-              </linearGradient>
-              <linearGradient id="stemGrad" x1="0" y1="1" x2="0" y2="0">
+              <linearGradient id="edgeGrad" x1="0" y1="1" x2="1" y2="0">
                 <stop offset="0" stop-color="#2E9BFF"/>
                 <stop offset="1" stop-color="#57E0A6"/>
               </linearGradient>
@@ -116,6 +115,9 @@
                 <stop offset="0" stop-color="#2E9BFF" stop-opacity="0.5"/>
                 <stop offset="1" stop-color="#2E9BFF" stop-opacity="0"/>
               </radialGradient>
+              <clipPath id="waveClip">
+                <rect x="40" y="478" width="480" height="46"/>
+              </clipPath>
             </defs>
 
             <!-- orbital data rings -->
@@ -124,59 +126,71 @@
               <ellipse class="ring" cx="280" cy="250" rx="180" ry="70" stroke="var(--line-blue)" stroke-width="1" stroke-dasharray="3 7"/>
             </g>
 
-            <!-- measurement ripples -->
+            <!-- signal field radiating from the model core -->
             <g id="ripples" opacity="0">
-              <ellipse cx="280" cy="392" rx="70" ry="16" stroke="var(--blue)" stroke-width="1.2" opacity="0.5"/>
-              <ellipse cx="280" cy="392" rx="120" ry="27" stroke="var(--blue)" stroke-width="1" opacity="0.3"/>
-              <ellipse cx="280" cy="392" rx="170" ry="38" stroke="var(--blue)" stroke-width="1" opacity="0.16"/>
+              <circle cx="280" cy="280" r="60" stroke="var(--blue)" stroke-width="1.2" opacity="0.5"/>
+              <circle cx="280" cy="280" r="100" stroke="var(--blue)" stroke-width="1" opacity="0.3"/>
+              <circle cx="280" cy="280" r="140" stroke="var(--blue)" stroke-width="1" opacity="0.16"/>
             </g>
 
-            <!-- computation layer -->
-            <path d="M40 392 H520 V520 H40 Z" fill="url(#soilGrad)"/>
-            <path d="M40 392 H520" stroke="var(--line)" stroke-width="1"/>
-            <line x1="40" y1="392" x2="520" y2="392" stroke="var(--blue)" stroke-width="2" opacity="0.25"/>
+            <!-- glow behind the model graph -->
+            <circle id="coreGlow" cx="280" cy="280" r="120" fill="url(#glow)" opacity="0"/>
 
-            <!-- glow behind model graph -->
-            <circle id="plantGlow" cx="280" cy="330" r="120" fill="url(#glow)" opacity="0"/>
-
-            <!-- dependency paths -->
-            <g id="roots" stroke="#3a4a63" stroke-width="2" stroke-linecap="round" fill="none">
-              <path class="root" d="M280 392 C 278 430, 264 452, 244 476"/>
-              <path class="root" d="M280 392 C 282 430, 300 450, 322 470"/>
-              <path class="root" d="M280 392 C 280 440, 280 470, 280 500"/>
+            <!-- graph edges: core to outer nodes -->
+            <g id="edges" stroke="#3a4a63" stroke-width="2" stroke-linecap="round" fill="none">
+              <path class="edge" d="M280 280 C 274 250, 267 218, 264 186"/>
+              <path class="edge" d="M280 280 C 320 267, 344 258, 347 347"/>
+              <path class="edge" d="M280 280 C 260 313, 240 330, 213 347"/>
+              <path class="edge" d="M280 280 C 240 265, 215 254, 194 240"/>
             </g>
 
-            <!-- model spine -->
-            <path id="stem" d="M280 392 C 280 356, 280 320, 280 286"
-                  stroke="url(#stemGrad)" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <!-- primary edge, highlighted -->
+            <path id="mainEdge" d="M280 280 C 315 264, 344 254, 366 240"
+                  stroke="url(#edgeGrad)" stroke-width="4" stroke-linecap="round" fill="none"/>
 
-            <!-- scientific model nodes -->
-            <g id="leaves">
-              <circle class="leaf" cx="232" cy="330" r="16" fill="#2E9BFF"/>
-              <rect class="leaf" x="328" y="302" width="32" height="32" rx="4" fill="#57E0A6"/>
-              <path class="leaf" d="M280 218 L306 260 H254 Z" fill="#EAF0FA"/>
+            <!-- secondary cross-links (graph texture) -->
+            <g id="crossLinks" stroke="var(--line-blue)" stroke-width="1" stroke-dasharray="2 6" fill="none" opacity="0">
+              <path d="M264 186 C 300 200, 335 215, 366 240"/>
+              <path d="M213 347 C 245 320, 265 285, 194 240"/>
+            </g>
+
+            <!-- model nodes -->
+            <g id="nodes">
+              <circle class="node" cx="264" cy="186" r="13" fill="#EAF0FA"/>
+              <rect class="node" x="350" y="224" width="28" height="28" rx="5" fill="#57E0A6"/>
+              <circle class="node" cx="347" cy="347" r="14" fill="#2E9BFF"/>
+              <circle class="node" cx="213" cy="347" r="11" fill="#2E9BFF"/>
+              <rect class="node" x="180" y="226" width="26" height="26" rx="5" fill="#5AB4FF"/>
             </g>
 
             <!-- model core -->
-            <circle id="seed" cx="280" cy="392" r="10" fill="#5AB4FF"/>
+            <circle id="core" cx="280" cy="280" r="10" fill="#5AB4FF"/>
 
             <!-- observation instrument + scan beam -->
-            <g id="satellite" opacity="0">
-              <g id="satBody" transform="translate(120,96)">
+            <g id="instrument" opacity="0">
+              <g id="instrumentBody" transform="translate(120,96)">
                 <rect x="-9" y="-6" width="18" height="12" rx="2" fill="var(--white)"/>
                 <rect x="-28" y="-4" width="14" height="8" rx="1" fill="var(--blue-bright)"/>
                 <rect x="14" y="-4" width="14" height="8" rx="1" fill="var(--blue-bright)"/>
               </g>
-              <path id="beam" d="M120 102 L 232 300 L 328 300 Z" fill="var(--blue)" opacity="0.10"/>
-              <line id="beamEdge1" x1="120" y1="102" x2="232" y2="300" stroke="var(--blue)" stroke-width="1" opacity="0.4"/>
-              <line id="beamEdge2" x1="120" y1="102" x2="328" y2="300" stroke="var(--blue)" stroke-width="1" opacity="0.4"/>
+              <path id="beam" d="M120 102 L 264 186 L 366 240 Z" fill="var(--blue)" opacity="0.10"/>
+              <line id="beamEdge1" x1="120" y1="102" x2="264" y2="186" stroke="var(--blue)" stroke-width="1" opacity="0.4"/>
+              <line id="beamEdge2" x1="120" y1="102" x2="366" y2="240" stroke="var(--blue)" stroke-width="1" opacity="0.4"/>
             </g>
 
             <!-- data connectors from model graph to chips -->
             <g id="connectors" stroke="var(--line-blue)" stroke-width="1" fill="none" opacity="0">
-              <path d="M300 300 C 360 290, 400 260, 452 232"/>
-              <path d="M262 322 C 200 330, 150 348, 108 372"/>
-              <path d="M296 262 C 350 250, 392 214, 430 150"/>
+              <path d="M366 240 C 400 232, 430 220, 452 200"/>
+              <path d="M213 347 C 160 355, 118 366, 96 372"/>
+              <path d="M194 240 C 150 216, 110 176, 92 150"/>
+            </g>
+
+            <!-- scrolling signal trace -->
+            <g clip-path="url(#waveClip)">
+              <g id="waveTrack" stroke="var(--blue)" stroke-width="1.3" fill="none" opacity="0.4">
+                <path d="M40 501 C 55 489, 70 513, 85 501 S 115 489, 130 501 S 160 513, 175 501 S 205 489, 220 501 S 250 513, 265 501 S 295 489, 310 501 S 340 513, 355 501 S 385 489, 400 501 S 430 513, 445 501 S 475 489, 490 501 S 505 501, 520 501"/>
+                <path d="M40 501 C 55 489, 70 513, 85 501 S 115 489, 130 501 S 160 513, 175 501 S 205 489, 220 501 S 250 513, 265 501 S 295 489, 310 501 S 340 513, 355 501 S 385 489, 400 501 S 430 513, 445 501 S 475 489, 490 501 S 505 501, 520 501" transform="translate(480,0)"/>
+              </g>
             </g>
           </svg>
 
@@ -187,7 +201,7 @@
           <span class="data-chip"      style="left:6%;  top:64%">
             <i></i> open notebooks
           </span>
-          <span class="data-chip leaf" style="left:70%; top:16%">
+          <span class="data-chip accent" style="left:70%; top:16%">
             <i></i> simulation
           </span>
           <span class="data-chip"      style="left:2%;  top:30%">
@@ -230,6 +244,64 @@
       </div>
     </section>
 
+    <!-- ============ FEATURED SCIENTIFIC WORK ============ -->
+    <section class="band featured-band" id="featured">
+      <div class="wrap section-head" data-reveal>
+        <span class="eyebrow">Featured work</span>
+        <h2>A sample of what Chakradhari is producing.</h2>
+        <p>
+          Video, code, notebooks and research notes are different windows into the same
+          laboratory. This set will grow as Explore, Open Lab and Research fill out.
+        </p>
+      </div>
+
+      <div class="wrap">
+        <div class="channel-grid" data-reveal-stagger>
+
+          <article class="channel-card live">
+            <div class="channel-top">
+              <span class="content-badge">Video</span>
+              <span class="status">Live now</span>
+            </div>
+            <h3>Compute Stories</h3>
+            <p>Our first public series on computational science, numerical methods and scientific programming.</p>
+            <a href="https://www.youtube.com/@ComputeStories" target="_blank" rel="noopener">Watch on YouTube</a>
+          </article>
+
+          <article class="channel-card">
+            <div class="channel-top">
+              <span class="content-badge">Open source</span>
+              <span class="status">Planned</span>
+            </div>
+            <h3>Scientific Python toolboxes</h3>
+            <p>Reusable components for modelling, analysis and visualisation, released openly where appropriate.</p>
+            <a href="#open-lab">See Open Lab</a>
+          </article>
+
+          <article class="channel-card">
+            <div class="channel-top">
+              <span class="content-badge">Paper</span>
+              <span class="status">Placeholder</span>
+            </div>
+            <h3>[Founder publication — placeholder]</h3>
+            <p>A sample structure for a founder publication, ready to be replaced with a real paper, summary and DOI.</p>
+            <a href="#research">See Research</a>
+          </article>
+
+          <article class="channel-card">
+            <div class="channel-top">
+              <span class="content-badge">Notebook</span>
+              <span class="status">Planned</span>
+            </div>
+            <h3>Digital twin notebooks</h3>
+            <p>Small, inspectable prototypes connecting observations, model states and uncertainty.</p>
+            <a href="#open-lab">See Open Lab</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
     <!-- ============ ETHOS / THE NAME ============ -->
     <section class="band ethos" id="ethos">
       <div class="wrap ethos-grid">
@@ -255,16 +327,15 @@
       </div>
     </section>
 
-    <!-- ============ OPEN LAB ============ -->
-    <section class="band" id="open-lab">
+    <!-- ============ EXPLORE ============ -->
+    <section class="band" id="explore">
       <div class="wrap section-head" data-reveal>
-        <span class="eyebrow">Open Lab</span>
-        <h2>Explore what we are studying, building and teaching.</h2>
+        <span class="eyebrow">Explore</span>
+        <h2>Public science from Chakradhari.</h2>
         <p>
-          We believe scientific expertise should be demonstrated, not advertised. Open Lab
-          is where Chakradhari's public work gathers: explainers, articles, notebooks,
-          simulations, repositories, tutorials, courses and scientist conversations. It
-          begins with Compute Stories and grows carefully from there.
+          We believe scientific expertise should be demonstrated, not advertised. Explore
+          is where our public explanations gather: videos, articles, papers, notes,
+          demonstrations, podcasts and scientist conversations.
         </p>
       </div>
 
@@ -272,11 +343,10 @@
         <div class="lab-toolbar" data-reveal>
           <span>Videos</span>
           <span>Articles</span>
-          <span>GitHub</span>
-          <span>Tutorials</span>
-          <span>Courses</span>
+          <span>Papers</span>
+          <span>Notes</span>
           <span>Interviews</span>
-          <span>Simulations</span>
+          <span>Podcasts</span>
         </div>
 
         <div class="channel-grid" data-reveal-stagger>
@@ -324,12 +394,50 @@
           <article class="channel-card">
             <div class="channel-top">
               <span class="status">In development</span>
+              <span class="channel-type">Future Chakradhari format</span>
+            </div>
+            <h3>Scientist Conversations</h3>
+            <p>Researchers discussing the ideas, methods and judgement behind their actual work.</p>
+            <div class="channel-path"><span>Watch</span><span>Read</span><span>Go deeper</span></div>
+          </article>
+
+          <article class="channel-card">
+            <div class="channel-top">
+              <span class="status">In development</span>
               <span class="channel-type">Future Chakradhari channel</span>
             </div>
             <h3>Agriculture &amp; Earth Systems</h3>
             <p>Remote sensing, modelling and technologies for understanding managed landscapes, soils, water and crops.</p>
             <div class="channel-path"><span>Watch</span><span>Build</span><span>Go deeper</span></div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ OPEN LAB ============ -->
+    <section class="band open-lab-band" id="open-lab">
+      <div class="wrap section-head" data-reveal>
+        <span class="eyebrow">Open Lab</span>
+        <h2>Software, code, notebooks, models and experiments.</h2>
+        <p>
+          Open Lab is where shared science becomes inspectable work. When useful and
+          responsible, we publish code, notebooks, datasets, simulations and research
+          tools so researchers can read the method, run the example and adapt the idea.
+          The list below is a plan for what Open Lab will hold — nothing here is live yet
+          except the code we publish directly on GitHub as it is written.
+        </p>
+        <a class="card-link" href="https://github.com/sraocodes" target="_blank" rel="noopener" style="margin-top:1rem;">Follow the code on GitHub</a>
+      </div>
+
+      <div class="wrap">
+        <div class="lab-toolbar filter-toolbar" data-reveal data-filter-target="#open-lab .cap-grid .cap" role="group" aria-label="Filter Open Lab by type">
+          <button type="button" class="filter-pill is-active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter-pill" data-filter="toolbox" aria-pressed="false">Toolboxes</button>
+          <button type="button" class="filter-pill" data-filter="code" aria-pressed="false">Code</button>
+          <button type="button" class="filter-pill" data-filter="notebook" aria-pressed="false">Notebooks</button>
+          <button type="button" class="filter-pill" data-filter="article" aria-pressed="false">Articles</button>
+          <button type="button" class="filter-pill" data-filter="video" aria-pressed="false">Video</button>
+          <button type="button" class="filter-pill" data-filter="dataset" aria-pressed="false">Datasets</button>
         </div>
 
         <div class="toolbox-panel" data-reveal>
@@ -347,60 +455,52 @@
 
         <div class="cap-grid lab-grid" data-reveal-stagger>
 
-          <article class="cap">
-            <span class="cap-no">Planned project</span>
+          <article class="cap" data-domain="scientific-software" data-type="toolbox">
+            <span class="cap-no">Planned &middot; Placeholder</span>
             <h3>Scientific Python toolboxes</h3>
             <p>Reusable components for modelling, analysis, visualisation and research workflows, released openly where appropriate.</p>
             <div class="resource-links"><span>MIT where suitable</span><span>Docs</span><span>GitHub</span></div>
             <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 9 4 12l4 3M16 9l4 3-4 3M14 4l-4 16"/></svg>
           </article>
 
-          <article class="cap">
-            <span class="cap-no">Planned project</span>
+          <article class="cap" data-domain="scientific-software" data-type="code">
+            <span class="cap-no">Planned &middot; Placeholder</span>
             <h3>Rebuilding legacy scientific models</h3>
             <p>A reproducible format for modernising older research codes and documenting the assumptions behind them.</p>
             <div class="resource-links"><span>Article</span><span>Notebook</span><span>GitHub</span></div>
             <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 9 4 12l4 3M16 9l4 3-4 3M14 4l-4 16"/></svg>
           </article>
 
-          <article class="cap">
-            <span class="cap-no">Planned series</span>
+          <article class="cap" data-domain="photonics" data-type="video">
+            <span class="cap-no">Planned &middot; Placeholder</span>
             <h3>Understanding photonic systems computationally</h3>
             <p>Visual and numerical explanations of optical systems, electromagnetic modelling and photonic structures.</p>
             <div class="resource-links"><span>Video</span><span>Simulation</span><span>Source code</span></div>
             <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c3 3 3 13 0 16M12 4c-3 3-3 13 0 16"/></svg>
           </article>
 
-          <article class="cap">
-            <span class="cap-no">Research walkthrough</span>
+          <article class="cap" data-domain="agriculture-earth-systems" data-type="article">
+            <span class="cap-no">Planned &middot; Placeholder</span>
             <h3>Recovering missing observations in Earth systems</h3>
             <p>Examples of how satellite data, field measurements and models can be combined when observations are incomplete.</p>
             <div class="resource-links"><span>Article</span><span>Notebook</span><span>Dataset notes</span></div>
             <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12M6 21h12M8 3v5l-4 9a3 3 0 0 0 3 4h10a3 3 0 0 0 3-4l-4-9V3"/></svg>
           </article>
 
-          <article class="cap">
-            <span class="cap-no">Interview format</span>
-            <h3>Conversations with working scientists</h3>
-            <p>Long-form interviews about methods, research culture, open tools and the decisions behind scientific work.</p>
-            <div class="resource-links"><span>Video</span><span>Transcript</span><span>Reading list</span></div>
-            <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c4 5 7 8 7 12a7 7 0 0 1-14 0c0-4 3-7 7-12Z"/></svg>
-          </article>
-
-          <article class="cap">
-            <span class="cap-no">Open format</span>
+          <article class="cap" data-domain="digital-twins" data-type="notebook">
+            <span class="cap-no">Planned &middot; Placeholder</span>
             <h3>Digital twin notebooks</h3>
             <p>Small, inspectable prototypes that connect observations, model states, simulations and uncertainty.</p>
             <div class="resource-links"><span>Notebook</span><span>Demo</span><span>Code</span></div>
             <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="8" height="8" rx="1"/><rect x="13" y="12" width="8" height="8" rx="1"/><path d="M11 8h4a2 2 0 0 1 2 2v2"/></svg>
           </article>
 
-          <article class="cap">
-            <span class="cap-no">Course pathway</span>
-            <h3>Scientific computing tutorials</h3>
-            <p>Short teaching modules that connect equations, code, datasets and interpretation for researchers and students.</p>
-            <div class="resource-links"><span>Tutorial</span><span>Exercises</span><span>Notes</span></div>
-            <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="7" r="3"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2M12 10v3"/></svg>
+          <article class="cap" data-domain="agriculture-earth-systems" data-type="dataset">
+            <span class="cap-no">Planned &middot; Placeholder</span>
+            <h3>Research-ready environmental datasets</h3>
+            <p>Curated public datasets and derived products, documented well enough for others to reuse in their own research.</p>
+            <div class="resource-links"><span>Dataset notes</span><span>Docs</span><span>GitHub</span></div>
+            <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>
           </article>
 
         </div>
@@ -411,57 +511,71 @@
     <section class="band approach" id="approach">
       <div class="wrap approach-grid">
         <div class="section-head" data-reveal style="margin-bottom:0">
-          <span class="eyebrow">Knowledge cycle</span>
+          <span class="eyebrow">The Chakradhari cycle</span>
           <h2>Applied work makes the public work sharper.</h2>
           <p>
-            We learn by preparing explanations, courses, models and software. Applied
-            projects then expose us to real constraints. What can responsibly be shared
-            comes back as better teaching, reusable tools and clearer scientific notes.
+            We learn by preparing explanations, models and software. Applied projects then
+            expose us to real constraints. What can responsibly be shared comes back as
+            better teaching, reusable tools and clearer scientific notes — a loop, not a
+            one-way pipeline.
           </p>
         </div>
 
-        <div class="approach-list" data-reveal-stagger>
-          <div class="approach-item">
-            <span class="idx">01</span>
-            <div>
-              <h4>Learn</h4>
-              <p>We investigate subjects seriously before turning them into a video, course, model, notebook or article.</p>
-            </div>
+        <div class="approach-right">
+          <div class="cycle-diagram" data-reveal aria-hidden="true">
+            <svg viewBox="0 0 260 260" fill="none">
+              <circle cx="130" cy="130" r="96" stroke="var(--line)" stroke-width="1.5"/>
+              <circle class="cycle-pulse" cx="130" cy="130" r="96" stroke="var(--blue-bright)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="90 513" transform="rotate(-90 130 130)"/>
+              <g class="cycle-node"><circle cx="130" cy="34" r="5" fill="var(--blue-bright)"/><text x="130" y="16" text-anchor="middle">01</text></g>
+              <g class="cycle-node"><circle cx="226" cy="130" r="5" fill="var(--blue-bright)"/><text x="240" y="134" text-anchor="start">02</text></g>
+              <g class="cycle-node"><circle cx="130" cy="226" r="5" fill="var(--blue-bright)"/><text x="130" y="250" text-anchor="middle">03</text></g>
+              <g class="cycle-node"><circle cx="34" cy="130" r="5" fill="var(--blue-bright)"/><text x="20" y="134" text-anchor="end">04</text></g>
+            </svg>
           </div>
-          <div class="approach-item">
-            <span class="idx">02</span>
-            <div>
-              <h4>Explain and build</h4>
-              <p>Public explanations and open implementations make the thinking inspectable and useful beyond one project.</p>
+
+          <div class="approach-list" data-reveal-stagger>
+            <div class="approach-item">
+              <span class="idx">01</span>
+              <div>
+                <h4>Learn</h4>
+                <p>We investigate subjects seriously before turning them into a video, model, notebook or article.</p>
+              </div>
             </div>
-          </div>
-          <div class="approach-item">
-            <span class="idx">03</span>
-            <div>
-              <h4>Apply</h4>
-              <p>Organisations bring difficult versions of scientific, software, AI or modelling problems that need sustained attention.</p>
+            <div class="approach-item">
+              <span class="idx">02</span>
+              <div>
+                <h4>Explain and build</h4>
+                <p>Public explanations and open implementations make the thinking inspectable and useful beyond one project.</p>
+              </div>
             </div>
-          </div>
-          <div class="approach-item">
-            <span class="idx">04</span>
-            <div>
-              <h4>Share back where possible</h4>
-              <p>Client data, proprietary designs and unpublished research stay private. General lessons can become public tools, notes and teaching.</p>
+            <div class="approach-item">
+              <span class="idx">03</span>
+              <div>
+                <h4>Apply</h4>
+                <p>Organisations bring difficult versions of scientific, software, AI or modelling problems that need sustained attention.</p>
+              </div>
+            </div>
+            <div class="approach-item">
+              <span class="idx">04</span>
+              <div>
+                <h4>Share back where possible</h4>
+                <p>Client data, proprietary designs and unpublished research stay private. General lessons can become public tools, notes and teaching.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ SCIENTIFIC DOMAINS ============ -->
-    <section class="band" id="domains">
+    <!-- ============ SCIENTIFIC WORLDS ============ -->
+    <section class="band" id="scientific-worlds">
       <div class="wrap section-head" data-reveal>
-        <span class="eyebrow">Scientific domains</span>
-        <h2>Channels for serious scientific work.</h2>
+        <span class="eyebrow">Scientific worlds</span>
+        <h2>The subjects travel across everything we do.</h2>
         <p>
-          These domains are not separate businesses. They are scientific channels where
-          Chakradhari explains, builds and applies expertise. The structure is designed to
-          grow as new researchers and subjects join the company.
+          Domains are not departments or separate businesses. Each scientific world can
+          produce videos, articles, code, notebooks, courses, training and applied R&amp;D
+          engagements.
         </p>
       </div>
 
@@ -490,6 +604,13 @@
           </article>
 
           <article class="focus-card">
+            <span class="tag">Radar &amp; Remote Sensing</span>
+            <h3>Sensing systems and signal interpretation</h3>
+            <p>Radar systems, SAR, microwave sensing, time-series analysis, sensor fusion and scientific interpretation.</p>
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 12a8 8 0 0 1 16 0M7 12a5 5 0 0 1 10 0M10 12a2 2 0 0 1 4 0M12 14v7"/></svg>
+          </article>
+
+          <article class="focus-card">
             <span class="tag">AI Systems &amp; Computing Architecture</span>
             <h3>AI for scientific and technical work</h3>
             <p>Scientific machine learning, AI-assisted research, agentic workflows, evaluation, surrogate modelling and computing architecture.</p>
@@ -514,11 +635,139 @@
       </div>
     </section>
 
-    <!-- ============ COURSES ============ -->
-    <section class="band courses-band" id="courses">
+    <!-- ============ RESEARCH ============ -->
+    <section class="band research-band" id="research">
       <div class="wrap section-head" data-reveal>
-        <span class="eyebrow">Courses</span>
-        <h2>Teaching grounded in active scientific work.</h2>
+        <span class="eyebrow">Research</span>
+        <h2>Publications, projects and the people behind them.</h2>
+        <p>
+          Chakradhari's applied work grows out of the founders' research background. This
+          section is built to hold that record as it is added — shown here with clearly
+          labelled placeholder entries so the structure can be populated later.
+        </p>
+      </div>
+
+      <div class="wrap">
+
+        <!--
+          Publication card field schema (repeat per entry):
+          type badge, year, title, authors, venue, DOI/link, domain,
+          plain-language summary, optional related code/video/dataset.
+          No real publications are recorded yet — entries below are placeholders.
+        -->
+        <div class="research-subhead" data-reveal>
+          <h3>Publications</h3>
+          <span class="placeholder-flag">Sample structure — placeholder entries</span>
+        </div>
+
+        <div class="pub-list" data-reveal-stagger>
+          <article class="pub-card" data-domain="hydrology">
+            <div class="pub-top">
+              <span class="content-badge">Paper</span>
+              <span class="pub-year">20XX</span>
+            </div>
+            <h4 class="pub-title">[Publication title — placeholder]</h4>
+            <p class="pub-authors">[Author names] &middot; <span>[Journal / conference — placeholder]</span></p>
+            <p class="pub-summary">[Plain-language summary of the question and contribution — placeholder text until a real publication is added.]</p>
+            <div class="resource-links"><span>DOI — placeholder</span><span>Related code</span></div>
+          </article>
+
+          <article class="pub-card" data-domain="computational-science">
+            <div class="pub-top">
+              <span class="content-badge">Paper</span>
+              <span class="pub-year">20XX</span>
+            </div>
+            <h4 class="pub-title">[Publication title — placeholder]</h4>
+            <p class="pub-authors">[Author names] &middot; <span>[Journal / conference — placeholder]</span></p>
+            <p class="pub-summary">[Plain-language summary of the question and contribution — placeholder text until a real publication is added.]</p>
+            <div class="resource-links"><span>DOI — placeholder</span><span>Related notebook</span></div>
+          </article>
+
+          <article class="pub-card" data-domain="signal-processing">
+            <div class="pub-top">
+              <span class="content-badge">Paper</span>
+              <span class="pub-year">20XX</span>
+            </div>
+            <h4 class="pub-title">[Publication title — placeholder]</h4>
+            <p class="pub-authors">[Author names] &middot; <span>[Journal / conference — placeholder]</span></p>
+            <p class="pub-summary">[Plain-language summary of the question and contribution — placeholder text until a real publication is added.]</p>
+            <div class="resource-links"><span>DOI — placeholder</span></div>
+          </article>
+
+          <article class="pub-card" data-domain="photonics">
+            <div class="pub-top">
+              <span class="content-badge">Paper</span>
+              <span class="pub-year">20XX</span>
+            </div>
+            <h4 class="pub-title">[Publication title — placeholder]</h4>
+            <p class="pub-authors">[Author names] &middot; <span>[Journal / conference — placeholder]</span></p>
+            <p class="pub-summary">[Plain-language summary of the question and contribution — placeholder text until a real publication is added.]</p>
+            <div class="resource-links"><span>DOI — placeholder</span><span>Related video</span></div>
+          </article>
+        </div>
+
+        <!-- Research project card field schema: status, title, description,
+             domain, related publications/code/media. Placeholders until confirmed. -->
+        <div class="research-subhead" data-reveal>
+          <h3>Research projects</h3>
+          <span class="placeholder-flag">Illustrative structure</span>
+        </div>
+
+        <div class="cap-grid lab-grid" data-reveal-stagger>
+          <article class="cap" data-domain="agriculture-earth-systems">
+            <span class="cap-no">In progress &middot; Placeholder</span>
+            <h4>[Digital twin prototype for soil–water systems]</h4>
+            <p>[Short description of the research question, method and current status — placeholder text.]</p>
+            <div class="resource-links"><span>Publications</span><span>Code</span><span>Media</span></div>
+            <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="8" height="8" rx="1"/><rect x="13" y="12" width="8" height="8" rx="1"/><path d="M11 8h4a2 2 0 0 1 2 2v2"/></svg>
+          </article>
+
+          <article class="cap" data-domain="photonics">
+            <span class="cap-no">Planned &middot; Placeholder</span>
+            <h4>[Computational photonics demonstration]</h4>
+            <p>[Short description of the research question, method and current status — placeholder text.]</p>
+            <div class="resource-links"><span>Publications</span><span>Simulation</span><span>Code</span></div>
+            <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c3 3 3 13 0 16M12 4c-3 3-3 13 0 16"/></svg>
+          </article>
+
+          <article class="cap" data-domain="scientific-software">
+            <span class="cap-no">Planned &middot; Placeholder</span>
+            <h4>[Legacy scientific model modernisation]</h4>
+            <p>[Short description of the research question, method and current status — placeholder text.]</p>
+            <div class="resource-links"><span>Article</span><span>Code</span><span>Notebook</span></div>
+            <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 9 4 12l4 3M16 9l4 3-4 3M14 4l-4 16"/></svg>
+          </article>
+        </div>
+
+        <!-- People -->
+        <div class="research-subhead" data-reveal>
+          <h3>People</h3>
+          <a class="card-link" href="#about">Full founder profiles</a>
+        </div>
+
+        <div class="work-grid" data-reveal-stagger>
+          <article class="t-card">
+            <span class="t-no">Co-founder</span>
+            <h4>Sathyanarayan Rao</h4>
+            <p>Scientific ML &middot; Soil &amp; hydrology &middot; Remote sensing &middot; HPC</p>
+            <a class="card-link" href="https://www.drsrao.com" target="_blank" rel="noopener">www.drsrao.com</a>
+          </article>
+          <article class="t-card">
+            <span class="t-no">Co-founder</span>
+            <h4>Praveen Ranganath</h4>
+            <p>Signal processing &middot; Applied physics &middot; ML systems &middot; Engineering</p>
+            <a class="card-link" href="https://praveenr.com" target="_blank" rel="noopener">www.praveenr.com</a>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ LEARN ============ -->
+    <section class="band courses-band" id="learn">
+      <div class="wrap section-head" data-reveal>
+        <span class="eyebrow">Learn</span>
+        <h2>Advanced courses for people who need to use the methods.</h2>
         <p>
           Chakradhari's courses and workshops are designed for researchers, students and
           technical professionals who need to understand methods deeply enough to use them,
@@ -547,14 +796,15 @@
       </div>
     </section>
 
-    <!-- ============ CONSULTING ============ -->
-    <section class="band consulting-band" id="consulting">
+    <!-- ============ WORK WITH US ============ -->
+    <section class="band consulting-band" id="work-with-us">
       <div class="wrap section-head" data-reveal>
         <span class="eyebrow">Work with Chakradhari</span>
-        <h2>Need to go deeper?</h2>
+        <h2>Applied R&amp;D for scientific problems worth thinking about.</h2>
         <p>
           Our public work shows how we think. We work with research groups, universities
-          and companies on problems requiring specialised scientific expertise.
+          and companies on specialised scientific problems, from modelling and software to
+          research strategy, grant development and specialised training.
         </p>
       </div>
       <div class="wrap">
@@ -565,14 +815,9 @@
             <p>Convert, validate and extend legacy scientific software into reproducible Python workflows and maintainable research tools.</p>
           </article>
           <article class="t-card">
-            <span class="t-no">Sensing</span>
-            <h3>Remote Sensing for Environmental R&amp;D</h3>
-            <p>SAR, optical remote sensing, time-series analysis, scientific interpretation and modelling for Earth-system questions.</p>
-          </article>
-          <article class="t-card">
-            <span class="t-no">Data</span>
-            <h3>Environmental Data &amp; Public-Data ML</h3>
-            <p>Curating public environmental datasets, building research-ready data products, and training or evaluating ML models for academic and applied teams.</p>
+            <span class="t-no">Sensing &amp; data</span>
+            <h3>Remote Sensing &amp; Environmental Data</h3>
+            <p>SAR, optical remote sensing, time-series analysis and research-ready environmental data products for Earth-system questions.</p>
           </article>
           <article class="t-card">
             <span class="t-no">Modelling</span>
@@ -586,19 +831,22 @@
           </article>
           <article class="t-card">
             <span class="t-no">Physics</span>
-            <h3>Photonics Modelling &amp; Training</h3>
-            <p>Computational photonics, optics, applied-physics modelling and specialist teaching for teams working with light-based systems.</p>
+            <h3>Photonics Modelling</h3>
+            <p>Computational photonics, optics and applied-physics modelling for teams working with light-based systems.</p>
           </article>
           <article class="t-card">
-            <span class="t-no">Strategy</span>
-            <h3>Research Strategy &amp; Grant Development</h3>
-            <p>State-of-the-art analysis, technical methodology, modelling plans, work packages and scientific positioning.</p>
-          </article>
-          <article class="t-card">
-            <span class="t-no">Courses</span>
+            <span class="t-no">Training</span>
             <h3>Advanced University Courses</h3>
             <p>Custom two-to-five day programmes for postgraduate students, researchers and industry teams.</p>
           </article>
+        </div>
+
+        <div class="work-principles" data-reveal-stagger>
+          <span>Understand deeply</span>
+          <span>Explain clearly</span>
+          <span>Build reproducibly</span>
+          <span>Validate seriously</span>
+          <span>Share what can be shared</span>
         </div>
 
         <div class="consulting-cta" data-reveal>
@@ -612,7 +860,7 @@
     <section class="band" id="about">
       <div class="wrap section-head" data-reveal>
         <span class="eyebrow">About</span>
-        <h2>Research, education and application should be closer.</h2>
+        <h2>Founded by scientists who love doing science and explaining it.</h2>
         <p>
           Chakradhari Computational Technologies was created by scientists and engineers
           who believe the boundary between research, education and application should be
@@ -646,6 +894,7 @@
               <span>Remote sensing</span>
               <span>HPC</span>
             </div>
+            <a class="card-link" href="#research" style="margin-top:1.1rem;">Publications &amp; research</a>
             <span class="f-name">Sathyanarayan Rao</span>
           </article>
 
@@ -667,6 +916,7 @@
               <span>ML systems</span>
               <span>Engineering</span>
             </div>
+            <a class="card-link" href="#research" style="margin-top:1.1rem;">Publications &amp; research</a>
             <span class="f-name">Praveen Ranganath</span>
           </article>
 
@@ -679,11 +929,11 @@
       <div class="wrap contact-grid">
         <div data-reveal>
           <span class="eyebrow">Contact</span>
-          <h2>Bring us a scientific problem.</h2>
+          <h2>Have a scientific problem worth thinking about?</h2>
           <p style="color:var(--text-soft); margin-top:1.2rem; max-width:34rem;">
-            If you are working on a modelling, AI, computing-architecture, scientific
-            software, training or proposal problem that needs real depth, start a
-            conversation with the founders.
+            We work with researchers, universities, R&amp;D teams and companies on
+            specialised scientific problems, from modelling and software to training and
+            research strategy.
           </p>
           <p style="color:var(--text-faint); margin-top:1.4rem; font-size:0.95rem;">Reach the founders directly through their sites:</p>
           <div class="contact-sites">
@@ -716,10 +966,12 @@
           <span>Chakradhari</span>
         </a>
         <nav class="footer-nav">
+          <a href="#explore">Explore</a>
           <a href="#open-lab">Open Lab</a>
-          <a href="#domains">Domains</a>
-          <a href="#courses">Courses</a>
-          <a href="#consulting">Consulting</a>
+          <a href="#scientific-worlds">Domains</a>
+          <a href="#research">Research</a>
+          <a href="#learn">Learn</a>
+          <a href="#work-with-us">Work With Us</a>
           <a href="#about">About</a>
           <a href="https://www.youtube.com/@ComputeStories" target="_blank" rel="noopener">Compute Stories</a>
           <a href="#contact">Contact</a>
