@@ -10,9 +10,16 @@
      JS only removes the overlay from the tree once the fade completes. */
   const intro = document.getElementById('intro');
   if (intro) {
-    const kill = () => { intro.style.display = 'none'; };
-    intro.addEventListener('animationend', (e) => { if (e.animationName === 'introOut') kill(); });
-    setTimeout(kill, 4200); // safety net
+    if (document.documentElement.classList.contains('intro-seen')) {
+      intro.style.display = 'none';
+    } else {
+      try {
+        sessionStorage.setItem('cctech-intro-seen', '1');
+      } catch (_) {}
+      const kill = () => { intro.style.display = 'none'; };
+      intro.addEventListener('animationend', (e) => { if (e.animationName === 'introOut') kill(); });
+      setTimeout(kill, 4200); // safety net
+    }
   }
 
   /* ---------- Sticky header state ---------- */
@@ -65,7 +72,7 @@
   }
 
   /* ---------- Active nav link on scroll ---------- */
-  const sections = ['capabilities', 'approach', 'focus', 'team']
+  const sections = ['open-lab', 'domains', 'courses', 'consulting', 'about']
     .map(id => document.getElementById(id))
     .filter(Boolean);
   const navLinks = new Map(

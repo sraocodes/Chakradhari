@@ -1,6 +1,6 @@
 /* =========================================================
    Chakradhari — Global tokens & reset
-   Theme: black · blue · white  (modern AI research company)
+   Theme: black · blue · white  (scientific open R&D company)
    ========================================================= */
 
 :root {
@@ -24,7 +24,7 @@
   --blue-deep:  #0A6ED1;
   --blue-dim:   #1B4E7A;
 
-  /* Vegetation accent (used sparingly, in the hero growth only) */
+  /* Secondary accent, used sparingly in scientific markers */
   --leaf:       #35C48A;
   --leaf-bright:#57E0A6;
 
@@ -42,8 +42,8 @@
   /* Rhythm */
   --maxw: 1200px;
   --gutter: clamp(1.25rem, 5vw, 4rem);
-  --radius: 14px;
-  --radius-lg: 22px;
+  --radius: 8px;
+  --radius-lg: 8px;
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }

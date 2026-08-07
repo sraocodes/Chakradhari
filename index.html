@@ -3,9 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Chakradhari builds AI for agriculture, water, and Earth observation. We combine satellite data, field sensors, and physics with machine learning to build models teams can trust." />
+  <meta name="description" content="Chakradhari Computational Technologies is a science-and-engineering knowledge company and applied R&D studio. We explain science, build tools, and work on difficult scientific problems." />
   <meta name="theme-color" content="#080B11" />
-  <title>Chakradhari · AI for Agriculture, Water and Earth Systems</title>
+  <title>Chakradhari Computational Technologies · Science, Engineering and Applied R&D</title>
+  <script>
+    try {
+      if (sessionStorage.getItem('cctech-intro-seen') === '1') {
+        document.documentElement.classList.add('intro-seen');
+      }
+    } catch (_) {}
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,11 +46,15 @@
       </a>
 
       <nav class="nav" id="nav">
-        <a href="#capabilities" class="nav-link">Capabilities</a>
-        <a href="#approach" class="nav-link">Approach</a>
-        <a href="#focus" class="nav-link">Focus</a>
-        <a href="#team" class="nav-link">Team</a>
-        <a href="#contact" class="btn btn-primary">Start a conversation</a>
+        <a href="#open-lab" class="nav-link">Open Lab</a>
+        <a href="#domains" class="nav-link">Domains</a>
+        <a href="#courses" class="nav-link">Courses</a>
+        <a href="#consulting" class="nav-link">Consulting</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="https://www.youtube.com/@ComputeStories" class="nav-icon" target="_blank" rel="noopener" aria-label="Compute Stories on YouTube" title="Compute Stories">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.8 2.8 0 0 0-2-2c-1.8-.5-7.6-.5-7.6-.5s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2A29.4 29.4 0 0 0 2 12a29.4 29.4 0 0 0 .4 4.8 2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2A29.4 29.4 0 0 0 22 12a29.4 29.4 0 0 0-.4-4.8Z"/><path d="m10 15.4 5.2-3.4L10 8.6v6.8Z"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-primary">Discuss a problem</a>
       </nav>
 
       <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -58,29 +69,38 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow" data-reveal>AI for the physical world</span>
+          <span class="eyebrow" data-reveal>Open scientific knowledge, sustained by applied work</span>
           <h1 data-reveal>
-            AI for agriculture, water, and the
-            <span class="accent">living world</span>.
+            Chakradhari Computational
+            <span class="accent">Technologies</span>.
           </h1>
           <p class="hero-lead" data-reveal>
-            We combine satellite data, field sensors, and physics with machine learning.
-            The result is models that stay reliable where data is sparse and noisy, built
-            for teams that have to make real decisions.
+            <strong>Science should travel.</strong> We explain it openly, build with it,
+            and work with researchers, universities and companies on problems that need
+            deeper scientific and engineering involvement.
           </p>
           <div class="hero-cta" data-reveal>
-            <a href="#capabilities" class="btn btn-primary">What we build</a>
-            <a href="#contact" class="btn btn-ghost">Work with us</a>
+            <a href="#open-lab" class="btn btn-primary">Explore our work</a>
+            <a href="#consulting" class="btn btn-ghost">Work with us</a>
           </div>
+          <a class="hero-channel" href="https://www.youtube.com/@ComputeStories" target="_blank" rel="noopener" data-reveal>
+            <span class="play-dot" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8.5 6.8v10.4L16.5 12 8.5 6.8Z"/></svg>
+            </span>
+            <span>
+              <b>Compute Stories is live now</b>
+              <em>Our first experiment in public computational science.</em>
+            </span>
+          </a>
           <div class="hero-meta" data-reveal>
-            <div class="m"><b>Soil&nbsp;&amp;&nbsp;water</b><span>domain focus</span></div>
-            <div class="m"><b>Satellite&nbsp;+&nbsp;field</b><span>multi-source fusion</span></div>
-            <div class="m"><b>Physics&nbsp;+&nbsp;ML</b><span>modelling with uncertainty</span></div>
+            <div class="m"><b>Explain</b><span>videos, articles, teaching</span></div>
+            <div class="m"><b>Build</b><span>software, models, notebooks</span></div>
+            <div class="m"><b>Apply</b><span>consulting, architecture, R&amp;D</span></div>
           </div>
         </div>
 
-        <!-- Animated hero: a seed germinates while EO + AI signals gather around it -->
-        <div class="hero-stage" id="stage" aria-label="Animation: a seed germinating into a plant while satellite and AI data layers form around it" role="img">
+        <!-- Animated hero: scientific observations, models and open tools connecting around a physical system -->
+        <div class="hero-stage" id="stage" aria-label="Animation: scientific observations, models and open tools connecting around a physical system" role="img">
           <canvas class="particles" id="particles"></canvas>
           <svg class="scene" id="scene" viewBox="0 0 560 560" fill="none" aria-hidden="true">
             <defs>
@@ -104,43 +124,43 @@
               <ellipse class="ring" cx="280" cy="250" rx="180" ry="70" stroke="var(--line-blue)" stroke-width="1" stroke-dasharray="3 7"/>
             </g>
 
-            <!-- soil-moisture ripples -->
+            <!-- measurement ripples -->
             <g id="ripples" opacity="0">
               <ellipse cx="280" cy="392" rx="70" ry="16" stroke="var(--blue)" stroke-width="1.2" opacity="0.5"/>
               <ellipse cx="280" cy="392" rx="120" ry="27" stroke="var(--blue)" stroke-width="1" opacity="0.3"/>
               <ellipse cx="280" cy="392" rx="170" ry="38" stroke="var(--blue)" stroke-width="1" opacity="0.16"/>
             </g>
 
-            <!-- soil -->
+            <!-- computation layer -->
             <path d="M40 392 H520 V520 H40 Z" fill="url(#soilGrad)"/>
             <path d="M40 392 H520" stroke="var(--line)" stroke-width="1"/>
             <line x1="40" y1="392" x2="520" y2="392" stroke="var(--blue)" stroke-width="2" opacity="0.25"/>
 
-            <!-- glow behind plant -->
+            <!-- glow behind model graph -->
             <circle id="plantGlow" cx="280" cy="330" r="120" fill="url(#glow)" opacity="0"/>
 
-            <!-- root system -->
+            <!-- dependency paths -->
             <g id="roots" stroke="#3a4a63" stroke-width="2" stroke-linecap="round" fill="none">
               <path class="root" d="M280 392 C 278 430, 264 452, 244 476"/>
               <path class="root" d="M280 392 C 282 430, 300 450, 322 470"/>
               <path class="root" d="M280 392 C 280 440, 280 470, 280 500"/>
             </g>
 
-            <!-- stem -->
+            <!-- model spine -->
             <path id="stem" d="M280 392 C 280 356, 280 320, 280 286"
                   stroke="url(#stemGrad)" stroke-width="4" stroke-linecap="round" fill="none"/>
 
-            <!-- leaves -->
+            <!-- scientific model nodes -->
             <g id="leaves">
-              <path class="leaf" d="M280 330 C 250 322, 224 332, 214 356 C 246 360, 272 352, 280 330 Z" fill="#35C48A"/>
-              <path class="leaf" d="M280 312 C 310 304, 336 314, 346 338 C 314 342, 288 334, 280 312 Z" fill="#57E0A6"/>
-              <path class="leaf" d="M280 300 C 262 276, 268 250, 280 232 C 292 250, 298 276, 280 300 Z" fill="#35C48A"/>
+              <circle class="leaf" cx="232" cy="330" r="16" fill="#2E9BFF"/>
+              <rect class="leaf" x="328" y="302" width="32" height="32" rx="4" fill="#57E0A6"/>
+              <path class="leaf" d="M280 218 L306 260 H254 Z" fill="#EAF0FA"/>
             </g>
 
-            <!-- seed -->
-            <ellipse id="seed" cx="280" cy="392" rx="9" ry="12" fill="#5AB4FF"/>
+            <!-- model core -->
+            <circle id="seed" cx="280" cy="392" r="10" fill="#5AB4FF"/>
 
-            <!-- satellite + scan beam -->
+            <!-- observation instrument + scan beam -->
             <g id="satellite" opacity="0">
               <g id="satBody" transform="translate(120,96)">
                 <rect x="-9" y="-6" width="18" height="12" rx="2" fill="var(--white)"/>
@@ -152,7 +172,7 @@
               <line id="beamEdge2" x1="120" y1="102" x2="328" y2="300" stroke="var(--blue)" stroke-width="1" opacity="0.4"/>
             </g>
 
-            <!-- data connectors from plant to chips -->
+            <!-- data connectors from model graph to chips -->
             <g id="connectors" stroke="var(--line-blue)" stroke-width="1" fill="none" opacity="0">
               <path d="M300 300 C 360 290, 400 260, 452 232"/>
               <path d="M262 322 C 200 330, 150 348, 108 372"/>
@@ -162,16 +182,16 @@
 
           <!-- floating data chips (positioned in %) -->
           <span class="data-chip sat"  style="left:60%; top:36%">
-            <i></i> radar &amp; optical
+            <i></i> models &amp; data
           </span>
           <span class="data-chip"      style="left:6%;  top:64%">
-            <i></i> soil moisture
+            <i></i> open notebooks
           </span>
           <span class="data-chip leaf" style="left:70%; top:16%">
-            <i></i> canopy · growth
+            <i></i> simulation
           </span>
           <span class="data-chip"      style="left:2%;  top:30%">
-            <i></i> rainfall · recharge
+            <i></i> research notes
           </span>
         </div>
       </div>
@@ -180,19 +200,33 @@
     </section>
 
     <!-- ============ STATEMENT ============ -->
-    <section class="statement" id="mission">
+    <section class="statement" id="pillars">
       <div class="wrap">
-        <span class="eyebrow" data-reveal>Why we exist</span>
+        <span class="eyebrow" data-reveal>Three-part model</span>
         <p data-reveal>
-          Decisions about food, water and land are made on <em>incomplete evidence</em>.
-          We build the AI that closes the gap.
+          Learn. Explain. Build. Apply. Learn again.
+          <em>Share back</em>.
         </p>
         <p class="sub" data-reveal>
-          Environmental data is sparse and slow. Clouds hide the ground, sensors drift, and
-          satellites miss the moments that matter most. Our systems fill those gaps, show
-          how confident they are, and stay honest when conditions change. We build
-          intelligence you can defend, not dashboards that look convincing until they fail.
+          We investigate scientific and engineering ideas seriously, explain them publicly,
+          build examples around them, and apply the same depth to difficult projects. What
+          can responsibly be made open comes back as better teaching, tools and public
+          scientific knowledge.
         </p>
+        <div class="pillar-strip" data-reveal-stagger>
+          <article>
+            <span>Explain</span>
+            <p>We make difficult science accessible through videos, articles, courses and conversations.</p>
+          </article>
+          <article>
+            <span>Build</span>
+            <p>We turn ideas into open tools, working demonstrations, models, notebooks and code.</p>
+          </article>
+          <article>
+            <span>Apply</span>
+            <p>We work with organisations on problems that need deeper scientific and engineering involvement.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -204,9 +238,9 @@
           <h2>Chakradhari means carrying knowledge.</h2>
           <p>
             The chakra stands for vision, precision, and purposeful action. We read
-            Chakradhari as carrying knowledge forward. In practice that means turning
-            complex environmental and agricultural data into something clear, and turning
-            clarity into decisions that hold up. It shapes how we work.
+            Chakradhari as carrying knowledge forward. In practice that means studying
+            difficult scientific ideas, explaining them openly, building tools around them,
+            and applying them with care when organisations need real systems.
           </p>
         </div>
 
@@ -214,80 +248,159 @@
           <li><span class="lead">We carry</span> knowledge.</li>
           <li><span class="lead">We carry</span> scientific integrity.</li>
           <li><span class="lead">We carry</span> clarity from complexity.</li>
-          <li><span class="lead">We carry</span> responsible AI.</li>
-          <li><span class="lead">We carry</span> decision intelligence for the real world.</li>
+          <li><span class="lead">We carry</span> open tools into practice.</li>
+          <li><span class="lead">We carry</span> research into useful systems.</li>
+          <li><span class="lead">We build</span> from India for the wider world.</li>
         </ul>
       </div>
     </section>
 
-    <!-- ============ CAPABILITIES ============ -->
-    <section class="band" id="capabilities">
+    <!-- ============ OPEN LAB ============ -->
+    <section class="band" id="open-lab">
       <div class="wrap section-head" data-reveal>
-        <span class="eyebrow">Capabilities</span>
-        <h2>Eight ways we turn measurement into decisions.</h2>
+        <span class="eyebrow">Open Lab</span>
+        <h2>Explore what we are studying, building and teaching.</h2>
         <p>
-          We organise around problems, not algorithms. Each of these is a different way to
-          take data from the field and turn it into something a team can act on.
+          We believe scientific expertise should be demonstrated, not advertised. Open Lab
+          is where Chakradhari's public work gathers: explainers, articles, notebooks,
+          simulations, repositories, tutorials, courses and scientist conversations. It
+          begins with Compute Stories and grows carefully from there.
         </p>
       </div>
 
       <div class="wrap">
-        <div class="cap-grid" data-reveal-stagger>
+        <div class="lab-toolbar" data-reveal>
+          <span>Videos</span>
+          <span>Articles</span>
+          <span>GitHub</span>
+          <span>Tutorials</span>
+          <span>Courses</span>
+          <span>Interviews</span>
+          <span>Simulations</span>
+        </div>
+
+        <div class="channel-grid" data-reveal-stagger>
+          <article class="channel-card live">
+            <div class="channel-top">
+              <span class="status">Live now</span>
+              <span class="channel-type">A Chakradhari Open Science channel</span>
+            </div>
+            <h3>Compute Stories</h3>
+            <p>Stories, ideas and demonstrations from computational science, numerical methods, modelling and scientific programming.</p>
+            <div class="channel-path"><span>Watch</span><span>Build</span><span>Go deeper</span></div>
+            <a href="https://www.youtube.com/@ComputeStories" target="_blank" rel="noopener">Visit channel</a>
+          </article>
+
+          <article class="channel-card">
+            <div class="channel-top">
+              <span class="status">In development</span>
+              <span class="channel-type">Future Chakradhari channel</span>
+            </div>
+            <h3>AI &amp; AGI Systems</h3>
+            <p>Reasoning systems, AI architecture, agentic workflows, evaluations and the limits of current models.</p>
+            <div class="channel-path"><span>Watch</span><span>Build</span><span>Go deeper</span></div>
+          </article>
+
+          <article class="channel-card">
+            <div class="channel-top">
+              <span class="status">In development</span>
+              <span class="channel-type">Future Chakradhari channel</span>
+            </div>
+            <h3>Photoniverse</h3>
+            <p>Photonics, optics, computational physics and the behaviour of light in engineered systems.</p>
+            <div class="channel-path"><span>Watch</span><span>Build</span><span>Go deeper</span></div>
+          </article>
+
+          <article class="channel-card">
+            <div class="channel-top">
+              <span class="status">In development</span>
+              <span class="channel-type">Future Chakradhari channel</span>
+            </div>
+            <h3>Radar &amp; Sensing</h3>
+            <p>Radar physics, SAR, microwave sensing, signal processing and scientific applications.</p>
+            <div class="channel-path"><span>Watch</span><span>Build</span><span>Go deeper</span></div>
+          </article>
+
+          <article class="channel-card">
+            <div class="channel-top">
+              <span class="status">In development</span>
+              <span class="channel-type">Future Chakradhari channel</span>
+            </div>
+            <h3>Agriculture &amp; Earth Systems</h3>
+            <p>Remote sensing, modelling and technologies for understanding managed landscapes, soils, water and crops.</p>
+            <div class="channel-path"><span>Watch</span><span>Build</span><span>Go deeper</span></div>
+          </article>
+        </div>
+
+        <div class="toolbox-panel" data-reveal>
+          <div>
+            <span class="eyebrow">Open toolboxes</span>
+            <h3>Reusable scientific tools, with serious applied support.</h3>
+          </div>
+          <p>
+            Where unrestricted reuse makes sense, Chakradhari toolboxes can be released
+            under permissive open-source licenses such as MIT. Organisations can then work
+            with us on validation, custom builds, integrations, hosted workflows, data
+            products and model development around those tools.
+          </p>
+        </div>
+
+        <div class="cap-grid lab-grid" data-reveal-stagger>
 
           <article class="cap">
-            <span class="cap-no">01</span>
-            <h3>Agricultural AI</h3>
-            <p>Models for soil moisture, crop stress, irrigation, and growth. Built for field scale, where ground data is thin and every season is different.</p>
-            <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21V9M12 9C12 6 9 3 4 3c0 5 3 6 8 6ZM12 12c0-2 3-4 7-4 0 4-3 4-7 4Z"/></svg>
+            <span class="cap-no">Planned project</span>
+            <h3>Scientific Python toolboxes</h3>
+            <p>Reusable components for modelling, analysis, visualisation and research workflows, released openly where appropriate.</p>
+            <div class="resource-links"><span>MIT where suitable</span><span>Docs</span><span>GitHub</span></div>
+            <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 9 4 12l4 3M16 9l4 3-4 3M14 4l-4 16"/></svg>
           </article>
 
           <article class="cap">
-            <span class="cap-no">02</span>
-            <h3>Earth Observation AI</h3>
-            <p>We turn satellite radar and optical imagery into calibrated, gap-filled products. Retrieval, fusion, and downscaling, all anchored to local measurements.</p>
+            <span class="cap-no">Planned project</span>
+            <h3>Rebuilding legacy scientific models</h3>
+            <p>A reproducible format for modernising older research codes and documenting the assumptions behind them.</p>
+            <div class="resource-links"><span>Article</span><span>Notebook</span><span>GitHub</span></div>
+            <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 9 4 12l4 3M16 9l4 3-4 3M14 4l-4 16"/></svg>
+          </article>
+
+          <article class="cap">
+            <span class="cap-no">Planned series</span>
+            <h3>Understanding photonic systems computationally</h3>
+            <p>Visual and numerical explanations of optical systems, electromagnetic modelling and photonic structures.</p>
+            <div class="resource-links"><span>Video</span><span>Simulation</span><span>Source code</span></div>
             <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c3 3 3 13 0 16M12 4c-3 3-3 13 0 16"/></svg>
           </article>
 
           <article class="cap">
-            <span class="cap-no">03</span>
-            <h3>Scientific AI</h3>
-            <p>Machine learning that respects physics. Hybrid models, parameter estimation, and inverse problems for systems that follow physical laws.</p>
+            <span class="cap-no">Research walkthrough</span>
+            <h3>Recovering missing observations in Earth systems</h3>
+            <p>Examples of how satellite data, field measurements and models can be combined when observations are incomplete.</p>
+            <div class="resource-links"><span>Article</span><span>Notebook</span><span>Dataset notes</span></div>
             <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12M6 21h12M8 3v5l-4 9a3 3 0 0 0 3 4h10a3 3 0 0 0 3-4l-4-9V3"/></svg>
           </article>
 
           <article class="cap">
-            <span class="cap-no">04</span>
-            <h3>Environmental Intelligence</h3>
-            <p>Analytics for watersheds, groundwater, and hydrology. We measure how land and water respond over years, not in single snapshots.</p>
+            <span class="cap-no">Interview format</span>
+            <h3>Conversations with working scientists</h3>
+            <p>Long-form interviews about methods, research culture, open tools and the decisions behind scientific work.</p>
+            <div class="resource-links"><span>Video</span><span>Transcript</span><span>Reading list</span></div>
             <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c4 5 7 8 7 12a7 7 0 0 1-14 0c0-4 3-7 7-12Z"/></svg>
           </article>
 
           <article class="cap">
-            <span class="cap-no">05</span>
-            <h3>Digital Twins</h3>
-            <p>Physics-based simulations, coupled with data. Test scenarios and interventions before you commit them to the ground, with uncertainty included.</p>
+            <span class="cap-no">Open format</span>
+            <h3>Digital twin notebooks</h3>
+            <p>Small, inspectable prototypes that connect observations, model states, simulations and uncertainty.</p>
+            <div class="resource-links"><span>Notebook</span><span>Demo</span><span>Code</span></div>
             <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="8" height="8" rx="1"/><rect x="13" y="12" width="8" height="8" rx="1"/><path d="M11 8h4a2 2 0 0 1 2 2v2"/></svg>
           </article>
 
           <article class="cap">
-            <span class="cap-no">06</span>
-            <h3>Agentic AI Systems</h3>
-            <p>AI agents that carry out multi-step scientific work. They retrieve data, run models, and draft analysis, grounded in evidence with a person in the loop.</p>
+            <span class="cap-no">Course pathway</span>
+            <h3>Scientific computing tutorials</h3>
+            <p>Short teaching modules that connect equations, code, datasets and interpretation for researchers and students.</p>
+            <div class="resource-links"><span>Tutorial</span><span>Exercises</span><span>Notes</span></div>
             <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="7" r="3"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2M12 10v3"/></svg>
-          </article>
-
-          <article class="cap">
-            <span class="cap-no">07</span>
-            <h3>AI Evaluation &amp; Benchmarking</h3>
-            <p>We build the datasets and benchmarks that AI gets measured against. Then we test where models hold, where they break, and whether you can trust them.</p>
-            <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 11l3 3 7-7M4 6h6M4 12h4M4 18h8"/></svg>
-          </article>
-
-          <article class="cap">
-            <span class="cap-no">08</span>
-            <h3>Data Platforms for Science</h3>
-            <p>Pipelines that turn sensors, satellites, and field records into clean datasets. Quality control, provenance, and licensing come built in, so the work stays reproducible.</p>
-            <svg class="cap-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
           </article>
 
         </div>
@@ -298,11 +411,12 @@
     <section class="band approach" id="approach">
       <div class="wrap approach-grid">
         <div class="section-head" data-reveal style="margin-bottom:0">
-          <span class="eyebrow">How we work</span>
-          <h2>Built to survive contact with reality.</h2>
+          <span class="eyebrow">Knowledge cycle</span>
+          <h2>Applied work makes the public work sharper.</h2>
           <p>
-            Environmental systems punish models that only look good on paper. Everything we
-            build is designed to stay grounded when the data is thin and the stakes are high.
+            We learn by preparing explanations, courses, models and software. Applied
+            projects then expose us to real constraints. What can responsibly be shared
+            comes back as better teaching, reusable tools and clearer scientific notes.
           </p>
         </div>
 
@@ -310,43 +424,44 @@
           <div class="approach-item">
             <span class="idx">01</span>
             <div>
-              <h4>Physics as the backbone</h4>
-              <p>We keep physical laws inside the model. Outputs stay physically possible, not just statistically plausible.</p>
+              <h4>Learn</h4>
+              <p>We investigate subjects seriously before turning them into a video, course, model, notebook or article.</p>
             </div>
           </div>
           <div class="approach-item">
             <span class="idx">02</span>
             <div>
-              <h4>Uncertainty as a deliverable</h4>
-              <p>Every estimate carries confidence bounds. Knowing when not to trust a number is as valuable as the number itself.</p>
+              <h4>Explain and build</h4>
+              <p>Public explanations and open implementations make the thinking inspectable and useful beyond one project.</p>
             </div>
           </div>
           <div class="approach-item">
             <span class="idx">03</span>
             <div>
-              <h4>Fusion over single sources</h4>
-              <p>We combine satellites, field sensors, and models. Each covers the others' blind spots, especially when one source goes dark.</p>
+              <h4>Apply</h4>
+              <p>Organisations bring difficult versions of scientific, software, AI or modelling problems that need sustained attention.</p>
             </div>
           </div>
           <div class="approach-item">
             <span class="idx">04</span>
             <div>
-              <h4>Validated against the ground</h4>
-              <p>We test models against independent field data, across seasons. Continuously, not once at the end of a project.</p>
+              <h4>Share back where possible</h4>
+              <p>Client data, proprietary designs and unpublished research stay private. General lessons can become public tools, notes and teaching.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ FOCUS AREAS ============ -->
-    <section class="band" id="focus">
+    <!-- ============ SCIENTIFIC DOMAINS ============ -->
+    <section class="band" id="domains">
       <div class="wrap section-head" data-reveal>
-        <span class="eyebrow">Focus areas</span>
-        <h2>Where our experience runs deepest.</h2>
+        <span class="eyebrow">Scientific domains</span>
+        <h2>Channels for serious scientific work.</h2>
         <p>
-          The team has years of hands-on research in environmental science and Earth
-          observation. These are the areas where we move fastest and know the ground.
+          These domains are not separate businesses. They are scientific channels where
+          Chakradhari explains, builds and applies expertise. The structure is designed to
+          grow as new researchers and subjects join the company.
         </p>
       </div>
 
@@ -354,46 +469,60 @@
         <div class="focus-grid" data-reveal-stagger>
 
           <article class="focus-card">
-            <span class="tag">Agriculture &amp; Soil</span>
-            <h3>Soil moisture &amp; crop-water intelligence</h3>
-            <p>We reconstruct soil moisture and crop-water stress by fusing satellite radar with ground sensors. This fills the monsoon and cloud-cover gaps where standard products go quiet.</p>
+            <span class="tag">Computational Science</span>
+            <h3>Numerical modelling and simulation</h3>
+            <p>Scientific programming, reproducible modelling, numerical experiments and high-performance computing for research problems.</p>
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 7h16M4 12h16M4 17h16M7 4v16M12 4v16M17 4v16"/></svg>
+          </article>
+
+          <article class="focus-card">
+            <span class="tag">Photonics &amp; Applied Physics</span>
+            <h3>Optics and computational physics</h3>
+            <p>Electromagnetic modelling, photonic systems, applied physics demonstrations and physics-based scientific computation.</p>
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M19.1 4.9l-2.8 2.8M7.7 16.3l-2.8 2.8"/></svg>
+          </article>
+
+          <article class="focus-card">
+            <span class="tag">Agriculture &amp; Earth Systems</span>
+            <h3>Soil, water, crops and observation</h3>
+            <p>Remote sensing, soil-water systems, crop modelling, environmental monitoring and agricultural science.</p>
             <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 21V9M12 9C12 6 9 3 4 3c0 5 3 6 8 6ZM12 12c0-2 3-4 7-4 0 4-3 4-7 4Z"/></svg>
           </article>
 
           <article class="focus-card">
-            <span class="tag">Water &amp; Watersheds</span>
-            <h3>Watershed &amp; groundwater analytics</h3>
-            <p>We study how watersheds respond over time. That means measuring the effect of interventions, tracking recharge and water availability, and tying both to decisions on the ground.</p>
-            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3c4 5 7 8 7 12a7 7 0 0 1-14 0c0-4 3-7 7-12Z"/></svg>
+            <span class="tag">AI Systems &amp; Computing Architecture</span>
+            <h3>AI for scientific and technical work</h3>
+            <p>Scientific machine learning, AI-assisted research, agentic workflows, evaluation, surrogate modelling and computing architecture.</p>
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 3h12M6 21h12M8 3v5l-4 9a3 3 0 0 0 3 4h10a3 3 0 0 0 3-4l-4-9V3"/></svg>
           </article>
 
           <article class="focus-card">
-            <span class="tag">Earth Observation</span>
-            <h3>Remote sensing &amp; sensor fusion</h3>
-            <p>Retrieval and fusion methods that make satellite data trustworthy at local scale. Everything is calibrated against ground measurements, not taken on faith.</p>
-            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c3 3 3 13 0 16M12 4c-3 3-3 13 0 16"/></svg>
+            <span class="tag">Digital Twins</span>
+            <h3>Physical systems connected to computation</h3>
+            <p>Models that connect physical systems, observations, uncertainty, simulation and computation for inspection and decision support.</p>
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4" width="8" height="8" rx="1"/><rect x="13" y="12" width="8" height="8" rx="1"/><path d="M11 8h4a2 2 0 0 1 2 2v2"/></svg>
           </article>
 
           <article class="focus-card">
             <span class="tag">Scientific Software</span>
-            <h3>AI-assisted scientific computing</h3>
-            <p>Hybrid physics and ML models, scientific data engineering, and agentic workflows. We help research and engineering teams run, check, and scale their analysis.</p>
-            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 3h12M6 21h12M8 3v5l-4 9a3 3 0 0 0 3 4h10a3 3 0 0 0 3-4l-4-9V3"/></svg>
+            <h3>Research tools that can be reused</h3>
+            <p>Modern scientific computing, reproducible software, model coupling and modernisation of legacy scientific codes.</p>
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M8 9 4 12l4 3M16 9l4 3-4 3M14 4l-4 16"/></svg>
           </article>
 
         </div>
       </div>
     </section>
 
-    <!-- ============ BUILD: DATASETS · BENCHMARKS · AGENTS ============ -->
-    <section class="band build" id="build">
+    <!-- ============ COURSES ============ -->
+    <section class="band courses-band" id="courses">
       <div class="wrap section-head" data-reveal>
-        <span class="eyebrow">What we're building</span>
-        <h2>The data behind trustworthy AI.</h2>
+        <span class="eyebrow">Courses</span>
+        <h2>Teaching grounded in active scientific work.</h2>
         <p>
-          Good AI needs good ground truth. We collect and structure agricultural and
-          environmental data, turn it into benchmarks, and build agents that are measured
-          against them. What we ship can be checked, not just claimed.
+          Chakradhari's courses and workshops are designed for researchers, students and
+          technical professionals who need to understand methods deeply enough to use them,
+          adapt them and question them.
         </p>
       </div>
 
@@ -401,55 +530,98 @@
         <div class="triad" data-reveal-stagger>
           <article class="t-card">
             <span class="t-no">01</span>
-            <h3>Curated datasets</h3>
-            <p>We gather field, sensor, and satellite data and turn it into clean, documented datasets. Clear provenance and licensing, ready for science and machine learning.</p>
+            <h3>Open tutorials</h3>
+            <p>Public teaching material that connects scientific concepts to code, examples and reproducible exercises.</p>
           </article>
           <article class="t-card">
             <span class="t-no">02</span>
-            <h3>Benchmarks &amp; evaluation</h3>
-            <p>We design evaluation sets that test whether AI is accurate, calibrated, and honest on real agricultural and environmental tasks. Not just on generic leaderboards.</p>
+            <h3>University short courses</h3>
+            <p>Compact modules for departments and research groups that want serious training in computational methods.</p>
           </article>
           <article class="t-card">
             <span class="t-no">03</span>
-            <h3>Grounded AI agents</h3>
-            <p>We build agents that retrieve data, run models, and draft analysis. They are measured against those benchmarks, and a person stays in the loop.</p>
+            <h3>Industry workshops</h3>
+            <p>Custom training for R&amp;D teams using modelling, simulation, AI for science, digital twins or scientific software.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ============ AUDIENCES ============ -->
-    <section class="band audiences" id="audiences">
+    <!-- ============ CONSULTING ============ -->
+    <section class="band consulting-band" id="consulting">
       <div class="wrap section-head" data-reveal>
-        <span class="eyebrow">Who we work with</span>
-        <h2>Built for teams that can't get the science wrong.</h2>
+        <span class="eyebrow">Work with Chakradhari</span>
+        <h2>Need to go deeper?</h2>
         <p>
-          We work with organisations where the science has to be right. Where decisions
-          carry weight, and the evidence has to hold up to scrutiny.
+          Our public work shows how we think. We work with research groups, universities
+          and companies on problems requiring specialised scientific expertise.
         </p>
       </div>
       <div class="wrap">
-        <div class="aud-flow" data-reveal>
-          <span>Research organisations</span>
-          <span>Governments</span>
-          <span>NGOs</span>
-          <span>Agri-tech companies</span>
-          <span>Climate-tech startups</span>
-          <span>Engineering companies</span>
-          <span>International funding agencies</span>
+        <div class="work-grid" data-reveal-stagger>
+          <article class="t-card">
+            <span class="t-no">Software</span>
+            <h3>Scientific Python &amp; Model Modernisation</h3>
+            <p>Convert, validate and extend legacy scientific software into reproducible Python workflows and maintainable research tools.</p>
+          </article>
+          <article class="t-card">
+            <span class="t-no">Sensing</span>
+            <h3>Remote Sensing for Environmental R&amp;D</h3>
+            <p>SAR, optical remote sensing, time-series analysis, scientific interpretation and modelling for Earth-system questions.</p>
+          </article>
+          <article class="t-card">
+            <span class="t-no">Data</span>
+            <h3>Environmental Data &amp; Public-Data ML</h3>
+            <p>Curating public environmental datasets, building research-ready data products, and training or evaluating ML models for academic and applied teams.</p>
+          </article>
+          <article class="t-card">
+            <span class="t-no">Modelling</span>
+            <h3>Custom Scientific Modelling</h3>
+            <p>Numerical models, surrogate models, scientific ML, simulation workflows and research prototypes for specialised problems.</p>
+          </article>
+          <article class="t-card">
+            <span class="t-no">AI systems</span>
+            <h3>AI Systems &amp; Computing Architecture</h3>
+            <p>Architecture-level work on AI-enabled scientific workflows, agentic systems, evaluation, data pipelines and computing strategy.</p>
+          </article>
+          <article class="t-card">
+            <span class="t-no">Physics</span>
+            <h3>Photonics Modelling &amp; Training</h3>
+            <p>Computational photonics, optics, applied-physics modelling and specialist teaching for teams working with light-based systems.</p>
+          </article>
+          <article class="t-card">
+            <span class="t-no">Strategy</span>
+            <h3>Research Strategy &amp; Grant Development</h3>
+            <p>State-of-the-art analysis, technical methodology, modelling plans, work packages and scientific positioning.</p>
+          </article>
+          <article class="t-card">
+            <span class="t-no">Courses</span>
+            <h3>Advanced University Courses</h3>
+            <p>Custom two-to-five day programmes for postgraduate students, researchers and industry teams.</p>
+          </article>
+        </div>
+
+        <div class="consulting-cta" data-reveal>
+          <p>Research groups, universities, R&amp;D teams and technical organisations can start with a concrete scientific problem.</p>
+          <a href="#contact" class="btn btn-primary">Discuss a scientific problem</a>
         </div>
       </div>
     </section>
 
-    <!-- ============ TEAM / FOUNDERS ============ -->
-    <section class="band" id="team">
+    <!-- ============ ABOUT / FOUNDERS ============ -->
+    <section class="band" id="about">
       <div class="wrap section-head" data-reveal>
-        <span class="eyebrow">Team</span>
-        <h2>Founded by researchers who work close to the problem.</h2>
+        <span class="eyebrow">About</span>
+        <h2>Research, education and application should be closer.</h2>
         <p>
-          Chakradhari was started by two researchers in physics, computation, and
-          environmental science. We have spent years turning field measurements into models
-          that hold up, and built the company to keep doing exactly that.
+          Chakradhari Computational Technologies was created by scientists and engineers
+          who believe the boundary between research, education and application should be
+          thinner. We study emerging scientific ideas, explain them openly, build tools
+          around them, and collaborate when those ideas need to become real systems. The
+          company sits at the intersection of research depth, engineering and teaching.
+          We are building from India with a world-facing scientific ethic: contribute to
+          national capability, share useful knowledge widely, and work in the spirit of
+          Vasudhaiva Kutumbakam.
         </p>
       </div>
 
@@ -465,8 +637,8 @@
             <p>
               Computational scientist in hydrology, digital agriculture, and scientific
               machine learning. Works on soil, water, and crop modelling, remote sensing,
-              sensor fusion, and high-performance computing. Writes and teaches widely on
-              making computational science accessible.
+              sensor fusion, high-performance computing and scientific software. Writes and
+              teaches widely on making computational science accessible.
             </p>
             <div class="f-tags">
               <span>Scientific ML</span>
@@ -486,8 +658,8 @@
             <p>
               Physicist and engineer turned computational scientist. Works across applied
               physics, machine intelligence, and systems engineering, with a background in
-              radar signal processing, research systems, and machine learning applied to
-              real-world environments.
+              radar signal processing, research systems, scientific software and machine
+              learning applied to real-world environments.
             </p>
             <div class="f-tags">
               <span>Signal processing</span>
@@ -507,10 +679,11 @@
       <div class="wrap contact-grid">
         <div data-reveal>
           <span class="eyebrow">Contact</span>
-          <h2>Let's build something that holds up.</h2>
+          <h2>Bring us a scientific problem.</h2>
           <p style="color:var(--text-soft); margin-top:1.2rem; max-width:34rem;">
-            Running a monitoring programme, funding environmental work, or building an agri-
-            or climate-tech product? If the science has to be right, let's talk.
+            If you are working on a modelling, AI, computing-architecture, scientific
+            software, training or proposal problem that needs real depth, start a
+            conversation with the founders.
           </p>
           <p style="color:var(--text-faint); margin-top:1.4rem; font-size:0.95rem;">Reach the founders directly through their sites:</p>
           <div class="contact-sites">
@@ -543,10 +716,12 @@
           <span>Chakradhari</span>
         </a>
         <nav class="footer-nav">
-          <a href="#capabilities">Capabilities</a>
-          <a href="#approach">Approach</a>
-          <a href="#focus">Focus</a>
-          <a href="#team">Team</a>
+          <a href="#open-lab">Open Lab</a>
+          <a href="#domains">Domains</a>
+          <a href="#courses">Courses</a>
+          <a href="#consulting">Consulting</a>
+          <a href="#about">About</a>
+          <a href="https://www.youtube.com/@ComputeStories" target="_blank" rel="noopener">Compute Stories</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>

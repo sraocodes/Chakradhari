@@ -1,8 +1,8 @@
 /* =========================================================
    Chakradhari — Hero animation
-   A seed germinates into a plant while Earth-observation and
-   AI data layers gather around it. Communicates: AI helps us
-   understand and improve natural systems.
+   Scientific observations, models and open tools gather around a
+   physical system. Communicates: open scientific work can become
+   serious applied R&D.
    Built on GSAP. Respects prefers-reduced-motion.
    ========================================================= */
 (function () {
@@ -26,8 +26,8 @@
   const chips = $$('.data-chip');
   const rings = $$('.ring', scene);
 
-  // Attach points (svg coords) for leaves so they unfurl from the stem
-  const leafOrigins = ['280 330', '280 312', '280 296'];
+  // Attach points (svg coords) for model nodes so they resolve from their centers.
+  const leafOrigins = ['232 330', '344 318', '280 246'];
 
   // Prime drawable strokes
   function prime(path) {
@@ -68,24 +68,24 @@
   const tl = gsap.timeline({ delay: 0.5, defaults: { ease: 'power2.out' } });
 
   tl
-    // 1. seed appears and settles into the soil
+    // 1. model core appears and settles into the computation layer
     .to(seed, { scale: 1, opacity: 1, duration: 0.5, ease: 'back.out(2)' })
     .to(seed, { y: 4, duration: 0.3 }, '-=0.1')
 
-    // 2. roots reach down
+    // 2. dependency paths resolve
     .to(roots, { strokeDashoffset: 0, duration: 1.1, stagger: 0.12, ease: 'power1.inOut' }, '-=0.1')
 
-    // 3. stem rises, seed dims as it becomes a sprout
+    // 3. model spine rises, core dims into the graph
     .to(stem, { strokeDashoffset: 0, duration: 1.0, ease: 'power1.inOut' }, '-=0.9')
     .to(seed, { opacity: 0.15, duration: 0.5 }, '-=0.4')
 
-    // 4. soft glow of "living" signal
+    // 4. soft glow of activity
     .to(plantGlow, { opacity: 0.55, duration: 0.8 }, '-=0.6')
 
-    // 5. leaves unfurl
+    // 5. model nodes resolve
     .to(leaves, { scale: 1, opacity: 1, duration: 0.55, stagger: 0.14, ease: 'back.out(1.7)' }, '-=0.5')
 
-    // 6. satellite arrives and scans; soil-moisture ripples answer
+    // 6. observations arrive and the physical system answers
     .to(satellite, { opacity: 1, duration: 0.5 }, '-=0.3')
     .fromTo(satBody, { x: -40 }, { x: 0, duration: 1.4, ease: 'sine.inOut' }, '<')
     .to(ripples, { opacity: 1, duration: 0.6 }, '-=0.9')
@@ -105,7 +105,7 @@
     // ripple breathing
     gsap.to(ripples, { opacity: 0.55, scale: 1.04, transformOrigin: '280px 392px',
       duration: 2.6, yoyo: true, repeat: -1, ease: 'sine.inOut' });
-    // plant sway
+    // model marker drift
     gsap.to(leaves, { rotation: 2.5, duration: 3.2, yoyo: true, repeat: -1, ease: 'sine.inOut',
       svgOrigin: '280 340', stagger: { each: 0.2, yoyo: true } });
     // chips float
