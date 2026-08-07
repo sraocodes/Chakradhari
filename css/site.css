@@ -998,7 +998,6 @@ section.band { padding: clamp(4.5rem, 10vw, 8rem) 0; position: relative; }
     font-size: 1.15rem;
     font-weight: 500;
   }
-  body.menu-open .nav .nav-icon.yt::after { content: "Compute Stories"; }
   body.menu-open .nav .nav-icon.gh::after { content: "GitHub"; }
   .hero-meta { gap: 1.4rem; }
 }
