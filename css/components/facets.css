@@ -1,0 +1,60 @@
+/* =========================================================
+   Chakradhari — Stealth facets
+   Angular geometry as a quiet running theme: the company's own
+   positioning is literally "stealth", and faceted panel-seam
+   lines are how stealth aircraft scatter radar returns — the same
+   idea as the radar/sensing domain-viz elsewhere on this page,
+   just used as texture instead of an icon. Self-authored SVG line
+   work, no external assets. Kept faint enough to never compete
+   with content: z-index:-1, so it only ever shows in the negative
+   space around cards and text, never behind or through them.
+   ========================================================= */
+@layer components {
+
+  :root {
+    --facet-tile: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%232E9BFF' stroke-opacity='0.55' stroke-width='1'%3E%3Cpath d='M0 70L70 0'/%3E%3Cpath d='M70 0L190 45'/%3E%3Cpath d='M190 45L240 10'/%3E%3Cpath d='M0 70L110 150'/%3E%3Cpath d='M110 150L240 105'/%3E%3Cpath d='M110 150L150 240'/%3E%3Cpath d='M190 45L240 105'/%3E%3Cpath d='M20 240L70 0'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  /* .statement doesn't carry .band (it has its own dedicated rules in
+     sections.css) but should still get the texture; .hero is excluded
+     deliberately — it has neither class, and stays exactly as it was. */
+  section.band::before, .statement::before {
+    content: "";
+    position: absolute; inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.4;
+    background-image: var(--facet-tile);
+    background-size: 240px 240px;
+  }
+  :root[data-theme="light"] :is(section.band, .statement)::before { opacity: 0.22; }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) :is(section.band, .statement)::before { opacity: 0.22; }
+  }
+
+  /* ---------- Chamfered card corner ----------
+     A short diagonal seam cutting the top-right corner, like a
+     chamfered panel edge — reads as an accent mark, not a full
+     clip, so card silhouettes stay exactly as they are. Requires
+     the card to have overflow:hidden (all five already do) so the
+     segment's off-card portion clips cleanly into a corner notch.
+     Shares the same reveal trigger as the border-sweep in cards.css
+     so a card's entrance and hover state assemble together. */
+  .cap::before, .channel-card::before, .t-card::before, .pub-card::before, .focus-card::before {
+    content: "";
+    position: absolute; top: 13px; right: -8px; z-index: 2;
+    width: 32px; height: 1.5px;
+    background: var(--blue-bright);
+    transform: rotate(45deg);
+    transform-origin: center;
+    opacity: 0;
+    transition: opacity .5s var(--ease);
+    pointer-events: none;
+  }
+  .cap:hover::before, .channel-card:hover::before, .t-card:hover::before, .pub-card:hover::before, .focus-card:hover::before,
+  [data-reveal-stagger].in > .channel-card::before,
+  [data-reveal-stagger].in > .t-card::before,
+  [data-reveal-stagger].in > .pub-card::before,
+  [data-reveal-stagger].in > .focus-card::before {
+    opacity: 0.85;
+  }
+}

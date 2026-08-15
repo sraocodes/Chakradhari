@@ -81,6 +81,11 @@
   .signal-divider--mesh .mesh-v { opacity: .55; }
   .signal-divider--mesh .mesh-h { opacity: .3; }
 
+  /* Angular panel-seam zigzag, drawn in once via the existing
+     [data-assemble-line] mechanic — no continuous motion, a sharp
+     counterpoint to the smooth wave divider elsewhere on the page. */
+  .signal-divider--facet .facet-zigzag { stroke: var(--blue-bright); stroke-width: 1.3; fill: none; opacity: .6; }
+
   .signal-divider--radar .base-line { stroke: var(--line); stroke-width: 1; opacity: .3; }
   .signal-divider--radar .scan-dot {
     fill: var(--blue-bright);
