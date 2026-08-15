@@ -138,27 +138,6 @@ html.intro-seen #intro { display: none; }
 }
 .nav a.nav-link:hover { color: var(--white); }
 .nav a.nav-link:hover::after { width: 100%; }
-.nav-icon {
-  width: 38px;
-  height: 38px;
-  display: inline-grid;
-  place-items: center;
-  color: var(--text-soft);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  transition: border-color .25s, color .25s, background .25s, transform .2s var(--ease);
-}
-.nav-icon:hover {
-  color: var(--white);
-  border-color: var(--line-blue);
-  background: rgba(46,155,255,0.08);
-  transform: translateY(-1px);
-}
-.nav-icon svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
-}
 
 .btn {
   display: inline-flex;
@@ -459,7 +438,7 @@ section.band { padding: clamp(4.5rem, 10vw, 8rem) 0; position: relative; }
   white-space: nowrap;
 }
 
-/* ---------- Open Lab grid ---------- */
+/* ---------- Product grid ---------- */
 .cap-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -678,7 +657,7 @@ section.band { padding: clamp(4.5rem, 10vw, 8rem) 0; position: relative; }
 }
 .research-subhead:first-child { margin-top: 0; padding-top: 0; border-top: none; }
 .research-subhead h3 { font-size: 1.3rem; color: var(--white); letter-spacing: -0.01em; }
-.placeholder-flag {
+.stage-flag {
   font-family: var(--mono);
   font-size: 0.68rem;
   letter-spacing: 0.08em;
@@ -802,7 +781,7 @@ section.band { padding: clamp(4.5rem, 10vw, 8rem) 0; position: relative; }
 .t-card :is(h3, h4) { font-size: 1.25rem; margin: 1rem 0 0.6rem; color: var(--white); }
 .t-card p { color: var(--text-soft); font-size: 0.95rem; line-height: 1.55; }
 
-/* ---------- Work With Us ---------- */
+/* ---------- Partnerships ---------- */
 .consulting-band { background: var(--night); border-block: 1px solid var(--line); }
 .work-grid {
   display: grid;
@@ -845,70 +824,10 @@ section.band { padding: clamp(4.5rem, 10vw, 8rem) 0; position: relative; }
   font-size: 1rem;
 }
 
-/* ---------- Founders ---------- */
-.founders-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
-.founder {
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  padding: clamp(1.8rem, 3vw, 2.4rem);
-  background: linear-gradient(180deg, var(--field) 0%, var(--bg-2) 100%);
-  display: flex;
-  flex-direction: column;
-  transition: border-color .35s, transform .35s var(--ease);
-}
-.founder:hover { border-color: var(--line-blue); transform: translateY(-3px); }
-.founder .role { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; color: var(--blue); text-transform: uppercase; }
-.founder .f-site {
-  display: inline-flex; align-items: center; gap: 0.55rem;
-  font-family: var(--serif);
-  font-size: clamp(1.35rem, 2.4vw, 1.7rem);
-  letter-spacing: -0.01em;
-  color: var(--white);
-  margin-top: 0.7rem;
-  transition: color .25s;
-}
-.founder .f-site svg { width: 16px; height: 16px; opacity: 0.6; transition: transform .25s, opacity .25s; }
-.founder .f-site:hover { color: var(--blue-bright); }
-.founder .f-site:hover svg { transform: translate(2px, -2px); opacity: 1; }
-.founder p { color: var(--text-soft); font-size: 0.97rem; margin-top: 1.1rem; }
-.founder .f-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.3rem; }
-.founder .f-tags span { font-size: 0.74rem; color: var(--text-soft); background: rgba(255,255,255,0.05); border: 1px solid var(--line); border-radius: 6px; padding: 0.25rem 0.55rem; }
-.founder .f-name {
-  margin-top: 1.4rem;
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-}
-
 /* ---------- Contact ---------- */
 .contact { background: var(--bg-2); }
 .contact-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 .contact h2 { font-size: clamp(2.2rem, 4.5vw, 3.6rem); color: var(--white); }
-.contact .big-mail {
-  font-family: var(--serif);
-  font-size: clamp(1.4rem, 3vw, 2.1rem);
-  color: var(--blue-bright);
-  display: inline-block;
-  margin-top: 1.4rem;
-  border-bottom: 2px solid transparent;
-  transition: border-color .3s;
-}
-.contact .big-mail:hover { border-color: var(--blue); }
-.contact-sites { display: flex; flex-direction: column; gap: 0.7rem; margin-top: 0.7rem; }
-.contact-sites a {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-family: var(--serif);
-  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
-  color: var(--blue-bright);
-  width: max-content;
-  border-bottom: 2px solid transparent;
-  transition: border-color .3s;
-}
-.contact-sites a svg { opacity: 0.6; transition: transform .25s, opacity .25s; }
-.contact-sites a:hover { border-color: var(--blue); }
-.contact-sites a:hover svg { transform: translate(2px, -2px); opacity: 1; }
 .contact-card {
   background: var(--field);
   border: 1px solid var(--line);
@@ -962,7 +881,7 @@ section.band { padding: clamp(4.5rem, 10vw, 8rem) 0; position: relative; }
   .hero-copy { max-width: none; }
   .cap-grid { grid-template-columns: repeat(2, 1fr); }
   .approach-grid, .ethos-grid { grid-template-columns: 1fr; }
-  .focus-grid, .founders-grid, .contact-grid, .triad, .work-grid, .work-principles, .pub-list { grid-template-columns: 1fr; }
+.focus-grid, .contact-grid, .triad, .work-grid, .work-principles, .pub-list { grid-template-columns: 1fr; }
   .contact-grid { gap: 2rem; }
   .pillar-strip { grid-template-columns: 1fr; }
   .toolbox-panel { grid-template-columns: 1fr; }
@@ -985,20 +904,6 @@ section.band { padding: clamp(4.5rem, 10vw, 8rem) 0; position: relative; }
     box-shadow: 0 24px 40px -30px rgba(0,0,0,.7);
   }
   body.menu-open .nav a.nav-link { font-size: 1.15rem; }
-  body.menu-open .nav .nav-icon {
-    width: auto;
-    height: auto;
-    border: none;
-    border-radius: 0;
-    display: inline-flex;
-    gap: 0.55rem;
-    color: var(--text-soft);
-  }
-  body.menu-open .nav .nav-icon::after {
-    font-size: 1.15rem;
-    font-weight: 500;
-  }
-  body.menu-open .nav .nav-icon.gh::after { content: "GitHub"; }
   .hero-meta { gap: 1.4rem; }
 }
 
