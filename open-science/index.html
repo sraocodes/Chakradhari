@@ -9,9 +9,7 @@
   <script>
     try {
       var storedTheme = localStorage.getItem('cctech-theme');
-      var theme = storedTheme === 'light' || storedTheme === 'dark'
-        ? storedTheme
-        : (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      var theme = (storedTheme === 'light' || storedTheme === 'dark') ? storedTheme : 'dark';
       document.documentElement.setAttribute('data-theme', theme);
       var metaColor = document.querySelector('meta[name="theme-color"]');
       if (metaColor) metaColor.setAttribute('content', theme === 'light' ? '#F7F6F2' : '#080B11');

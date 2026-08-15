@@ -12,6 +12,8 @@ import { initPointerCards } from './core/pointer-cards.js';
 import { initDomainCards } from './viz/domain-cards.js';
 import { initCycleDiagram } from './viz/cycle-diagram.js';
 import { createParticleField } from './viz/particle-field.js';
+import { initDividerMotion } from './viz/dividers.js';
+import { initSequentialHighlight } from './viz/sequential-highlight.js';
 
 initReveal();
 initAssemble();
@@ -20,6 +22,11 @@ initFilters();
 initPointerCards();
 initDomainCards();
 initCycleDiagram();
+initDividerMotion();
+initSequentialHighlight('.work-principles', 'span', 850);
+initSequentialHighlight('.pillar-strip', 'article', 1400);
+initSequentialHighlight('.carry-list', 'li', 700);
 
-const statementCanvas = document.querySelector('#statementField');
-if (statementCanvas) createParticleField(statementCanvas, { colorRGB: '46,155,255', maxParticles: 26 });
+document.querySelectorAll('.field-canvas').forEach((canvas) => {
+  createParticleField(canvas, { colorRGB: canvas.dataset.color || '46,155,255', maxParticles: 26 });
+});

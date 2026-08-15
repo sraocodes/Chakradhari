@@ -57,6 +57,48 @@
     opacity: 0.55;
   }
 
+  /* ---------- Divider variants ----------
+     Three more transition motifs alongside the wave, each distinct
+     rather than repeating the same effect: nodes pulsing in sequence,
+     a mesh strip that unfolds once (via the existing [data-assemble]
+     reveal, no extra JS), and a scanning dot tracing the divider like
+     a radar sweep. .is-visible is toggled by js/viz/dividers.js. */
+  .signal-divider--nodes .base-line { stroke: var(--line); stroke-width: 1; opacity: .35; }
+  .signal-divider--nodes .node-dot {
+    fill: var(--blue); opacity: .4;
+    transform-box: fill-box; transform-origin: center;
+  }
+  .signal-divider--nodes.is-visible .node-dot { animation: dividerNodePulse 2.2s var(--ease) infinite; }
+  .signal-divider--nodes .node-dot:nth-of-type(2) { animation-delay: .25s; }
+  .signal-divider--nodes .node-dot:nth-of-type(3) { animation-delay: .5s; }
+  .signal-divider--nodes .node-dot:nth-of-type(4) { animation-delay: .75s; }
+  .signal-divider--nodes .node-dot:nth-of-type(5) { animation-delay: 1s; }
+  .signal-divider--nodes .node-dot:nth-of-type(6) { animation-delay: 1.25s; }
+  .signal-divider--nodes .node-dot:nth-of-type(7) { animation-delay: 1.5s; }
+  @keyframes dividerNodePulse { 0%,100% { opacity: .4; transform: scale(1); } 50% { opacity: 1; transform: scale(1.7); } }
+
+  .signal-divider--mesh path { stroke: var(--line-blue); stroke-width: 1; fill: none; }
+  .signal-divider--mesh .mesh-v { opacity: .55; }
+  .signal-divider--mesh .mesh-h { opacity: .3; }
+
+  .signal-divider--radar .base-line { stroke: var(--line); stroke-width: 1; opacity: .3; }
+  .signal-divider--radar .scan-dot {
+    fill: var(--blue-bright);
+    offset-path: path('M0 30 L1200 30');
+    offset-rotate: 0deg;
+    opacity: 0;
+  }
+  .signal-divider--radar.is-visible .scan-dot { animation: dividerScan 4s ease-in-out infinite; }
+  @keyframes dividerScan {
+    0% { offset-distance: 0%; opacity: 0; }
+    8%, 92% { opacity: 1; }
+    100% { offset-distance: 100%; opacity: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .signal-divider--nodes .node-dot, .signal-divider--radar .scan-dot { animation: none !important; opacity: .5 !important; }
+  }
+
   /* Generic ambient particle canvas used behind a couple of content
      bands — always paused off-screen by motion-controller.js. */
   .field-canvas {

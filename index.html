@@ -12,9 +12,7 @@
         document.documentElement.classList.add('intro-seen');
       }
       var storedTheme = localStorage.getItem('cctech-theme');
-      var theme = storedTheme === 'light' || storedTheme === 'dark'
-        ? storedTheme
-        : (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      var theme = (storedTheme === 'light' || storedTheme === 'dark') ? storedTheme : 'dark';
       document.documentElement.setAttribute('data-theme', theme);
       var metaColor = document.querySelector('meta[name="theme-color"]');
       if (metaColor) metaColor.setAttribute('content', theme === 'light' ? '#F7F6F2' : '#080B11');
@@ -225,7 +223,7 @@
 
     <!-- ============ STATEMENT ============ -->
     <section class="statement field-host" id="pillars">
-      <canvas class="field-canvas" id="statementField" aria-hidden="true"></canvas>
+      <canvas class="field-canvas" data-color="46,155,255" aria-hidden="true"></canvas>
       <div class="wrap">
         <span class="eyebrow" data-reveal>Company thesis</span>
         <p data-reveal>
@@ -336,6 +334,19 @@
         </ul>
       </div>
     </section>
+
+    <div class="signal-divider signal-divider--nodes" aria-hidden="true">
+      <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <line class="base-line" x1="0" y1="30" x2="1200" y2="30"/>
+        <circle class="node-dot" cx="90" cy="30" r="3"/>
+        <circle class="node-dot" cx="270" cy="30" r="3"/>
+        <circle class="node-dot" cx="450" cy="30" r="3"/>
+        <circle class="node-dot" cx="630" cy="30" r="3"/>
+        <circle class="node-dot" cx="810" cy="30" r="3"/>
+        <circle class="node-dot" cx="990" cy="30" r="3"/>
+        <circle class="node-dot" cx="1150" cy="30" r="3"/>
+      </svg>
+    </div>
 
     <!-- ============ PLATFORM ============ -->
     <section class="band" id="explore">
@@ -510,6 +521,13 @@
         </div>
       </div>
     </section>
+
+    <div class="signal-divider signal-divider--mesh" data-assemble aria-hidden="true">
+      <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path class="mesh-h" d="M0 15H1200M0 30H1200M0 45H1200"/>
+        <path class="mesh-v" d="M0 0V60M150 0V60M300 0V60M450 0V60M600 0V60M750 0V60M900 0V60M1050 0V60M1200 0V60"/>
+      </svg>
+    </div>
 
     <!-- ============ APPROACH ============ -->
     <section class="band approach" id="approach">
@@ -690,7 +708,8 @@
     </div>
 
     <!-- ============ RESEARCH ============ -->
-    <section class="band research-band" id="research">
+    <section class="band research-band field-host" id="research">
+      <canvas class="field-canvas" data-color="46,155,255" aria-hidden="true"></canvas>
       <div class="wrap section-head" data-reveal>
         <span class="eyebrow">Roadmap</span>
         <h2>Milestones we will share when the company comes out of stealth.</h2>
@@ -824,8 +843,16 @@
       </div>
     </section>
 
+    <div class="signal-divider signal-divider--radar" aria-hidden="true">
+      <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <line class="base-line" x1="0" y1="30" x2="1200" y2="30"/>
+        <circle class="scan-dot" cx="0" cy="30" r="3"/>
+      </svg>
+    </div>
+
     <!-- ============ PARTNERSHIPS ============ -->
-    <section class="band consulting-band" id="work-with-us">
+    <section class="band consulting-band field-host" id="work-with-us">
+      <canvas class="field-canvas" data-color="87,224,166" aria-hidden="true"></canvas>
       <div class="wrap section-head" data-reveal>
         <span class="eyebrow">Partnerships</span>
         <h2>Selective design-partner, university and government-funded research work.</h2>

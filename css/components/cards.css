@@ -14,6 +14,24 @@
   }
   [data-tilt].is-tilting { transition: transform .08s linear; }
 
+  /* Border draw-in: the same top-edge sweep .cap already does on hover
+     (below), generalised to every other card type and triggered once as
+     the card scrolls into view rather than only on hover — so entrances
+     read as "assembling", not just fading up. */
+  .channel-card::after, .pub-card::after, .focus-card::after, .t-card::after {
+    content: ""; position: absolute; left: 0; top: 0; height: 2px; width: 0;
+    background: linear-gradient(90deg, var(--blue), var(--blue-bright));
+    transition: width .7s var(--ease) .35s;
+    pointer-events: none;
+  }
+  [data-reveal-stagger].in > .channel-card::after,
+  [data-reveal-stagger].in > .pub-card::after,
+  [data-reveal-stagger].in > .focus-card::after,
+  [data-reveal-stagger].in > .t-card::after,
+  .channel-card:hover::after, .pub-card:hover::after, .focus-card:hover::after, .t-card:hover::after {
+    width: 100%;
+  }
+
   /* ---------- Chips, tags, filter toolbar ---------- */
   .lab-toolbar { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 1.2rem; }
   .lab-toolbar span,
@@ -78,6 +96,7 @@
   /* ---------- Channel cards ---------- */
   .channel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 1.8rem; }
   .channel-card {
+    position: relative; overflow: hidden;
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     padding: clamp(1.3rem, 2.3vw, 1.7rem);
@@ -145,6 +164,7 @@
   /* ---------- Publication / roadmap cards ---------- */
   .pub-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; margin-bottom: 0.4rem; }
   .pub-card {
+    position: relative; overflow: hidden;
     border: 1px solid var(--line); border-radius: var(--radius-lg); padding: clamp(1.4rem, 2.4vw, 1.9rem);
     background: linear-gradient(180deg, var(--field) 0%, var(--bg-2) 100%);
     transition: border-color .35s, transform .35s var(--ease);
@@ -175,7 +195,7 @@
   /* ---------- Triad / work-grid (t-card) ---------- */
   .triad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
   .t-card {
-    position: relative; border: 1px solid var(--line); border-radius: var(--radius-lg);
+    position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-lg);
     padding: clamp(1.5rem, 2.6vw, 2.1rem);
     background: linear-gradient(180deg, var(--field) 0%, var(--bg-2) 100%);
     transition: border-color .35s, transform .35s var(--ease);
@@ -197,7 +217,10 @@
   .work-principles span {
     display: grid; place-items: center; min-height: 72px; padding: 0.9rem; text-align: center;
     color: var(--text); background: var(--night); font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+    transition: background .5s var(--ease), color .5s var(--ease);
   }
+  /* Sequential scan across the five principles — js/viz/sequential-highlight.js */
+  .work-principles span.is-active { background: rgba(46,155,255,0.14); color: var(--white); }
 
   @media (max-width: 960px) {
     .cap-grid { grid-template-columns: repeat(2, 1fr); }

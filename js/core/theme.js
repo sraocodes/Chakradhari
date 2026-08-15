@@ -52,10 +52,9 @@ if (toggle) {
   });
 }
 
-// Follow OS changes only when the visitor hasn't made an explicit choice.
-window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
-  let stored = null;
-  try { stored = localStorage.getItem('cctech-theme'); } catch (_) {}
-  if (stored === 'light' || stored === 'dark') return;
-  setTheme(e.matches ? 'light' : 'dark', { persist: false });
-});
+// Deliberately no prefers-color-scheme auto-switching: dark is the fixed
+// default until the visitor explicitly clicks the toggle. The hero stays
+// dark-locked regardless of theme, and silently flipping the rest of the
+// page to light off an OS signal produced a jarring half-dark/half-light
+// first impression — exactly what "preserve the opening experience" rules
+// out. Light mode is opt-in only.
