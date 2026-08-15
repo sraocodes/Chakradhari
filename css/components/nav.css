@@ -1,0 +1,151 @@
+/* =========================================================
+   Chakradhari — Header, navigation, mobile menu, theme toggle
+   The header sits transparently over the (always-dark) hero until
+   scrolled, so its default text colors are hardcoded dark-safe
+   values (--hdr-*). Once .scrolled — meaning the header now sits
+   over themed page content, not the hero — it switches to the
+   real theme tokens. This is what keeps nav text legible in light
+   mode without touching the protected hero itself.
+   ========================================================= */
+@layer components {
+
+  .site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    transition: background .4s var(--ease), border-color .4s var(--ease), backdrop-filter .4s;
+    border-bottom: 1px solid transparent;
+
+    --hdr-text: #EAF0FA;
+    --hdr-text-soft: #9DAAC2;
+    --hdr-white: #FFFFFF;
+    --hdr-line: rgba(255,255,255,0.09);
+  }
+  .site-header.scrolled {
+    background: color-mix(in srgb, var(--bg) 78%, transparent);
+    backdrop-filter: blur(16px) saturate(1.2);
+    border-bottom: 1px solid var(--line);
+
+    --hdr-text: var(--text);
+    --hdr-text-soft: var(--text-soft);
+    --hdr-white: var(--white);
+    --hdr-line: var(--line);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+  .brand { display: inline-flex; align-items: center; gap: 0.7rem; }
+  .brand img { width: 34px; height: 34px; border-radius: 8px; }
+  .brand .brand-name {
+    font-family: var(--serif);
+    font-size: 1.12rem;
+    letter-spacing: -0.01em;
+    color: var(--hdr-white);
+  }
+  .brand .brand-name b { font-weight: 560; color: #5AB4FF; }
+
+  .nav { display: flex; align-items: center; gap: clamp(1rem, 1.8vw, 1.6rem); }
+  .nav a.nav-link {
+    font-size: 0.9rem;
+    color: var(--hdr-text-soft);
+    font-weight: 500;
+    position: relative;
+    transition: color .25s;
+  }
+  .nav a.nav-link::after {
+    content: "";
+    position: absolute; left: 0; bottom: -5px;
+    width: 0; height: 1.5px;
+    background: var(--blue);
+    transition: width .3s var(--ease);
+  }
+  .nav a.nav-link:hover,
+  .nav a.nav-link.active { color: var(--hdr-white); }
+  .nav a.nav-link:hover::after,
+  .nav a.nav-link.active::after { width: 100%; }
+
+  /* ---------- Theme toggle ---------- */
+  .theme-toggle {
+    position: relative;
+    width: 40px; height: 40px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 999px;
+    border: 1px solid var(--hdr-line);
+    color: var(--hdr-text);
+    transition: border-color .25s, color .25s, transform .3s var(--ease);
+    flex: 0 0 auto;
+  }
+  .theme-toggle:hover { border-color: var(--blue); color: var(--hdr-white); transform: translateY(-2px); }
+  .theme-toggle svg { width: 18px; height: 18px; }
+  .theme-toggle .icon-sun, .theme-toggle .icon-moon {
+    position: absolute; inset: 0; display: grid; place-items: center;
+    transition: opacity .4s var(--ease), transform .5s var(--ease);
+  }
+  .theme-toggle .icon-sun { opacity: 0; transform: rotate(-90deg) scale(.4); }
+  .theme-toggle .icon-moon { opacity: 1; transform: rotate(0) scale(1); }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .theme-toggle .icon-sun { opacity: 1; transform: rotate(0) scale(1); }
+    :root:not([data-theme="dark"]) .theme-toggle .icon-moon { opacity: 0; transform: rotate(90deg) scale(.4); }
+  }
+  :root[data-theme="light"] .theme-toggle .icon-sun { opacity: 1; transform: rotate(0) scale(1); }
+  :root[data-theme="light"] .theme-toggle .icon-moon { opacity: 0; transform: rotate(90deg) scale(.4); }
+  .theme-toggle .sweep {
+    position: absolute; inset: -1px;
+    border-radius: 999px;
+    border: 1px solid var(--blue);
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  .theme-toggle.is-switching .sweep {
+    animation: themeSweep .6s var(--ease);
+  }
+  @keyframes themeSweep {
+    0% { opacity: .9; transform: scale(0.6); }
+    70% { opacity: .25; transform: scale(1.35); }
+    100% { opacity: 0; transform: scale(1.6); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .theme-toggle .sweep { animation: none !important; }
+  }
+
+  .menu-toggle { display: none; width: 40px; height: 40px; position: relative; }
+  .menu-toggle span {
+    position: absolute; left: 9px; right: 9px; height: 2px;
+    background: var(--hdr-text); border-radius: 2px; transition: .3s var(--ease);
+  }
+  .menu-toggle span:nth-child(1) { top: 14px; }
+  .menu-toggle span:nth-child(2) { top: 20px; }
+  .menu-toggle span:nth-child(3) { top: 26px; }
+  body.menu-open .menu-toggle span:nth-child(1) { top: 20px; transform: rotate(45deg); }
+  body.menu-open .menu-toggle span:nth-child(2) { opacity: 0; }
+  body.menu-open .menu-toggle span:nth-child(3) { top: 20px; transform: rotate(-45deg); }
+
+  @media (max-width: 720px) {
+    .nav { display: none; }
+    .menu-toggle { display: block; }
+    body.menu-open .nav {
+      display: flex;
+      position: fixed;
+      inset: 72px 0 auto 0;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.4rem;
+      padding: 2rem var(--gutter) 2.4rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 24px 40px -30px rgba(0,0,0,.7);
+    }
+    /* The open dropdown is an opaque panel on the real page background,
+       never the hero, so it always uses live theme tokens regardless
+       of scroll position. */
+    body.menu-open .nav a.nav-link { font-size: 1.15rem; color: var(--text-soft); }
+    body.menu-open .nav a.nav-link:hover,
+    body.menu-open .nav a.nav-link.active { color: var(--white); }
+    body.menu-open .nav .btn-primary { color: #fff; }
+    body.menu-open .nav .theme-toggle { color: var(--text); border-color: var(--line); }
+  }
+}

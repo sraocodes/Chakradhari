@@ -1,0 +1,162 @@
+/* =========================================================
+   Chakradhari — Design tokens
+   Dark is the signature/default surface. Light is a distinct
+   "laboratory notebook" palette, not an inversion.
+   Resolution order: localStorage choice > OS preference > dark.
+   See js/core/theme.js for the runtime switch, and the inline
+   <head> script in index.html for the pre-paint init.
+   ========================================================= */
+
+@layer tokens {
+
+  :root {
+    /* Surfaces (black) */
+    --bg:        #080B11;
+    --bg-2:      #0B111A;
+    --bg-3:      #0F1826;
+    --field:     #0E1622;
+    --field-2:   #121D2C;
+    --night:     #05080D;
+
+    /* Text (white) */
+    --text:      #EAF0FA;
+    --text-soft: #9DAAC2;
+    --text-faint:#5E6B84;
+    --white:     #FFFFFF;
+
+    /* Blue accent */
+    --blue:       #2E9BFF;
+    --blue-bright:#5AB4FF;
+    --blue-deep:  #0A6ED1;
+    --blue-dim:   #1B4E7A;
+
+    /* Secondary accent, used sparingly in scientific markers */
+    --leaf:       #35C48A;
+    --leaf-bright:#57E0A6;
+
+    /* Lines & glows */
+    --line:       rgba(255,255,255,0.09);
+    --line-soft:  rgba(255,255,255,0.05);
+    --line-blue:  rgba(46,155,255,0.28);
+    --glow-blue:  rgba(46,155,255,0.20);
+
+    /* Elevated surfaces (cards floating over field) */
+    --card-shadow: 0 30px 60px -34px rgba(0,0,0,.8);
+
+    /* Type */
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans:  "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono:  "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+    /* Rhythm */
+    --maxw: 1200px;
+    --gutter: clamp(1.25rem, 5vw, 4rem);
+    --radius: 8px;
+    --radius-lg: 8px;
+
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --theme-transition: 0.5s var(--ease);
+
+    /* Hero / intro — intentionally NOT theme-reactive.
+       The hero stage and preloader keep the exact values the
+       protected opening experience already renders in dark mode,
+       in both themes, so the opening sequence never changes. */
+    --hero-bg-1: #080B11;
+    --hero-bg-2: #0A0F18;
+    --hero-bg-3: #070A10;
+    --hero-edge-a:  #2E9BFF;
+    --hero-edge-b:  #57E0A6;
+    --hero-node-white:  #EAF0FA;
+    --hero-node-leaf:   #57E0A6;
+    --hero-node-blue:   #2E9BFF;
+    --hero-node-blue-bright: #5AB4FF;
+    --hero-edge-line: #3a4a63;
+    --hero-particle-blue: 90,180,255;
+    --hero-particle-white: 234,240,250;
+    --hero-line: rgba(255,255,255,0.09);
+    --hero-line-blue: rgba(46,155,255,0.28);
+    --hero-blue: #2E9BFF;
+    --hero-blue-bright: #5AB4FF;
+    --hero-white: #FFFFFF;
+    --hero-header-text: #EAF0FA;
+    --hero-header-text-soft: #9DAAC2;
+    --hero-header-white: #FFFFFF;
+  }
+
+  /* ---------- Light theme: "laboratory notebook", not an inversion ---------- */
+  :root[data-theme="light"] {
+    --bg:        #F7F6F2;
+    --bg-2:      #F1EFE9;
+    --bg-3:      #EAE7DE;
+    --field:     #FFFFFF;
+    --field-2:   #F4F2EC;
+    --night:     #ECE9E1;
+
+    --text:      #12161F;
+    --text-soft: #4B5568;
+    --text-faint:#7C879C;
+    --white:     #0A0D12;
+
+    --blue:       #0A6ED1;
+    --blue-bright:#0868C4;
+    --blue-deep:  #084F97;
+    --blue-dim:   #B9D6F2;
+
+    --leaf:       #1D8F63;
+    --leaf-bright:#177A54;
+
+    --line:       rgba(10,14,20,0.12);
+    --line-soft:  rgba(10,14,20,0.07);
+    --line-blue:  rgba(10,110,209,0.30);
+    --glow-blue:  rgba(10,110,209,0.14);
+
+    --card-shadow: 0 24px 48px -30px rgba(20,30,45,.22);
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg:        #F7F6F2;
+      --bg-2:      #F1EFE9;
+      --bg-3:      #EAE7DE;
+      --field:     #FFFFFF;
+      --field-2:   #F4F2EC;
+      --night:     #ECE9E1;
+
+      --text:      #12161F;
+      --text-soft: #4B5568;
+      --text-faint:#7C879C;
+      --white:     #0A0D12;
+
+      --blue:       #0A6ED1;
+      --blue-bright:#0868C4;
+      --blue-deep:  #084F97;
+      --blue-dim:   #B9D6F2;
+
+      --leaf:       #1D8F63;
+      --leaf-bright:#177A54;
+
+      --line:       rgba(10,14,20,0.12);
+      --line-soft:  rgba(10,14,20,0.07);
+      --line-blue:  rgba(10,110,209,0.30);
+      --glow-blue:  rgba(10,110,209,0.14);
+
+      --card-shadow: 0 24px 48px -30px rgba(20,30,45,.22);
+    }
+  }
+
+  /* Cross-fade surfaces/text when the theme switches (not on first paint).
+     Scoped to structural surfaces rather than a universal [class] selector
+     so it never fights per-component hover/tilt transitions. */
+  html.theme-ready :is(body, .site-header, section, .wrap, .band,
+    .channel-card, .cap, .focus-card, .t-card, .pub-card, .contact-card,
+    .toolbox-panel, .pillar-strip article, .work-principles span,
+    .lab-toolbar span, .lab-toolbar button, .data-chip, .status,
+    .content-badge, .resource-links span, h1, h2, h3, h4, p, a, .btn) {
+    transition: background-color var(--theme-transition), border-color var(--theme-transition),
+      color var(--theme-transition), box-shadow var(--theme-transition), fill var(--theme-transition);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html.theme-ready * { transition: none !important; }
+  }
+}

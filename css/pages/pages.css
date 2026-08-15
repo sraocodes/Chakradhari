@@ -1,0 +1,98 @@
+/* =========================================================
+   Chakradhari — Shared subpage styles
+   Used by /open-science/, /updates/, /partnerships/. Each page
+   keeps the same header/footer chrome as the homepage plus a
+   lighter page-hero (no hero SVG/canvas — that stays homepage-
+   only) and a set of data-driven grids that render nothing when
+   their backing array is empty, per the "no visible placeholders"
+   rule — see js/pages/*.js.
+   ========================================================= */
+@layer components {
+
+  .page-hero {
+    position: relative;
+    padding: clamp(8rem, 14vw, 11rem) 0 clamp(3rem, 6vw, 4.5rem);
+    overflow: hidden;
+    background:
+      radial-gradient(70% 60% at 82% 0%, rgba(46,155,255,0.12) 0%, transparent 55%),
+      var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .page-hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(70% 70% at 70% 0%, #000 0%, transparent 75%);
+    opacity: .6;
+    pointer-events: none;
+  }
+  .page-hero .wrap { position: relative; z-index: 1; max-width: 46rem; }
+  .page-hero h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); margin-top: 1rem; letter-spacing: -0.03em; }
+  .page-hero .lead { margin-top: 1.2rem; font-size: 1.12rem; color: var(--text-soft); line-height: 1.6; }
+
+  .page-philosophy {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    border: 1px solid var(--line); background: var(--line);
+    margin-top: clamp(2rem, 4vw, 3rem);
+  }
+  .page-philosophy article { background: var(--bg); padding: clamp(1.3rem, 2.5vw, 1.8rem); min-height: 140px; }
+  .page-philosophy span { display: block; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; color: var(--blue); text-transform: uppercase; }
+  .page-philosophy p { font-size: 0.95rem; color: var(--text-soft); line-height: 1.55; margin-top: 0.7rem; }
+  @media (max-width: 720px) { .page-philosophy { grid-template-columns: 1fr; } }
+
+  /* Grids render empty (no DOM) when their data array is empty —
+     .is-empty just keeps the wrapping section out of layout. */
+  .empty-hidden { display: none !important; }
+
+  /* ---------- Open Science tool cards ---------- */
+  .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.1rem; }
+  .tool-card {
+    border: 1px solid var(--line); border-radius: var(--radius-lg);
+    padding: clamp(1.5rem, 2.6vw, 2rem);
+    background: linear-gradient(180deg, var(--field) 0%, var(--bg-2) 100%);
+    transition: border-color .35s, transform .35s var(--ease);
+  }
+  .tool-card:hover { border-color: var(--line-blue); transform: translateY(-4px); }
+  .tool-card .tool-top { display: flex; justify-content: space-between; gap: 0.8rem; margin-bottom: 0.9rem; }
+  .tool-card h3 { font-size: 1.25rem; }
+  .tool-card p { color: var(--text-soft); font-size: 0.95rem; line-height: 1.55; margin-top: 0.6rem; }
+
+  /* ---------- Channel cards (YouTube / science-communication) ---------- */
+  .channel-media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.1rem; }
+  .channel-media-card {
+    border: 1px solid var(--line); border-radius: var(--radius-lg); padding: clamp(1.4rem, 2.4vw, 1.9rem);
+    background: linear-gradient(180deg, var(--field) 0%, var(--bg-2) 100%);
+  }
+  .channel-media-card .play {
+    width: 40px; height: 40px; border-radius: 999px; display: grid; place-items: center;
+    background: rgba(46,155,255,0.16); border: 1px solid var(--line-blue); color: var(--white); margin-bottom: 1rem;
+  }
+  .channel-media-card .play svg { width: 16px; height: 16px; fill: currentColor; }
+  .channel-media-card h3 { font-size: 1.15rem; }
+  .channel-media-card p { color: var(--text-soft); font-size: 0.92rem; margin-top: 0.5rem; }
+
+  /* ---------- Updates / gallery ---------- */
+  .update-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.1rem; }
+  .update-card {
+    border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden;
+    background: var(--field); transition: border-color .3s, transform .3s var(--ease);
+  }
+  .update-card:hover { border-color: var(--line-blue); transform: translateY(-3px); }
+  .update-card button.thumb { display: block; width: 100%; aspect-ratio: 4/3; overflow: hidden; }
+  .update-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
+  .update-card:hover img { transform: scale(1.04); }
+  .update-card .meta { padding: 1rem 1.1rem 1.2rem; }
+  .update-card .date { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); }
+  .update-card h3 { font-size: 1.05rem; margin-top: 0.4rem; }
+  .update-card p { color: var(--text-soft); font-size: 0.88rem; margin-top: 0.4rem; }
+
+  /* ---------- Public collaborations ---------- */
+  .collab-list { display: grid; gap: 1px; border: 1px solid var(--line); background: var(--line); }
+  .collab-item { background: var(--bg); padding: clamp(1.2rem, 2.2vw, 1.6rem) clamp(1.3rem, 2.4vw, 1.9rem); display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; flex-wrap: wrap; }
+  .collab-item .who { font-family: var(--serif); font-size: 1.1rem; color: var(--white); }
+  .collab-item .what { color: var(--text-soft); font-size: 0.92rem; margin-top: 0.2rem; }
+  .collab-item .when { font-family: var(--mono); font-size: 0.72rem; color: var(--text-faint); letter-spacing: 0.06em; white-space: nowrap; }
+}

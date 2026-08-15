@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Public institutional collaborations announced by Chakradhari Computational Technologies." />
+  <meta name="theme-color" content="#080B11" />
+  <title>Public Collaborations · Chakradhari Computational Technologies</title>
+  <script>
+    try {
+      var storedTheme = localStorage.getItem('cctech-theme');
+      var theme = storedTheme === 'light' || storedTheme === 'dark'
+        ? storedTheme
+        : (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+      var metaColor = document.querySelector('meta[name="theme-color"]');
+      if (metaColor) metaColor.setAttribute('content', theme === 'light' ? '#F7F6F2' : '#080B11');
+    } catch (_) {}
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&amp;family=Inter:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components/nav.css">
+  <link rel="stylesheet" href="../css/components/buttons.css">
+  <link rel="stylesheet" href="../css/components/cards.css">
+  <link rel="stylesheet" href="../css/components/lightbox.css">
+  <link rel="stylesheet" href="../css/motion.css">
+  <link rel="stylesheet" href="../css/sections.css">
+  <link rel="stylesheet" href="../css/pages/pages.css">
+
+  <link rel="icon" type="image/gif" href="../assets/images/logo.gif">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="../" class="brand" aria-label="Chakradhari home">
+        <img src="../assets/images/logo.gif" alt="Chakradhari logo" width="34" height="34" decoding="async" />
+        <span class="brand-name">Chakradhari<b>.</b></span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="../#explore" class="nav-link">Platform</a>
+        <a href="../#open-lab" class="nav-link">Product</a>
+        <a href="../#research" class="nav-link">Roadmap</a>
+        <a href="../#work-with-us" class="nav-link">Partnerships</a>
+        <a href="../#about" class="nav-link">Company</a>
+        <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+          <span class="sweep" aria-hidden="true"></span>
+          <span class="icon-moon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11Z"/></svg>
+          </span>
+          <span class="icon-sun" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
+          </span>
+        </button>
+        <a href="../#contact" class="btn btn-primary">Private briefing</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ PAGE HERO ============ -->
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="eyebrow" data-reveal>Public Collaborations</span>
+        <h1 data-reveal>Announced institutional relationships.</h1>
+        <p class="lead" data-reveal>
+          Chakradhari works with research teams, universities and funded programmes —
+          most of it privately, by design. This page lists only the relationships we and
+          our partners have agreed to make public. It is not a record of everything we do.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ COLLABORATIONS ============ -->
+    <section class="band" id="collab-list-section">
+      <div class="wrap">
+        <div class="collab-list" id="collab-list"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <a href="../" class="footer-brand">
+          <img src="../assets/images/logo.gif" alt="Chakradhari logo" width="32" height="32" loading="lazy" decoding="async" />
+          <span>Chakradhari</span>
+        </a>
+        <nav class="footer-nav">
+          <a href="../#explore">Platform</a>
+          <a href="../#open-lab">Product</a>
+          <a href="../#scientific-worlds">Focus</a>
+          <a href="../#research">Roadmap</a>
+          <a href="../#learn">Enablement</a>
+          <a href="../#work-with-us">Partnerships</a>
+          <a href="../#about">Company</a>
+          <a href="../#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-legal">
+        <span class="cin">CHAKRADHARI COMPUTATIONAL TECHNOLOGIES PRIVATE LIMITED</span><br>
+        CIN: U72100KA2025PTC209662 &nbsp;·&nbsp; Incorporated 14 October 2025 &nbsp;·&nbsp; ROC-Bangalore (Reg. No. 209662)<br>
+        © 2025 Chakradhari Computational Technologies Pvt. Ltd. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/pages/partnerships.js"></script>
+</body>
+</html>

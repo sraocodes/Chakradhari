@@ -1,0 +1,115 @@
+/* =========================================================
+   Chakradhari — Domain visualizations
+   Seven small, cheap, pure-SVG+CSS motifs, one per focus-card
+   domain, replacing the old static .glyph icon. Idle animation
+   only runs once js/viz/domain-cards.js marks the card
+   .is-visible (IntersectionObserver-gated); hover always works.
+   Each is inert (no continuous animation) until then, and every
+   loop is paused via animation-play-state when off-screen.
+   ========================================================= */
+@layer components {
+
+  .domain-viz {
+    width: 100%; height: 100%;
+    opacity: 0.16;
+    color: var(--blue);
+    transition: opacity .5s var(--ease);
+  }
+  .focus-card:hover .domain-viz,
+  .focus-card.is-visible .domain-viz { opacity: 0.28; }
+  .domain-viz * { animation-play-state: paused; }
+  .focus-card.is-visible .domain-viz * { animation-play-state: running; }
+
+  /* ---------- Computational science: grid resolving into alignment ---------- */
+  .domain-viz--compute .node {
+    transform-box: fill-box; transform-origin: center;
+    animation: computeSnap 3.6s var(--ease) infinite;
+  }
+  .domain-viz--compute .node:nth-child(2) { animation-delay: .15s; }
+  .domain-viz--compute .node:nth-child(3) { animation-delay: .3s; }
+  .domain-viz--compute .node:nth-child(4) { animation-delay: .45s; }
+  .domain-viz--compute .node:nth-child(5) { animation-delay: .6s; }
+  .domain-viz--compute .node:nth-child(6) { animation-delay: .75s; }
+  @keyframes computeSnap { 0%,100% { transform: scale(1); } 50% { transform: scale(1.6); } }
+
+  /* ---------- Photonics: wave propagation ---------- */
+  .domain-viz--photonics .ray {
+    stroke-dasharray: 3 5;
+    animation: photonFlow 2.4s linear infinite;
+  }
+  .domain-viz--photonics .ray:nth-child(2) { animation-duration: 3.1s; }
+  .domain-viz--photonics .ray:nth-child(3) { animation-duration: 2.7s; animation-direction: reverse; }
+  @keyframes photonFlow { to { stroke-dashoffset: -16; } }
+
+  /* ---------- Agriculture / Earth systems: infiltration ---------- */
+  .domain-viz--agri .infiltrate {
+    stroke-dasharray: 4 6;
+    animation: agriDrop 2.8s linear infinite;
+  }
+  @keyframes agriDrop { to { stroke-dashoffset: -20; } }
+  .domain-viz--agri .layer { animation: agriLayer 5s var(--ease) infinite; transform-box: fill-box; transform-origin: center; }
+  .domain-viz--agri .layer:nth-child(2) { animation-delay: .3s; }
+  .domain-viz--agri .layer:nth-child(3) { animation-delay: .6s; }
+  @keyframes agriLayer { 0%,100% { opacity: .5; } 50% { opacity: 1; } }
+
+  /* ---------- Radar / sensing: expanding rings + sweep ---------- */
+  .domain-viz--radar .ring {
+    transform-box: fill-box; transform-origin: center;
+    animation: radarPulse 3s var(--ease) infinite;
+  }
+  .domain-viz--radar .ring:nth-child(2) { animation-delay: 1s; }
+  .domain-viz--radar .ring:nth-child(3) { animation-delay: 2s; }
+  @keyframes radarPulse { 0% { transform: scale(.3); opacity: .9; } 100% { transform: scale(1); opacity: 0; } }
+  .domain-viz--radar .sweep {
+    /* Rotate around the ring centre (100,100 in the 0 0 200 200 viewBox),
+       not the line's own bounding box — fill-box would pivot around its
+       midpoint instead. */
+    transform-origin: 100px 100px;
+    animation: radarSweep 4s linear infinite;
+  }
+  @keyframes radarSweep { to { transform: rotate(360deg); } }
+
+  /* ---------- AI systems: node graph pulse ---------- */
+  .domain-viz--ai .pulse-dot {
+    offset-path: path('M50 150 L 100 90 L 150 130');
+    offset-rotate: 0deg;
+    animation: aiTravel 3.2s linear infinite;
+  }
+  .domain-viz--ai .pulse-dot.p2 {
+    offset-path: path('M100 90 L 130 50');
+    animation-delay: 1.6s;
+    animation-duration: 1.8s;
+  }
+  @keyframes aiTravel { 0% { offset-distance: 0%; opacity: 0; } 10%,90% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+  .domain-viz--ai .anode { animation: aiNode 3.2s var(--ease) infinite; transform-box: fill-box; transform-origin: center; }
+  .domain-viz--ai .anode:nth-child(3) { animation-delay: .5s; }
+  .domain-viz--ai .anode:nth-child(4) { animation-delay: 1s; }
+  @keyframes aiNode { 0%,100% { opacity: .6; } 50% { opacity: 1; } }
+
+  /* ---------- Digital twins: wireframe assembling ---------- */
+  .domain-viz--twin .wire {
+    stroke-dasharray: 220;
+    animation: twinDraw 6s var(--ease) infinite;
+  }
+  @keyframes twinDraw { 0% { stroke-dashoffset: 220; } 30%,70% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -220; } }
+  .domain-viz--twin .sensor {
+    offset-path: path('M70 70 L130 70 L150 90 L90 90 Z');
+    offset-rotate: 0deg;
+    animation: twinOrbit 5s linear infinite;
+  }
+  @keyframes twinOrbit { to { offset-distance: 100%; } }
+
+  /* ---------- Scientific software: branch lighting up ---------- */
+  .domain-viz--software .commit {
+    animation: swCommit 3.6s var(--ease) infinite;
+    transform-box: fill-box; transform-origin: center;
+  }
+  .domain-viz--software .commit:nth-child(2) { animation-delay: .4s; }
+  .domain-viz--software .commit:nth-child(3) { animation-delay: .8s; }
+  .domain-viz--software .commit:nth-child(4) { animation-delay: 1.2s; }
+  @keyframes swCommit { 0%,20%,100% { opacity: .35; transform: scale(1); } 30% { opacity: 1; transform: scale(1.5); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .domain-viz * { animation: none !important; }
+  }
+}

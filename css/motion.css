@@ -1,0 +1,75 @@
+/* =========================================================
+   Chakradhari — Motion system
+   Scroll reveals, shared keyframes, and the vocabulary used by
+   js/core/motion-controller.js and js/viz/*.
+   ========================================================= */
+@layer motion {
+
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .8s var(--ease), transform .8s var(--ease);
+    will-change: opacity, transform;
+  }
+  [data-reveal].in { opacity: 1; transform: none; }
+  [data-reveal-stagger] > * {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity .7s var(--ease), transform .7s var(--ease);
+  }
+  [data-reveal-stagger].in > * { opacity: 1; transform: none; }
+
+  /* Assemble-on-scroll: elements draw/resolve like the hero graph does,
+     used sparingly at a few set-piece transitions. */
+  [data-assemble] {
+    opacity: 0;
+    transform: scale(.94);
+    transition: opacity .9s var(--ease), transform .9s var(--ease);
+  }
+  [data-assemble].in { opacity: 1; transform: none; }
+  [data-assemble-line] {
+    stroke-dasharray: var(--len, 300);
+    stroke-dashoffset: var(--len, 300);
+    transition: stroke-dashoffset 1.1s var(--ease);
+  }
+  [data-assemble-line].in { stroke-dashoffset: 0; }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal], [data-reveal-stagger] > *, [data-assemble] { opacity: 1 !important; transform: none !important; }
+    [data-assemble-line] { stroke-dashoffset: 0 !important; }
+  }
+
+  /* Section divider: a thin signal waveform used between a couple of
+     bands as a scientific transition motif instead of a plain border. */
+  .signal-divider {
+    position: relative;
+    height: clamp(40px, 6vw, 64px);
+    overflow: hidden;
+  }
+  .signal-divider svg { width: 100%; height: 100%; display: block; }
+  .signal-divider path {
+    fill: none;
+    stroke: var(--line-blue);
+    stroke-width: 1.2;
+  }
+  .signal-divider .trace {
+    stroke: var(--blue);
+    stroke-width: 1.4;
+    opacity: 0.55;
+  }
+
+  /* Generic ambient particle canvas used behind a couple of content
+     bands — always paused off-screen by motion-controller.js. */
+  .field-canvas {
+    position: absolute; inset: 0;
+    z-index: 0;
+    opacity: 0.55;
+    pointer-events: none;
+  }
+  .field-host { position: relative; isolation: isolate; }
+  .field-host > .wrap { position: relative; z-index: 1; }
+
+  @keyframes spinSlow { to { transform: rotate(360deg); } }
+  @keyframes spinSlowReverse { to { transform: rotate(-360deg); } }
+  @keyframes pulseGlow { 50% { opacity: .55; } }
+  @keyframes driftY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+}

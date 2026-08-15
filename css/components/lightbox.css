@@ -1,0 +1,37 @@
+/* =========================================================
+   Chakradhari — Lightbox
+   Reusable full-screen image viewer for gallery-style content
+   (Updates page event photography). No content today, but the
+   component is ready.
+   ========================================================= */
+@layer components {
+
+  .lightbox {
+    position: fixed; inset: 0; z-index: 1000;
+    display: grid; place-items: center;
+    background: color-mix(in srgb, var(--night) 92%, transparent);
+    backdrop-filter: blur(10px);
+    opacity: 0; pointer-events: none;
+    transition: opacity .35s var(--ease);
+  }
+  .lightbox.is-open { opacity: 1; pointer-events: auto; }
+  .lightbox figure {
+    max-width: min(90vw, 1100px); max-height: 84vh;
+    display: flex; flex-direction: column; gap: 0.9rem;
+    transform: scale(.97); transition: transform .35s var(--ease);
+  }
+  .lightbox.is-open figure { transform: none; }
+  .lightbox img { max-height: 74vh; width: auto; margin-inline: auto; border-radius: var(--radius); border: 1px solid var(--line); }
+  .lightbox figcaption { color: var(--text-soft); font-size: 0.9rem; text-align: center; }
+  .lightbox-close {
+    position: absolute; top: 1.4rem; right: 1.4rem;
+    width: 42px; height: 42px; border-radius: 999px;
+    border: 1px solid var(--line); color: var(--text);
+    display: grid; place-items: center; transition: border-color .2s, color .2s;
+  }
+  .lightbox-close:hover { border-color: var(--blue); color: var(--white); }
+  .lightbox-close svg { width: 18px; height: 18px; }
+  @media (prefers-reduced-motion: reduce) {
+    .lightbox, .lightbox figure { transition: none; }
+  }
+}

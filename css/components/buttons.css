@@ -1,0 +1,26 @@
+/* =========================================================
+   Chakradhari — Buttons
+   Theme-token driven, safe on any themed surface. The one
+   exception is .btn-ghost inside .hero, which needs hardcoded
+   hero-safe colors — see the override at the bottom of
+   css/components/hero.css, since .hero never reflects the
+   active site theme.
+   ========================================================= */
+@layer components {
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 550;
+    font-size: 0.92rem;
+    padding: 0.7rem 1.3rem;
+    border-radius: 999px;
+    transition: transform .2s var(--ease), background .25s, color .25s, box-shadow .3s, border-color .25s;
+    white-space: nowrap;
+  }
+  .btn-primary { background: var(--blue); color: #fff; }
+  .btn-primary:hover { background: var(--blue-bright); transform: translateY(-2px); box-shadow: 0 14px 30px -12px var(--glow-blue); }
+  .btn-ghost { border: 1px solid var(--line); color: var(--text); }
+  .btn-ghost:hover { border-color: var(--blue); color: var(--white); transform: translateY(-2px); }
+}

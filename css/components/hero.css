@@ -1,0 +1,234 @@
+/* =========================================================
+   Chakradhari — Hero & intro (PROTECTED)
+   Moved verbatim from the original css/site.css. Values here are
+   intentionally hardcoded, not theme tokens — the opening emblem
+   sequence and hero stage render identically in dark and light
+   mode. Do not swap these to var(--bg)/var(--text)/etc.
+   ========================================================= */
+@layer hero {
+
+  /* ---------- Intro (rotating emblem + name reveal) ---------- */
+  #intro {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    background: radial-gradient(ellipse at center, #0C1220 0%, #04070C 100%);
+    animation: introOut 0.8s var(--ease) 2.7s forwards;
+  }
+  html.intro-seen #intro { display: none; }
+  #intro::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(
+      0deg, transparent, transparent 2px,
+      rgba(46,155,255,0.045) 2px, rgba(46,155,255,0.045) 4px);
+    opacity: 0.6;
+    pointer-events: none;
+    animation: introStripes 6s linear infinite;
+  }
+  .intro-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1.5rem, 4vw, 4rem);
+    padding: 2rem;
+    position: relative;
+  }
+  .intro-logo {
+    width: clamp(150px, 24vw, 300px);
+    height: auto;
+    opacity: 0;
+    filter: drop-shadow(0 10px 34px rgba(46,155,255,0.35));
+    animation: introLogo 0.7s var(--ease) 0.1s forwards, introGlow 3s ease-in-out 0.8s infinite;
+    will-change: transform, opacity;
+  }
+  .intro-text { display: flex; flex-direction: column; gap: 0.12em; }
+  .intro-line {
+    position: relative;
+    overflow: hidden;
+    font-family: var(--sans);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1.02;
+    color: #FFFFFF;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: introLine 0.6s var(--ease) forwards;
+  }
+  .intro-line.l1 { font-size: clamp(2rem, 5vw, 3.9rem); animation-delay: 0.5s; }
+  .intro-line.l2 {
+    font-size: clamp(1.7rem, 4.4vw, 3.4rem);
+    background: linear-gradient(90deg, #2E9BFF 0%, #5AB4FF 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+    animation-delay: 0.66s;
+  }
+  .intro-line.l3 {
+    font-size: clamp(0.95rem, 2.3vw, 1.6rem);
+    font-weight: 600;
+    color: #9DAAC2;
+    letter-spacing: 0.12em;
+    animation-delay: 0.82s;
+  }
+  .intro-line::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(46,155,255,0.5), transparent);
+    transform: translateX(-100%);
+    animation: introScan 2.2s ease-out 1s infinite;
+  }
+  @keyframes introLogo { to { opacity: 1; transform: none; } }
+  @keyframes introLine { to { opacity: 1; transform: none; } }
+  @keyframes introGlow { 50% { filter: drop-shadow(0 10px 44px rgba(46,155,255,0.6)); } }
+  @keyframes introScan { to { transform: translateX(100%); } }
+  @keyframes introStripes { to { background-position: 0 24px; } }
+  @keyframes introOut {
+    to { opacity: 0; visibility: hidden; pointer-events: none; transform: scale(1.02); filter: blur(6px); }
+  }
+  @media (max-width: 640px) {
+    .intro-inner { flex-direction: column; gap: 1.6rem; text-align: center; }
+    .intro-text { align-items: center; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    min-height: 92svh;
+    display: flex;
+    align-items: center;
+    padding-top: 90px;
+    padding-bottom: 4rem;
+    overflow: hidden;
+    background:
+      radial-gradient(90% 70% at 78% 4%, rgba(46,155,255,0.16) 0%, transparent 55%),
+      radial-gradient(70% 60% at 12% 100%, rgba(46,155,255,0.08) 0%, transparent 60%),
+      linear-gradient(180deg, #080B11 0%, #0A0F18 60%, #070A10 100%);
+  }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(80% 70% at 60% 30%, #000 0%, transparent 80%);
+    opacity: .5;
+    pointer-events: none;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-copy { max-width: 34rem; }
+  .hero h1 {
+    font-size: clamp(2.5rem, 5.6vw, 4.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    margin: 1.4rem 0 1.4rem;
+    color: #FFFFFF;
+  }
+  .hero h1 .accent { font-style: italic; color: #5AB4FF; }
+  .hero-lead {
+    font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+    color: #9DAAC2;
+    max-width: 32rem;
+    line-height: 1.55;
+  }
+  .hero-lead strong { color: #FFFFFF; font-weight: 650; }
+  .hero-cta { display: flex; gap: 0.9rem; margin-top: 2.2rem; flex-wrap: wrap; }
+  /* .hero sits on a permanently-dark surface regardless of site theme,
+     so its ghost button keeps hardcoded dark-safe colors rather than
+     inheriting the live theme tokens .btn-ghost uses elsewhere. */
+  .hero-cta .btn-ghost { border-color: rgba(255,255,255,0.09); color: #EAF0FA; }
+  .hero-cta .btn-ghost:hover { border-color: #2E9BFF; color: #FFFFFF; }
+  .hero-meta {
+    margin-top: 2.6rem;
+    display: flex;
+    gap: 2.2rem;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,0.09);
+    padding-top: 1.4rem;
+  }
+  .hero-meta .m { display: flex; flex-direction: column; gap: 2px; }
+  .hero-meta .m b { font-family: var(--serif); font-size: 1.5rem; color: #FFFFFF; font-weight: 500; }
+  .hero-meta .m span { font-size: 0.78rem; color: #5E6B84; letter-spacing: 0.02em; }
+
+  /* Hero visual / animation stage */
+  .hero-stage {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 560px;
+    margin-inline: auto;
+  }
+  .hero-stage canvas.particles {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+  }
+  .hero-stage svg.scene {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    z-index: 2;
+    overflow: visible;
+  }
+  .data-chip {
+    position: absolute;
+    z-index: 3;
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.04em;
+    color: #EAF0FA;
+    background: rgba(14,22,34,0.82);
+    border: 1px solid rgba(255,255,255,0.09);
+    backdrop-filter: blur(6px);
+    padding: 0.32rem 0.6rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(6px) scale(.96);
+    box-shadow: 0 10px 26px -16px rgba(0,0,0,.7);
+  }
+  .data-chip i {
+    width: 6px; height: 6px; border-radius: 50%; background: #2E9BFF; display: inline-block;
+    box-shadow: 0 0 8px #2E9BFF;
+  }
+  .data-chip.accent i { background: #57E0A6; box-shadow: 0 0 8px #57E0A6; }
+  .data-chip.sat  i { background: #FFFFFF; box-shadow: 0 0 8px #FFFFFF; }
+
+  .scroll-hint {
+    position: absolute;
+    left: var(--gutter); bottom: 1.6rem;
+    z-index: 3;
+    display: flex; align-items: center; gap: 0.6rem;
+    font-family: var(--mono); font-size: 0.68rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: #5E6B84;
+  }
+  .scroll-hint .line { width: 46px; height: 1px; background: rgba(255,255,255,0.09); position: relative; overflow: hidden; }
+  .scroll-hint .line::after { content:""; position:absolute; inset:0; width: 40%; background: #2E9BFF; animation: scrollSlide 2.4s var(--ease) infinite; }
+  @keyframes scrollSlide { 0%{transform:translateX(-100%)} 60%,100%{transform:translateX(260%)} }
+
+  @media (max-width: 960px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-stage { order: -1; max-width: 420px; }
+    .hero-copy { max-width: none; }
+  }
+  @media (max-width: 720px) {
+    .hero-meta { gap: 1.4rem; }
+  }
+  @media (max-width: 480px) {
+    .hero h1 { font-size: clamp(2.2rem, 10vw, 3rem); }
+  }
+}

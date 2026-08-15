@@ -1,13 +1,14 @@
 /* =========================================================
-   Chakradhari — Site interactions
-   Preloader · sticky header · mobile menu · scroll reveals
+   Chakradhari — Intro dismissal (PROTECTED, unchanged logic)
+   Kept as its own classic deferred script, loaded right after
+   hero.js in exactly the same position it always was, because
+   its timing is coupled to the #intro CSS animation
+   (introOut / animationend) and a 4200ms safety net. Everything
+   else that used to live in this file (sticky header, mobile
+   menu, reveals, filters, active-nav spy) now lives in the
+   modular js/core/* system loaded via js/main.js.
    ========================================================= */
 (function () {
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ---------- Intro ----------
-     The reveal and fade-out are CSS-driven (guaranteed, independent of JS).
-     JS only removes the overlay from the tree once the fade completes. */
   const intro = document.getElementById('intro');
   if (intro) {
     if (document.documentElement.classList.contains('intro-seen')) {
@@ -20,98 +21,5 @@
       intro.addEventListener('animationend', (e) => { if (e.animationName === 'introOut') kill(); });
       setTimeout(kill, 4200); // safety net
     }
-  }
-
-  /* ---------- Sticky header state ---------- */
-  const header = document.querySelector('.site-header');
-  const onScroll = () => {
-    if (window.scrollY > 24) header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
-  };
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
-
-  /* ---------- Mobile menu ---------- */
-  const toggle = document.querySelector('.menu-toggle');
-  const closeMenu = () => {
-    document.body.classList.remove('menu-open');
-    if (toggle) toggle.setAttribute('aria-expanded', 'false');
-  };
-  if (toggle) {
-    toggle.addEventListener('click', () => {
-      const open = document.body.classList.toggle('menu-open');
-      toggle.setAttribute('aria-expanded', String(open));
-    });
-    document.querySelectorAll('#nav a').forEach(a => a.addEventListener('click', closeMenu));
-    window.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
-  }
-
-  /* ---------- Scroll reveals ---------- */
-  const revealTargets = document.querySelectorAll('[data-reveal], [data-reveal-stagger]');
-
-  if (reduce || !('IntersectionObserver' in window)) {
-    revealTargets.forEach(el => el.classList.add('in'));
-  } else {
-    // Stagger children via transition-delay
-    document.querySelectorAll('[data-reveal-stagger]').forEach(group => {
-      Array.from(group.children).forEach((child, i) => {
-        child.style.transitionDelay = (i * 0.07) + 's';
-      });
-    });
-
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-
-    revealTargets.forEach(el => io.observe(el));
-  }
-
-  /* ---------- Content filters (progressive enhancement) ----------
-     Toolbar buttons filter sibling cards by data-type. Falls back to
-     showing every card when JS doesn't run, since nothing starts hidden. */
-  document.querySelectorAll('.filter-toolbar[data-filter-target]').forEach(toolbar => {
-    const cards = Array.from(document.querySelectorAll(toolbar.dataset.filterTarget));
-    const buttons = Array.from(toolbar.querySelectorAll('.filter-pill'));
-    if (!cards.length || !buttons.length) return;
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const filter = btn.dataset.filter;
-        buttons.forEach(b => {
-          const active = b === btn;
-          b.classList.toggle('is-active', active);
-          b.setAttribute('aria-pressed', String(active));
-        });
-        cards.forEach(card => {
-          const match = filter === 'all' || card.dataset.type === filter;
-          card.classList.toggle('is-hidden', !match);
-        });
-      });
-    });
-  });
-
-  /* ---------- Active nav link on scroll ---------- */
-  const sections = ['explore', 'open-lab', 'research', 'work-with-us', 'about']
-    .map(id => document.getElementById(id))
-    .filter(Boolean);
-  const navLinks = new Map(
-    Array.from(document.querySelectorAll('.nav a.nav-link'))
-      .map(a => [a.getAttribute('href').slice(1), a])
-  );
-  if (sections.length && 'IntersectionObserver' in window) {
-    const spy = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          navLinks.forEach(l => l.classList.remove('active'));
-          const link = navLinks.get(e.target.id);
-          if (link) link.classList.add('active');
-        }
-      });
-    }, { threshold: 0.5 });
-    sections.forEach(s => spy.observe(s));
   }
 })();
