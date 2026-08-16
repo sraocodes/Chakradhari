@@ -1,6 +1,6 @@
 /* =========================================================
    Chakradhari — Domain visualizations
-   Seven small, cheap, pure-SVG+CSS motifs, one per focus-card
+   Six small, cheap, pure-SVG+CSS motifs, one per focus-card
    domain, replacing the old static .glyph icon. Idle animation
    only runs once js/viz/domain-cards.js marks the card
    .is-visible (IntersectionObserver-gated); hover always works.
@@ -31,15 +31,6 @@
   .domain-viz--compute .node:nth-child(5) { animation-delay: .6s; }
   .domain-viz--compute .node:nth-child(6) { animation-delay: .75s; }
   @keyframes computeSnap { 0%,100% { transform: scale(1); } 50% { transform: scale(1.6); } }
-
-  /* ---------- Photonics: wave propagation ---------- */
-  .domain-viz--photonics .ray {
-    stroke-dasharray: 3 5;
-    animation: photonFlow 2.4s linear infinite;
-  }
-  .domain-viz--photonics .ray:nth-child(2) { animation-duration: 3.1s; }
-  .domain-viz--photonics .ray:nth-child(3) { animation-duration: 2.7s; animation-direction: reverse; }
-  @keyframes photonFlow { to { stroke-dashoffset: -16; } }
 
   /* ---------- Agriculture / Earth systems: infiltration ---------- */
   .domain-viz--agri .infiltrate {

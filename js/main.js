@@ -25,7 +25,6 @@ initCycleDiagram();
 initDividerMotion();
 initSequentialHighlight('.work-principles', 'span', 850);
 initSequentialHighlight('.pillar-strip', 'article', 1400);
-initSequentialHighlight('.carry-list', 'li', 700);
 
 document.querySelectorAll('.field-canvas').forEach((canvas) => {
   createParticleField(canvas, { colorRGB: canvas.dataset.color || '46,155,255', maxParticles: 26 });

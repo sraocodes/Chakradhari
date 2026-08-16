@@ -31,7 +31,7 @@ export function initNav() {
     window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
   }
 
-  const sections = ['explore', 'open-lab', 'research', 'work-with-us', 'about']
+  const sections = ['capabilities', 'work-with-us', 'about']
     .map((id) => document.getElementById(id))
     .filter(Boolean);
   const navLinks = new Map(
