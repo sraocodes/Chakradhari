@@ -9,6 +9,7 @@
 
    Implemented now:
    channels:     { name, domain, description, href }               — Watch
+   videos:       { title, domain, description, href }               — Watch
    repositories: { name, domain, summary, language, href,
                    docsHref?, version?, license? }                  — Use
    toolboxes:    { name, domain, summary, href,
@@ -17,7 +18,6 @@
    Shapes for categories not yet built (add the export + a render
    function in open-science.js, following the Watch/Use pattern,
    when the first real item exists):
-   videos:          { title, domain, description, href, duration? }  — Watch
    talks:           { title, event, date: 'YYYY-MM-DD', href? }      — Watch
    publications:    { title, venue, date: 'YYYY-MM-DD', href }       — Read
    technicalNotes:  { title, domain, summary, href }                 — Read
@@ -37,6 +37,15 @@ export const channels = [
     domain: 'Technical demonstrations',
     description: 'Technical demonstrations, scientific explainers and research discussions from the company.',
     href: 'https://www.youtube.com/@ChakradhariComputeTech',
+  },
+];
+
+export const videos = [
+  {
+    title: 'Introducing Chakradhari',
+    domain: 'Company overview',
+    description: 'Scientific computing, domain AI and R&D — what Chakradhari builds and who it builds it for.',
+    href: 'https://www.youtube.com/watch?v=nxiifKtDw9k',
   },
 ];
 
